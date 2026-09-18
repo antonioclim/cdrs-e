@@ -1,0 +1,22 @@
+{
+  "applies_to": [
+    "repository_tree",
+    "source_and_tests_zip",
+    "wheel",
+    "sdist"
+  ],
+  "canonical_repository_url": "https://github.com/antonioclim/cdrs-e",
+  "content_licence_outside_surface": "DEFER_OR_SOURCE_SPECIFIC",
+  "default_rule": "FAIL_CLOSED",
+  "forbidden_top_level_segments": [
+    "paper",
+    "evidence",
+    "provenance",
+    "reports"
+  ],
+  "manuscript_supplements_figures_included": false,
+  "operational_authority_embedded": false,
+  "private_excluded_material_retained_outside_public_candidate": true,
+  "schema": "CDRSE_P10_SD40_PUBLIC_SURFACE_SCOPE_v1",
+  "scope": "SOFTWARE_ONLY"
+}

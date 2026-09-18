@@ -1,0 +1,21 @@
+{
+  "protocol_id": "phase-xlii-smoke-001",
+  "random_seeds": [
+    410041,
+    410042
+  ],
+  "metrics": [
+    "objective",
+    "optimality_gap",
+    "runtime",
+    "objective_calls"
+  ],
+  "comparators": [
+    "exhaustive",
+    "forest_dp"
+  ],
+  "failure_policy": "Retain every failed run and report it in the denominator.",
+  "chronology": "No labels or held-out outcomes are used for representation selection.",
+  "cost_tier": "E0",
+  "frozen": true
+}

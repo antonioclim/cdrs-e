@@ -1,0 +1,70 @@
+{
+  "artifact_state_model": "PUBLICATION_DURABLE",
+  "author_email": "Antonio.clim@csie.ase.ro",
+  "candidate_status": "PUBLICATION_DURABLE_SOFTWARE_ONLY_RC1",
+  "candidate_version": "0.1.0rc1",
+  "canonical_repository_url": "https://github.com/antonioclim/cdrs-e",
+  "licence_selected": true,
+  "licence_spdx": "Apache-2.0",
+  "operational_authority_embedded": false,
+  "orcid": "0000-0003-4745-0431",
+  "phase": "P10-SD40",
+  "public_surface": {
+    "content_licence_outside_surface": "DEFER_OR_SOURCE_SPECIFIC",
+    "deferred_path_count": 0,
+    "forbidden_top_level_segments": [
+      "paper",
+      "evidence",
+      "provenance",
+      "reports"
+    ],
+    "manuscript_or_supplement_bytes_included": false,
+    "scope": "SOFTWARE_ONLY"
+  },
+  "publication_identity": {
+    "package_name": "cdrs-e",
+    "release_channel": "release-candidate",
+    "tag": "v0.1.0rc1",
+    "version": "0.1.0rc1"
+  },
+  "qualification": {
+    "authoritative_fresh_phase": "P10-SD34",
+    "ds1_total_previous": 33174,
+    "false_certificates_observed_in_finite_catalogues": 0,
+    "fresh_rc1_mutation_campaign": false,
+    "full_independent_shards_reconciled": "28/28",
+    "full_parent_interruption_relabelled_as_pass": false,
+    "full_parent_orchestration_interrupted": true,
+    "full_status": "PASS_WITH_ORCHESTRATION_QUALIFICATION",
+    "integrated_documentary_checkpoint": "P10-SD35",
+    "quick_status": "PASS",
+    "source_and_installed_refreeze_status": "PASS_1280_OF_1280_EACH_LOCAL_PHASE_EVIDENCE",
+    "universal_correctness_claimed": false,
+    "p10_sd40_scientific_campaigns_rerun": false,
+    "registered_identity_contract": "28_BYTE_IDENTICAL_PLUS_ONE_DOCSTRING_ONLY_CORRECTION",
+    "local_qualification_evidence_external_to_public_tree": true
+  },
+  "release_track": "R-B_PROMOTED_RC",
+  "reproducibility_limits": {
+    "docker_digest_execution": false,
+    "independent_machine_execution": false,
+    "oci_runtime_certified": false,
+    "setuptools_84_executed_in_p10_sd40": false
+  },
+  "schema": "CDRSE_P10_SD40_RELEASE_QUALIFICATION_v1",
+  "scientific_open_gates": {
+    "f03": "OPEN",
+    "f15": "OPEN",
+    "historical_objects_located": 21,
+    "historical_objects_total": 75,
+    "historical_objects_unreconciled": 54,
+    "programme_complete": false,
+    "submission_ready": false,
+    "ts0": "NOT_MET"
+  },
+  "software_version": "0.1.0rc1",
+  "source_snapshot_archival_identity": {
+    "doi_embedded": false,
+    "doi_policy": "NO_FABRICATION; add only after a real archival record exists, normally in external metadata or a subsequent source revision"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "canonical_repository_url": "https://github.com/antonioclim/cdrs-e",
+  "citation_metadata_source": "CITATION.cff",
+  "doi_embedded_in_source_snapshot": false,
+  "issue_tracker_url": "https://github.com/antonioclim/cdrs-e/issues",
+  "package_name": "cdrs-e",
+  "release_channel": "release-candidate",
+  "schema": "CDRSE_P10_SD40_PUBLICATION_IDENTITY_v1",
+  "security_policy": "SECURITY.md",
+  "tag": "v0.1.0rc1",
+  "version": "0.1.0rc1"
+}

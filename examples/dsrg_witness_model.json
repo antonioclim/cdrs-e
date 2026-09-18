@@ -1,0 +1,31 @@
+{
+  "coefficients": [
+    [
+      [
+        0.0,
+        0.5
+      ],
+      [
+        0.5,
+        0.0
+      ]
+    ]
+  ],
+  "innovation_covariance": [
+    [
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0
+    ]
+  ],
+  "channel_names": [
+    "x1",
+    "x2"
+  ],
+  "metadata": {
+    "witness": "strict DSRG log(5/4)"
+  }
+}

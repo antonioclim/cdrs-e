@@ -1,0 +1,6 @@
+pytest>=8
+coverage>=7
+hypothesis>=6
+mypy>=1.10
+ruff>=0.6
+build>=1.2

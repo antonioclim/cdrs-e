@@ -1,0 +1,43 @@
+{
+  "schema_version": "0.1.0",
+  "problem_sha256": "addde5551343cae685c962057640d029d4cbf9fc4c2dde02de3e9a01d9f6f244",
+  "selected": [
+    0,
+    2
+  ],
+  "algorithmic": {
+    "feasible": true,
+    "incumbent_upper": 1.25,
+    "optimum_lower": 1.1,
+    "termination": "node_budget",
+    "exact_oracle": false
+  },
+  "numerical": {
+    "backend": "float64",
+    "finite": true,
+    "enclosed": true,
+    "tolerance": 1e-09,
+    "condition_number": 120.0
+  },
+  "statistical": {
+    "estimand": "population CDRS-E scalar objective",
+    "simultaneous_coverage": false,
+    "failure_probability": 1.0,
+    "status": "exploratory"
+  },
+  "economic": {
+    "tier": "E0",
+    "units_declared": true,
+    "valuation_nonnegative": true,
+    "currency": null,
+    "base_date": null
+  },
+  "numerical_error": 0.01,
+  "statistical_error": 0.02,
+  "cost_error": 0.0,
+  "valuation_error": 0.0,
+  "tolerance": 0.25,
+  "notes": [
+    "Example only; not a real-data certificate."
+  ]
+}

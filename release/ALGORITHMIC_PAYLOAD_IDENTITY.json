@@ -1,0 +1,288 @@
+{
+  "all_identical": false,
+  "baseline": "SD37 qualified software-only candidate",
+  "candidate": "SD40 publication-durable local re-freeze",
+  "comparison": "SD37_TO_SD40",
+  "excluded_release_identity_surfaces": [
+    "src/cdrse/_version.py",
+    "src/cdrse/cli.py",
+    "src/cdrse/schema_files/result_contract.schema.json"
+  ],
+  "file_count": 29,
+  "files": [
+    {
+      "identical": false,
+      "identical_to_sd37": false,
+      "path": "src/cdrse/__init__.py",
+      "sd35_sha256": "174f19feb837d239701f81dfb6e0c704a3d3a46d341503fd1f646a785a50eb70",
+      "sd37_sha256": "174f19feb837d239701f81dfb6e0c704a3d3a46d341503fd1f646a785a50eb70",
+      "sd39_sha256": "174f19feb837d239701f81dfb6e0c704a3d3a46d341503fd1f646a785a50eb70",
+      "sd40_sha256": "8c665738a4fd70125764ccb5ccefd1708e3ad699d165a3f1716ba203b19f41aa",
+      "change_class": "MODULE_DOCSTRING_ONLY_PUBLICATION_IDENTITY_CORRECTION",
+      "only_first_line_changed": true,
+      "bytes_after_first_line_identical": true,
+      "ast_excluding_module_docstring_identical": true,
+      "authorised_old_first_line": "\"\"\"CDRS-E private research software candidate.\"\"\"",
+      "authorised_new_first_line": "\"\"\"CDRS-E auditable research software release candidate.\"\"\""
+    },
+    {
+      "identical": true,
+      "identical_to_sd37": true,
+      "path": "src/cdrse/__main__.py",
+      "sd35_sha256": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+      "sd37_sha256": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+      "sd39_sha256": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+      "sd40_sha256": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d"
+    },
+    {
+      "identical": true,
+      "identical_to_sd37": true,
+      "path": "src/cdrse/algorithms/__init__.py",
+      "sd35_sha256": "8d38932639982c48878bfe6826e470cc3b1ab16f8516ef5876b544d785e7571f",
+      "sd37_sha256": "8d38932639982c48878bfe6826e470cc3b1ab16f8516ef5876b544d785e7571f",
+      "sd39_sha256": "8d38932639982c48878bfe6826e470cc3b1ab16f8516ef5876b544d785e7571f",
+      "sd40_sha256": "8d38932639982c48878bfe6826e470cc3b1ab16f8516ef5876b544d785e7571f"
+    },
+    {
+      "identical": true,
+      "identical_to_sd37": true,
+      "path": "src/cdrse/algorithms/branch_bound.py",
+      "sd35_sha256": "e96549a597d7dc0e49b4feefb96448bf68967adebfd79ac55822a8b9b3eb7c67",
+      "sd37_sha256": "e96549a597d7dc0e49b4feefb96448bf68967adebfd79ac55822a8b9b3eb7c67",
+      "sd39_sha256": "e96549a597d7dc0e49b4feefb96448bf68967adebfd79ac55822a8b9b3eb7c67",
+      "sd40_sha256": "e96549a597d7dc0e49b4feefb96448bf68967adebfd79ac55822a8b9b3eb7c67"
+    },
+    {
+      "identical": true,
+      "identical_to_sd37": true,
+      "path": "src/cdrse/algorithms/common.py",
+      "sd35_sha256": "9716444993e94bc76922c18e4a3b7759d4a0f81b494ff575919ed46c20308ad5",
+      "sd37_sha256": "9716444993e94bc76922c18e4a3b7759d4a0f81b494ff575919ed46c20308ad5",
+      "sd39_sha256": "9716444993e94bc76922c18e4a3b7759d4a0f81b494ff575919ed46c20308ad5",
+      "sd40_sha256": "9716444993e94bc76922c18e4a3b7759d4a0f81b494ff575919ed46c20308ad5"
+    },
+    {
+      "identical": true,
+      "identical_to_sd37": true,
+      "path": "src/cdrse/algorithms/dynamic.py",
+      "sd35_sha256": "0cfc261398f556f66753a768fbbd4951d670a6ce028ddefa104a86e2fcb086d9",
+      "sd37_sha256": "0cfc261398f556f66753a768fbbd4951d670a6ce028ddefa104a86e2fcb086d9",
+      "sd39_sha256": "0cfc261398f556f66753a768fbbd4951d670a6ce028ddefa104a86e2fcb086d9",
+      "sd40_sha256": "0cfc261398f556f66753a768fbbd4951d670a6ce028ddefa104a86e2fcb086d9"
+    },
+    {
+      "identical": true,
+      "identical_to_sd37": true,
+      "path": "src/cdrse/algorithms/exhaustive.py",
+      "sd35_sha256": "f2ece8aab620c5347b31eacb22c478b3596f9f1c66d98b2ce0233f6e2d2334ab",
+      "sd37_sha256": "f2ece8aab620c5347b31eacb22c478b3596f9f1c66d98b2ce0233f6e2d2334ab",
+      "sd39_sha256": "f2ece8aab620c5347b31eacb22c478b3596f9f1c66d98b2ce0233f6e2d2334ab",
+      "sd40_sha256": "f2ece8aab620c5347b31eacb22c478b3596f9f1c66d98b2ce0233f6e2d2334ab"
+    },
+    {
+      "identical": true,
+      "identical_to_sd37": true,
+      "path": "src/cdrse/algorithms/forest.py",
+      "sd35_sha256": "b3ab9ccb05122c8c0b252fc46e1fd2b402d261a0da1dc3af154e28bf0669a60f",
+      "sd37_sha256": "b3ab9ccb05122c8c0b252fc46e1fd2b402d261a0da1dc3af154e28bf0669a60f",
+      "sd39_sha256": "b3ab9ccb05122c8c0b252fc46e1fd2b402d261a0da1dc3af154e28bf0669a60f",
+      "sd40_sha256": "b3ab9ccb05122c8c0b252fc46e1fd2b402d261a0da1dc3af154e28bf0669a60f"
+    },
+    {
+      "identical": true,
+      "identical_to_sd37": true,
+      "path": "src/cdrse/algorithms/grassmann.py",
+      "sd35_sha256": "83f433bc0f04487db7448c9d51085f691da47446fc9d303aae3cbeba32d10683",
+      "sd37_sha256": "83f433bc0f04487db7448c9d51085f691da47446fc9d303aae3cbeba32d10683",
+      "sd39_sha256": "83f433bc0f04487db7448c9d51085f691da47446fc9d303aae3cbeba32d10683",
+      "sd40_sha256": "83f433bc0f04487db7448c9d51085f691da47446fc9d303aae3cbeba32d10683"
+    },
+    {
+      "identical": true,
+      "identical_to_sd37": true,
+      "path": "src/cdrse/algorithms/robust.py",
+      "sd35_sha256": "c87ad49736b1854e9e2ff696d5d428d7542c9d0fb13b4bdf738f00ce75afe4c0",
+      "sd37_sha256": "c87ad49736b1854e9e2ff696d5d428d7542c9d0fb13b4bdf738f00ce75afe4c0",
+      "sd39_sha256": "c87ad49736b1854e9e2ff696d5d428d7542c9d0fb13b4bdf738f00ce75afe4c0",
+      "sd40_sha256": "c87ad49736b1854e9e2ff696d5d428d7542c9d0fb13b4bdf738f00ce75afe4c0"
+    },
+    {
+      "identical": true,
+      "identical_to_sd37": true,
+      "path": "src/cdrse/algorithms/treewidth.py",
+      "sd35_sha256": "72d22ba7ebf3617340a92f9140dc1ca82fab3ffdffed63778538ae0c466d0145",
+      "sd37_sha256": "72d22ba7ebf3617340a92f9140dc1ca82fab3ffdffed63778538ae0c466d0145",
+      "sd39_sha256": "72d22ba7ebf3617340a92f9140dc1ca82fab3ffdffed63778538ae0c466d0145",
+      "sd40_sha256": "72d22ba7ebf3617340a92f9140dc1ca82fab3ffdffed63778538ae0c466d0145"
+    },
+    {
+      "identical": true,
+      "identical_to_sd37": true,
+      "path": "src/cdrse/backends.py",
+      "sd35_sha256": "af96a4780d444734839c74e1ad3dd542c3ee63cab066782ff16d14ec996b1bd3",
+      "sd37_sha256": "af96a4780d444734839c74e1ad3dd542c3ee63cab066782ff16d14ec996b1bd3",
+      "sd39_sha256": "af96a4780d444734839c74e1ad3dd542c3ee63cab066782ff16d14ec996b1bd3",
+      "sd40_sha256": "af96a4780d444734839c74e1ad3dd542c3ee63cab066782ff16d14ec996b1bd3"
+    },
+    {
+      "identical": true,
+      "identical_to_sd37": true,
+      "path": "src/cdrse/certificates.py",
+      "sd35_sha256": "5e0377dcdee9490a16fb066b2ddefecc1f011ab5c8e3d0f970f445c9eb2c0e55",
+      "sd37_sha256": "5e0377dcdee9490a16fb066b2ddefecc1f011ab5c8e3d0f970f445c9eb2c0e55",
+      "sd39_sha256": "5e0377dcdee9490a16fb066b2ddefecc1f011ab5c8e3d0f970f445c9eb2c0e55",
+      "sd40_sha256": "5e0377dcdee9490a16fb066b2ddefecc1f011ab5c8e3d0f970f445c9eb2c0e55"
+    },
+    {
+      "identical": true,
+      "identical_to_sd37": true,
+      "path": "src/cdrse/economics.py",
+      "sd35_sha256": "e0aa6429499e841f1507a590255483c4ebf5cf60facb60e4ec16a7db4bfd4003",
+      "sd37_sha256": "e0aa6429499e841f1507a590255483c4ebf5cf60facb60e4ec16a7db4bfd4003",
+      "sd39_sha256": "e0aa6429499e841f1507a590255483c4ebf5cf60facb60e4ec16a7db4bfd4003",
+      "sd40_sha256": "e0aa6429499e841f1507a590255483c4ebf5cf60facb60e4ec16a7db4bfd4003"
+    },
+    {
+      "identical": true,
+      "identical_to_sd37": true,
+      "path": "src/cdrse/errors.py",
+      "sd35_sha256": "c2d4f146d0da8a26e5d7582a97c3760704b9650f20b3c8df2b75dc5713db085e",
+      "sd37_sha256": "c2d4f146d0da8a26e5d7582a97c3760704b9650f20b3c8df2b75dc5713db085e",
+      "sd39_sha256": "c2d4f146d0da8a26e5d7582a97c3760704b9650f20b3c8df2b75dc5713db085e",
+      "sd40_sha256": "c2d4f146d0da8a26e5d7582a97c3760704b9650f20b3c8df2b75dc5713db085e"
+    },
+    {
+      "identical": true,
+      "identical_to_sd37": true,
+      "path": "src/cdrse/exact_cut.py",
+      "sd35_sha256": "2dbc2115e16164c6f4a1cddb342afaa18a6297e03ea70124deac458b1c8f69bc",
+      "sd37_sha256": "2dbc2115e16164c6f4a1cddb342afaa18a6297e03ea70124deac458b1c8f69bc",
+      "sd39_sha256": "2dbc2115e16164c6f4a1cddb342afaa18a6297e03ea70124deac458b1c8f69bc",
+      "sd40_sha256": "2dbc2115e16164c6f4a1cddb342afaa18a6297e03ea70124deac458b1c8f69bc"
+    },
+    {
+      "identical": true,
+      "identical_to_sd37": true,
+      "path": "src/cdrse/hashing.py",
+      "sd35_sha256": "38818d57a2eaf19f915a2bf868a01b985ea583e872dba0bed8ba380b72fac4c0",
+      "sd37_sha256": "38818d57a2eaf19f915a2bf868a01b985ea583e872dba0bed8ba380b72fac4c0",
+      "sd39_sha256": "38818d57a2eaf19f915a2bf868a01b985ea583e872dba0bed8ba380b72fac4c0",
+      "sd40_sha256": "38818d57a2eaf19f915a2bf868a01b985ea583e872dba0bed8ba380b72fac4c0"
+    },
+    {
+      "identical": true,
+      "identical_to_sd37": true,
+      "path": "src/cdrse/models.py",
+      "sd35_sha256": "2929411a4663bf15c511e4e76e69d05571ab8447da80feb586225a2398268850",
+      "sd37_sha256": "2929411a4663bf15c511e4e76e69d05571ab8447da80feb586225a2398268850",
+      "sd39_sha256": "2929411a4663bf15c511e4e76e69d05571ab8447da80feb586225a2398268850",
+      "sd40_sha256": "2929411a4663bf15c511e4e76e69d05571ab8447da80feb586225a2398268850"
+    },
+    {
+      "identical": true,
+      "identical_to_sd37": true,
+      "path": "src/cdrse/objectives.py",
+      "sd35_sha256": "41449035ffe4201cf9ee9dd6981671465872751e06d76061e7bc46581c1442bb",
+      "sd37_sha256": "41449035ffe4201cf9ee9dd6981671465872751e06d76061e7bc46581c1442bb",
+      "sd39_sha256": "41449035ffe4201cf9ee9dd6981671465872751e06d76061e7bc46581c1442bb",
+      "sd40_sha256": "41449035ffe4201cf9ee9dd6981671465872751e06d76061e7bc46581c1442bb"
+    },
+    {
+      "identical": true,
+      "identical_to_sd37": true,
+      "path": "src/cdrse/protocols.py",
+      "sd35_sha256": "c79908d1cdd7ce75655debd436558b4772bc7684de32a4f29fcc25c10694ca2b",
+      "sd37_sha256": "c79908d1cdd7ce75655debd436558b4772bc7684de32a4f29fcc25c10694ca2b",
+      "sd39_sha256": "c79908d1cdd7ce75655debd436558b4772bc7684de32a4f29fcc25c10694ca2b",
+      "sd40_sha256": "c79908d1cdd7ce75655debd436558b4772bc7684de32a4f29fcc25c10694ca2b"
+    },
+    {
+      "identical": true,
+      "identical_to_sd37": true,
+      "path": "src/cdrse/py.typed",
+      "sd35_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sd37_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sd39_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sd40_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "identical": true,
+      "identical_to_sd37": true,
+      "path": "src/cdrse/reporting.py",
+      "sd35_sha256": "61862dad758caa0b8d704ec3949bc930a873f5826d48432b6a1d995a1adabb6f",
+      "sd37_sha256": "61862dad758caa0b8d704ec3949bc930a873f5826d48432b6a1d995a1adabb6f",
+      "sd39_sha256": "61862dad758caa0b8d704ec3949bc930a873f5826d48432b6a1d995a1adabb6f",
+      "sd40_sha256": "61862dad758caa0b8d704ec3949bc930a873f5826d48432b6a1d995a1adabb6f"
+    },
+    {
+      "identical": true,
+      "identical_to_sd37": true,
+      "path": "src/cdrse/schema_files/__init__.py",
+      "sd35_sha256": "06212648cf4047bbb860bfa84ed83188d724804ec9f793eb8659c9187f355417",
+      "sd37_sha256": "06212648cf4047bbb860bfa84ed83188d724804ec9f793eb8659c9187f355417",
+      "sd39_sha256": "06212648cf4047bbb860bfa84ed83188d724804ec9f793eb8659c9187f355417",
+      "sd40_sha256": "06212648cf4047bbb860bfa84ed83188d724804ec9f793eb8659c9187f355417"
+    },
+    {
+      "identical": true,
+      "identical_to_sd37": true,
+      "path": "src/cdrse/schema_files/certificate.schema.json",
+      "sd35_sha256": "d550393c781870341a0800be0ab16d41565fe6490f34656774a734c7b9b4bd67",
+      "sd37_sha256": "d550393c781870341a0800be0ab16d41565fe6490f34656774a734c7b9b4bd67",
+      "sd39_sha256": "d550393c781870341a0800be0ab16d41565fe6490f34656774a734c7b9b4bd67",
+      "sd40_sha256": "d550393c781870341a0800be0ab16d41565fe6490f34656774a734c7b9b4bd67"
+    },
+    {
+      "identical": true,
+      "identical_to_sd37": true,
+      "path": "src/cdrse/schema_files/problem.schema.json",
+      "sd35_sha256": "3809ac47c3a112af826622daba61c717b6d38caaea0a732020d32557066fd8bb",
+      "sd37_sha256": "3809ac47c3a112af826622daba61c717b6d38caaea0a732020d32557066fd8bb",
+      "sd39_sha256": "3809ac47c3a112af826622daba61c717b6d38caaea0a732020d32557066fd8bb",
+      "sd40_sha256": "3809ac47c3a112af826622daba61c717b6d38caaea0a732020d32557066fd8bb"
+    },
+    {
+      "identical": true,
+      "identical_to_sd37": true,
+      "path": "src/cdrse/schema_files/protocol.schema.json",
+      "sd35_sha256": "854dc0eadf4934e284e62ac5ab2be1a91159e532c4a421e42c477d276534b3e6",
+      "sd37_sha256": "854dc0eadf4934e284e62ac5ab2be1a91159e532c4a421e42c477d276534b3e6",
+      "sd39_sha256": "854dc0eadf4934e284e62ac5ab2be1a91159e532c4a421e42c477d276534b3e6",
+      "sd40_sha256": "854dc0eadf4934e284e62ac5ab2be1a91159e532c4a421e42c477d276534b3e6"
+    },
+    {
+      "identical": true,
+      "identical_to_sd37": true,
+      "path": "src/cdrse/schema_files/result.schema.json",
+      "sd35_sha256": "90c4e728073cda6b8bfd52fedd71eb89d8e0021292a0498f8219fc520bd8fb23",
+      "sd37_sha256": "90c4e728073cda6b8bfd52fedd71eb89d8e0021292a0498f8219fc520bd8fb23",
+      "sd39_sha256": "90c4e728073cda6b8bfd52fedd71eb89d8e0021292a0498f8219fc520bd8fb23",
+      "sd40_sha256": "90c4e728073cda6b8bfd52fedd71eb89d8e0021292a0498f8219fc520bd8fb23"
+    },
+    {
+      "identical": true,
+      "identical_to_sd37": true,
+      "path": "src/cdrse/schemas.py",
+      "sd35_sha256": "f849fdc79b27438b2dd5bc6c91f8db0e05a3d7f8d824da53d9adc366366a4fb4",
+      "sd37_sha256": "f849fdc79b27438b2dd5bc6c91f8db0e05a3d7f8d824da53d9adc366366a4fb4",
+      "sd39_sha256": "f849fdc79b27438b2dd5bc6c91f8db0e05a3d7f8d824da53d9adc366366a4fb4",
+      "sd40_sha256": "f849fdc79b27438b2dd5bc6c91f8db0e05a3d7f8d824da53d9adc366366a4fb4"
+    },
+    {
+      "identical": true,
+      "identical_to_sd37": true,
+      "path": "src/cdrse/verification.py",
+      "sd35_sha256": "255cc35c7dfbd00a17d4a3376fe090d5a2503d2860d58429426fdcc732375119",
+      "sd37_sha256": "255cc35c7dfbd00a17d4a3376fe090d5a2503d2860d58429426fdcc732375119",
+      "sd39_sha256": "255cc35c7dfbd00a17d4a3376fe090d5a2503d2860d58429426fdcc732375119",
+      "sd40_sha256": "255cc35c7dfbd00a17d4a3376fe090d5a2503d2860d58429426fdcc732375119"
+    }
+  ],
+  "schema": "CDRSE_P10_SD40_BOUNDED_PAYLOAD_IDENTITY_v1",
+  "byte_identical_count": 28,
+  "docstring_only_correction_count": 1,
+  "algorithmic_ast_changed": false,
+  "semantic_algorithmic_identity_preserved": true,
+  "status": "PASS_28_BYTE_IDENTICAL_PLUS_ONE_DOCSTRING_ONLY_PUBLICATION_IDENTITY_CORRECTION",
+  "authorised_target_change": "src/cdrse/__init__.py line 1 changed from the private-candidate module docstring to the auditable release-candidate module docstring; no other byte in that file changed."
+}

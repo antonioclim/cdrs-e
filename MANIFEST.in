@@ -1,0 +1,18 @@
+include LICENSE NOTICE LICENSING.md
+include README.md README_FINAL_CANDIDATE.md CHANGELOG.md CITATION.cff codemeta.json
+include PUBLIC_RELEASE_LICENCE_GATE.md release-gates.json build-recipe.json build-system.lock.txt
+include ENVIRONMENT_OBSERVED_P7.json
+recursive-include src/cdrse/schema_files *.json
+recursive-include docs *.md
+recursive-include examples *.json *.py
+recursive-include tests *.py
+recursive-include release *.md *.json
+recursive-include scripts *.py
+recursive-include containers *.md Dockerfile
+prune paper
+prune evidence
+prune provenance
+prune reports
+global-exclude *.py[cod]
+global-exclude __pycache__
+global-exclude .pytest_cache

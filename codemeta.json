@@ -1,0 +1,35 @@
+{
+  "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+  "@type": "SoftwareSourceCode",
+  "applicationCategory": "Research software",
+  "author": [
+    {
+      "@id": "https://orcid.org/0000-0003-4745-0431",
+      "@type": "Person",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "Department of Economic Informatics and Cybernetics, Faculty of Cybernetics, Statistics and Economic Informatics, Bucharest University of Economic Studies, 15–17 Calea Dorobanți, Sector 1, 010552 Bucharest, Romania"
+      },
+      "email": "Antonio.clim@csie.ase.ro",
+      "familyName": "Clim",
+      "givenName": "Antonio"
+    }
+  ],
+  "codeRepository": "https://github.com/antonioclim/cdrs-e",
+  "description": "Software-only release candidate for auditable coordinate-constrained dynamical representation selection.",
+  "developmentStatus": "active release candidate",
+  "issueTracker": "https://github.com/antonioclim/cdrs-e/issues",
+  "keywords": [
+    "multivariate time series",
+    "sensor selection",
+    "dynamical dependence",
+    "certified optimisation"
+  ],
+  "license": "https://spdx.org/licenses/Apache-2.0",
+  "name": "CDRS-E",
+  "programmingLanguage": "Python",
+  "runtimePlatform": "Python 3.11 or later",
+  "softwareHelp": "https://github.com/antonioclim/cdrs-e/blob/main/README.md",
+  "url": "https://github.com/antonioclim/cdrs-e",
+  "version": "0.1.0rc1"
+}

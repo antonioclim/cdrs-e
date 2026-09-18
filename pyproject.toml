@@ -1,0 +1,109 @@
+[build-system]
+requires = ["setuptools==84.0.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cdrs-e"
+version = "0.1.0rc1"
+description = "Auditable reference software for economically accountable coordinate-constrained dynamical representation selection"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{ name = "Antonio Clim", email = "Antonio.clim@csie.ase.ro" }]
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
+keywords = [
+  "multivariate time series",
+  "sensor selection",
+  "submodular optimisation",
+  "Grassmann optimisation",
+  "decision certificates",
+  "research software",
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Science/Research",
+  "Topic :: Scientific/Engineering :: Information Analysis",
+  "Topic :: Scientific/Engineering :: Mathematics",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Operating System :: OS Independent",
+  "Typing :: Typed",
+]
+dependencies = [
+  "numpy>=1.26",
+  "scipy>=1.11",
+  "networkx>=3.2",
+  "jsonschema>=4.21",
+  "mpmath>=1.3",
+  "sympy>=1.12",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8",
+  "coverage>=7",
+  "hypothesis>=6",
+  "mypy>=1.10",
+  "ruff>=0.6",
+  "build>=1.2",
+]
+
+[project.urls]
+Homepage = "https://github.com/antonioclim/cdrs-e"
+Repository = "https://github.com/antonioclim/cdrs-e"
+Issues = "https://github.com/antonioclim/cdrs-e/issues"
+Changelog = "https://github.com/antonioclim/cdrs-e/blob/main/CHANGELOG.md"
+
+[project.scripts]
+cdrse = "cdrse.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+cdrse = ["py.typed", "schema_files/*.json"]
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+addopts = "-ra --strict-markers --strict-config"
+testpaths = ["tests"]
+markers = [
+  "property: deterministic property-style randomised tests",
+  "metamorphic: metamorphic invariance tests",
+  "slow: slower clean-room or scaling checks",
+]
+
+[tool.coverage.run]
+branch = true
+source = ["cdrse"]
+omit = []
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = false
+exclude_also = [
+  "if TYPE_CHECKING:",
+]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+warn_unused_ignores = true
+warn_redundant_casts = true
+packages = ["cdrse"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM", "RUF"]
+ignore = ["E501"]

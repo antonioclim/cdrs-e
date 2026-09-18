@@ -1,0 +1,37 @@
+{
+  "independent_machine_reproduction": false,
+  "method": "DETERMINISTIC_REASSEMBLY_FROM_QUALIFIED_SD37_ASSETS",
+  "operational_authority_embedded": false,
+  "operations": [
+    "apply the explicitly authorised first-line module-docstring correction and no other change in src/cdrse/__init__.py",
+    "prove AST identity after removing the module docstring and byte identity of the other 28 registered files",
+    "retain publication-durable metadata and the software-only public surface",
+    "copy package payload from the P10-SD40 source tree into the qualified SD37 wheel envelope",
+    "recompute wheel metadata, WHEEL and RECORD",
+    "replace the qualified SD37 sdist source surface from the P10-SD40 repository tree",
+    "normalise ZIP, TAR and GZIP metadata to SOURCE_DATE_EPOCH",
+    "build each asset twice and require byte identity",
+    "install the resulting wheel and rerun the complete test suite"
+  ],
+  "phase": "P10-SD40",
+  "qualified_input_assets": {
+    "sdist": {
+      "sha256": "b09c95cd8ad4621d1fae0f7dfdbfad4d6798bd1564a5615e96287bae23480fd4"
+    },
+    "source_zip": {
+      "sha256": "f3eac28033dbac782749eab18bec124976003f04954e35fda2fb2cd5e9331184"
+    },
+    "wheel": {
+      "sha256": "b7a51c1448179a296f407ab214cc3c7dac8f36e2d0ec4dc5c177d74f64103dc7"
+    }
+  },
+  "schema": "CDRSE_P10_SD40_BUILD_DERIVATION_v1",
+  "scientific_payload_changed": false,
+  "why": "The exact setuptools 84.0.0 backend is not present in the isolated transition environment. P10-SD40 therefore uses deterministic reassembly from the fully qualified SD37 assets, applies the authorised docstring-only identity correction and performs complete source and installed-wheel qualification.",
+  "exact_setuptools_84_backend_executed_in_p10_sd40": false,
+  "algorithmic_semantics_changed": false,
+  "registered_payload_change_scope": "ONE_MODULE_DOCSTRING_ONLY",
+  "identity_contract": "28/28 byte-identical + 1 docstring-only publication-identity correction",
+  "parent_source_candidate_sha256": "58dcc92636e01bf8df8f305df9161979d38f3c3e77d77fb4d52cebe7416d7b95",
+  "parent_sd39_fail_closed_package_sha256": "c8f3f3011de1871f71b3ad1d7b5e2d9731f5ae5a8bf82e0f037073d9ddaae6d8"
+}
