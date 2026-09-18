@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:cdrse:solver-result:0.1.0",
+  "title": "CDRS-E solver result",
+  "type": "object",
+  "required": ["status", "selected", "objective", "exact", "certified", "termination_reason", "counters", "metadata"],
+  "properties": {
+    "status": {"type": "string"},
+    "selected": {"type": ["array", "null"], "uniqueItems": true, "items": {"type": "integer", "minimum": 0}},
+    "objective": {"type": ["number", "null"]},
+    "exact": {"type": "boolean"},
+    "certified": {"type": "boolean"},
+    "termination_reason": {"type": "string"},
+    "lower_bound": {"type": ["number", "null"]},
+    "upper_bound": {"type": ["number", "null"]},
+    "optimality_gap": {"type": ["number", "null"], "minimum": 0},
+    "counters": {"type": "object"},
+    "metadata": {"type": "object"}
+  }
+}

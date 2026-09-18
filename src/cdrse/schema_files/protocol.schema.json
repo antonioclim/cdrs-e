@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:cdrse:experiment-protocol:0.1.0",
+  "title": "CDRS-E experiment protocol",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["protocol_id", "random_seeds", "metrics", "comparators", "failure_policy", "chronology", "cost_tier", "frozen"],
+  "properties": {
+    "protocol_id": {"type": "string", "minLength": 1},
+    "random_seeds": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "integer"}},
+    "metrics": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}},
+    "comparators": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}},
+    "failure_policy": {"type": "string", "minLength": 1},
+    "chronology": {"type": "string", "minLength": 1},
+    "cost_tier": {"enum": ["E0", "E1", "E2", "E3"]},
+    "frozen": {"type": "boolean"}
+  }
+}

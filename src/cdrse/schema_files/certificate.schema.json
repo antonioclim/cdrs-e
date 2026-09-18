@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:cdrse:decision-certificate:0.1.0",
+  "title": "CDRS-E decision certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "problem_sha256", "selected", "algorithmic", "numerical", "statistical", "economic",
+    "numerical_error", "statistical_error", "cost_error", "valuation_error"
+  ],
+  "properties": {
+    "schema_version": {"type": "string"},
+    "problem_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "selected": {"type": ["array", "null"], "uniqueItems": true, "items": {"type": "integer", "minimum": 0}},
+    "algorithmic": {
+      "type": "object", "additionalProperties": false,
+      "required": ["feasible", "incumbent_upper", "optimum_lower", "termination", "exact_oracle"],
+      "properties": {
+        "feasible": {"type": "boolean"},
+        "incumbent_upper": {"type": ["number", "null"]},
+        "optimum_lower": {"type": ["number", "null"]},
+        "termination": {"type": "string"},
+        "exact_oracle": {"type": "boolean"}
+      }
+    },
+    "numerical": {
+      "type": "object", "additionalProperties": false,
+      "required": ["backend", "finite", "enclosed", "tolerance", "condition_number"],
+      "properties": {
+        "backend": {"type": "string"}, "finite": {"type": "boolean"}, "enclosed": {"type": "boolean"},
+        "tolerance": {"type": "number", "minimum": 0}, "condition_number": {"type": ["number", "null"], "exclusiveMinimum": 0}
+      }
+    },
+    "statistical": {
+      "type": "object", "additionalProperties": false,
+      "required": ["estimand", "simultaneous_coverage", "failure_probability", "status"],
+      "properties": {
+        "estimand": {"type": "string", "minLength": 1}, "simultaneous_coverage": {"type": "boolean"},
+        "failure_probability": {"type": "number", "minimum": 0, "maximum": 1},
+        "status": {"enum": ["none", "exploratory", "confirmatory"]}
+      }
+    },
+    "economic": {
+      "type": "object", "additionalProperties": false,
+      "required": ["tier", "units_declared", "valuation_nonnegative", "currency", "base_date"],
+      "properties": {
+        "tier": {"enum": ["E0", "E1", "E2", "E3"]}, "units_declared": {"type": "boolean"},
+        "valuation_nonnegative": {"type": "boolean"}, "currency": {"type": ["string", "null"]},
+        "base_date": {"type": ["string", "null"]}
+      }
+    },
+    "numerical_error": {"type": "number", "minimum": 0},
+    "statistical_error": {"type": "number", "minimum": 0},
+    "cost_error": {"type": "number", "minimum": 0},
+    "valuation_error": {"type": "number", "minimum": 0},
+    "tolerance": {"type": ["number", "null"], "minimum": 0},
+    "notes": {"type": "array", "items": {"type": "string"}},
+    "discrepancy": {"type": "number", "minimum": 0},
+    "regret_upper": {"type": ["number", "null"], "minimum": 0},
+    "non_vacuous": {"type": ["boolean", "null"]}
+  }
+}
