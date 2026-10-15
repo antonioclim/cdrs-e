@@ -1,0 +1,72 @@
+{
+  "cli_controls": "43/43",
+  "coverage": {
+    "branches": "1017/1128",
+    "statements": "2492/2619"
+  },
+  "ds1": {
+    "core": 26334,
+    "false_certificates_observed": 0,
+    "stress": 6696,
+    "total": 33174
+  },
+  "fresh_execution_authority": "P10-SD34",
+  "fresh_rc1_mutation_campaign": false,
+  "full": {
+    "independent_shards_completed_and_reconciled": "28/28",
+    "parent_attempt_relabelled_as_pass": false,
+    "parent_orchestration_interrupted": true,
+    "status": "PASS_WITH_ORCHESTRATION_QUALIFICATION"
+  },
+  "installed_tests": {
+    "p10_sd37": "PASS_SHARDED_RECONCILED_1280_OF_1280",
+    "p10_sd39": "NOT_RUN_FAIL_CLOSED_BEFORE_ASSET_BUILD",
+    "previous": "1280/1280",
+    "p10_sd40": "PASS_SHARDED_RECONCILED_1280_OF_1280"
+  },
+  "latest_integrated_checkpoint": "P10-SD35",
+  "limits": {
+    "f03": "OPEN",
+    "f15": "OPEN",
+    "finite_catalogues_are_not_universal_guarantees": true,
+    "programme_complete": false,
+    "ts0": "NOT_MET",
+    "undiscovered_defect_probability_not_inferred": true
+  },
+  "p10_sd37_packaging": {
+    "deterministic_rebuild": "PASS",
+    "distribution_verification": "PASS",
+    "public_deferred_path_count": 0,
+    "wheel_record": "PASS"
+  },
+  "p10_sd39_packaging": {
+    "deterministic_rebuild": "NOT_RUN_FAIL_CLOSED",
+    "distribution_verification": "NOT_RUN_FAIL_CLOSED",
+    "public_deferred_path_count": 0,
+    "wheel_record": "NOT_RUN_FAIL_CLOSED"
+  },
+  "packaging_remediation_phase": "P10-SD40",
+  "quick": {
+    "fresh_rc1": true,
+    "status": "PASS"
+  },
+  "reason_not_rerun": "Twenty-eight registered files remain byte-identical to SD37; src/cdrse/__init__.py differs only in the authorised module docstring and its AST excluding that docstring is identical. P10-SD40 does not modify algorithmic semantics or scientific configuration.",
+  "schema": "CDRSE_P10_SD40_QUALIFICATION_STATE_v1",
+  "scientific_campaigns_rerun_in_p10_sd37": false,
+  "scientific_campaigns_rerun_in_p10_sd39": false,
+  "software_version": "0.1.0rc1",
+  "solver_comparisons": "1320/1320",
+  "source_tests": {
+    "p10_sd37": "PASS_SHARDED_RECONCILED_1280_OF_1280",
+    "p10_sd39": "PASS_SHARDED_RECONCILED_1280_OF_1280_NON_PROMOTABLE_DRAFT",
+    "previous": "1280/1280",
+    "p10_sd40": "PASS_SHARDED_RECONCILED_1280_OF_1280"
+  },
+  "p10_sd40_packaging": {
+    "deterministic_rebuild": "PASS_TWO_OF_TWO_BYTE_IDENTICAL",
+    "distribution_verification": "PASS",
+    "public_deferred_path_count": 0,
+    "wheel_record": "PASS"
+  },
+  "scientific_campaigns_rerun_in_p10_sd40": false
+}

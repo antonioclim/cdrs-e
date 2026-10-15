@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "cdrs-e"
-version = "0.1.0rc1"
+version = "0.1.0rc2"
 description = "Auditable reference software for economically accountable coordinate-constrained dynamical representation selection"
 readme = "README.md"
 requires-python = ">=3.11"
@@ -78,6 +78,7 @@ markers = [
   "property: deterministic property-style randomised tests",
   "metamorphic: metamorphic invariance tests",
   "slow: slower clean-room or scaling checks",
+  "claim: executable scientific claim obligation",
 ]
 
 [tool.coverage.run]

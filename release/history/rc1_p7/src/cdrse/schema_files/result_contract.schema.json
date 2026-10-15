@@ -1,0 +1,426 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CDRS-E 0.1.0rc1 stored-input result contract",
+  "description": "Local implementation of the adopted P6B contract. Schema acceptance alone is not semantic verification. NODE_BUDGET completes the adopted expanded-node counter vocabulary.",
+  "type": "object",
+  "required": [
+    "record_kind",
+    "objective_id",
+    "arithmetic_contract",
+    "feasible_family_sha256",
+    "has_incumbent",
+    "selected",
+    "objective_interval",
+    "global_lower_bound",
+    "incumbent_upper_bound",
+    "regret_upper_bound",
+    "proof_status",
+    "proof_evidence_refs",
+    "oracle_calls",
+    "expanded_nodes",
+    "termination_reason",
+    "statistical_event",
+    "objective_estimate"
+  ],
+  "$defs": {
+    "rational": {
+      "type": "object",
+      "required": [
+        "numerator",
+        "denominator"
+      ],
+      "properties": {
+        "numerator": {
+          "type": "string",
+          "pattern": "^-?(0|[1-9][0-9]*)$"
+        },
+        "denominator": {
+          "type": "string",
+          "pattern": "^[1-9][0-9]*$"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "properties": {
+    "record_kind": {
+      "enum": [
+        "INTERFACE_EXAMPLE_NOT_OBSERVED_RUN",
+        "OBSERVED_SOLVER_RESULT"
+      ]
+    },
+    "objective_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "arithmetic_contract": {
+      "enum": [
+        "EXACT_STORED_RATIONAL",
+        "VALIDATED_NUMERICAL_INTERVAL",
+        "FLOAT64_EVALUATION",
+        "HIGH_PRECISION_EVALUATION"
+      ]
+    },
+    "feasible_family_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "has_incumbent": {
+      "type": "boolean"
+    },
+    "selected": {
+      "anyOf": [
+        {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "uniqueItems": true
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "objective_interval": {
+      "anyOf": [
+        {
+          "type": "object",
+          "required": [
+            "lower",
+            "upper"
+          ],
+          "properties": {
+            "lower": {
+              "$ref": "#/$defs/rational"
+            },
+            "upper": {
+              "$ref": "#/$defs/rational"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "global_lower_bound": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/rational"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "incumbent_upper_bound": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/rational"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "regret_upper_bound": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/rational"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "proof_status": {
+      "enum": [
+        "EXACT_STORED_INPUT",
+        "VALIDATED_ENCLOSURE",
+        "UNCERTIFIED_EVALUATION",
+        "NO_INCUMBENT",
+        "PROVED_INFEASIBLE"
+      ]
+    },
+    "proof_evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "oracle_calls": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "expanded_nodes": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "termination_reason": {
+      "enum": [
+        "COMPLETE",
+        "BOUND_GAP",
+        "CALL_BUDGET",
+        "TIME_BUDGET",
+        "NO_FEASIBLE_INCUMBENT",
+        "INVALID_INPUT",
+        "PROVED_INFEASIBLE",
+        "NODE_BUDGET"
+      ]
+    },
+    "statistical_event": {
+      "anyOf": [
+        {
+          "type": "object",
+          "required": [
+            "description",
+            "failure_probability",
+            "simultaneous_scope"
+          ],
+          "properties": {
+            "description": {
+              "type": "string"
+            },
+            "failure_probability": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "simultaneous_scope": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "objective_estimate": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]+)?([eE][+-]?[0-9]+)?$"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "Approximate point evaluation only; this field supplies no enclosure."
+    }
+  },
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "has_incumbent": {
+            "const": false
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "selected": {
+            "type": "null"
+          },
+          "objective_interval": {
+            "type": "null"
+          },
+          "incumbent_upper_bound": {
+            "type": "null"
+          },
+          "regret_upper_bound": {
+            "type": "null"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "proof_status": {
+            "const": "EXACT_STORED_INPUT"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "arithmetic_contract": {
+            "const": "EXACT_STORED_RATIONAL"
+          },
+          "has_incumbent": {
+            "const": true
+          },
+          "proof_evidence_refs": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "has_incumbent": {
+            "const": true
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "selected": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "uniqueItems": true
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "proof_status": {
+            "enum": [
+              "EXACT_STORED_INPUT",
+              "VALIDATED_ENCLOSURE"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "has_incumbent": {
+            "const": true
+          },
+          "objective_interval": {
+            "type": "object",
+            "required": [
+              "lower",
+              "upper"
+            ],
+            "properties": {
+              "lower": {
+                "$ref": "#/$defs/rational"
+              },
+              "upper": {
+                "$ref": "#/$defs/rational"
+              }
+            },
+            "additionalProperties": false
+          },
+          "global_lower_bound": {
+            "$ref": "#/$defs/rational"
+          },
+          "incumbent_upper_bound": {
+            "$ref": "#/$defs/rational"
+          },
+          "regret_upper_bound": {
+            "$ref": "#/$defs/rational"
+          },
+          "proof_evidence_refs": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "arithmetic_contract": {
+            "enum": [
+              "EXACT_STORED_RATIONAL",
+              "VALIDATED_NUMERICAL_INTERVAL"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "proof_status": {
+            "enum": [
+              "NO_INCUMBENT",
+              "PROVED_INFEASIBLE"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "has_incumbent": {
+            "const": false
+          },
+          "objective_estimate": {
+            "type": "null"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "proof_status": {
+            "const": "PROVED_INFEASIBLE"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "proof_evidence_refs": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "termination_reason": {
+            "const": "PROVED_INFEASIBLE"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "proof_status": {
+            "const": "UNCERTIFIED_EVALUATION"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "has_incumbent": {
+            "const": true
+          },
+          "objective_interval": {
+            "type": "null"
+          },
+          "incumbent_upper_bound": {
+            "type": "null"
+          },
+          "regret_upper_bound": {
+            "type": "null"
+          },
+          "objective_estimate": {
+            "type": "string",
+            "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]+)?([eE][+-]?[0-9]+)?$"
+          }
+        }
+      }
+    }
+  ]
+}

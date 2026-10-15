@@ -11,9 +11,9 @@ from zipfile import ZIP_DEFLATED, ZipFile, ZipInfo
 
 ROOT = Path(__file__).resolve().parents[1]
 EPOCH = 1789689600
-ARCHIVE_ROOT = "CDRS_E_0.1.0rc1_P10SD40_PUBLICATION_DURABLE_SOURCE_AND_TESTS"
+ARCHIVE_ROOT = "CDRS_E_0.1.0rc2_LOCAL_SOFTWARE_CANDIDATE_SOURCE_AND_TESTS"
 FORBIDDEN = {"paper", "evidence", "provenance", "reports"}
-EXCLUDED_PARTS = {"__pycache__", ".pytest_cache", ".mypy_cache", ".ruff_cache", "build", "dist", ".venv"}
+EXCLUDED_PARTS = {"__pycache__", ".pytest_cache", ".mypy_cache", ".ruff_cache", "build", "dist", ".venv", ".git"}
 
 
 def sha256(path: Path) -> str:
@@ -32,6 +32,8 @@ def public_files(root: Path) -> list[Path]:
         rel = path.relative_to(root)
         if rel.parts[0] in FORBIDDEN or any(part in EXCLUDED_PARTS for part in rel.parts):
             continue
+        if any(part.endswith(".egg-info") for part in rel.parts) or path.name.startswith(".coverage") or path.name in {"coverage.json", "coverage.xml"}:
+            continue
         if path.suffix in {".pyc", ".pyo"}:
             continue
         rows.append(path)
@@ -42,6 +44,9 @@ def build_source_archive(output: Path, *, root: Path = ROOT) -> dict[str, object
     for name in FORBIDDEN:
         if (root / name).exists():
             raise RuntimeError(f"forbidden public path exists: {name}")
+    recipe = json.loads((root / "build-recipe.json").read_text(encoding="utf-8"))
+    if recipe["software_version"] != "0.1.0rc2" or recipe["candidate_status"] != "LOCAL_SOFTWARE_CANDIDATE_RC2" or recipe["source_date_epoch"] != EPOCH:
+        raise RuntimeError("source archive recipe does not identify the local rc2 candidate")
     files = public_files(root)
     manifest = {
         p.relative_to(root).as_posix(): {"bytes": p.stat().st_size, "sha256": sha256(p)}
@@ -49,12 +54,12 @@ def build_source_archive(output: Path, *, root: Path = ROOT) -> dict[str, object
     }
     generated = {
         "SOURCE_ARCHIVE_README.md": (
-            "# CDRS-E P10-SD40 publication-durable software-only source archive\n\n"
+            "# CDRS-E 0.1.0rc2 local software-only source archive\n\n"
             "This archive contains only the Apache-2.0 software surface. "
             "Manuscript, evidence, private provenance and generated reports are excluded. "
             "Operational publication authority is deliberately external to this public artefact.\n"
         ).encode(),
-        "SOURCE_MANIFEST_SHA256.json": (json.dumps({"schema": "CDRSE_P10_SD40_SOURCE_MANIFEST_v1", "files": manifest}, indent=2, sort_keys=True) + "\n").encode(),
+        "SOURCE_MANIFEST_SHA256.json": (json.dumps({"schema": "CDRSE_RC2_LOCAL_SOURCE_MANIFEST_V1", "files": manifest}, indent=2, sort_keys=True) + "\n").encode(),
     }
     dt = time.gmtime(EPOCH)[:6]
     output.parent.mkdir(parents=True, exist_ok=True)

@@ -1,4 +1,4 @@
-# CDRS-E 0.1.0rc1 — publication-durable software-only release candidate
+# CDRS-E 0.1.0rc2 — local software-only source candidate
 
 **Author and maintainer: Antonio Clim. Apache-2.0 applies to the software-only surface. Canonical repository: `https://github.com/antonioclim/cdrs-e`.**
 
@@ -12,7 +12,7 @@ Omitting a budget means a non-binding total-cost budget.
 
 ## Publication identity and archival metadata
 
-The canonical repository identity is `https://github.com/antonioclim/cdrs-e` and the release-candidate tag is `v0.1.0rc1`. `CITATION.cff`, CodeMeta and `pyproject.toml` carry this durable identity. No DOI is fabricated or embedded in this source snapshot. If an archival record later assigns a DOI, that external record or a subsequent source revision should carry it without rewriting the frozen source tag. Security reports should follow `SECURITY.md`; ordinary defects and contribution proposals should follow `CONTRIBUTING.md`.
+The canonical repository identity remains `https://github.com/antonioclim/cdrs-e`. The local source identity is `0.1.0rc2` and the tag proposed for a future release is `v0.1.0rc2`. Candidate status remains `LOCAL_SOFTWARE_CANDIDATE_RC2`; the metadata profile is `PREPUBLICATION_PROFILE_PENDING_IMPACT_CHECKS`. Tag availability, successor commit, release date and version DOI are unset or unverified. The separately bound D2 predecessor qualification combines 36 criteria supported by inherited evidence with a new complete Q33 PASS campaign. The M12 acceptance-method extension was designed after observing phase05 and applies to successor06 only. Build and impact checks for this changed metadata profile remain pending; predecessor results are not reassigned to its new complete-file identities. D2 performed no scientific replay, and this profile introduces none. See `release/QUALIFICATION_STATE.json` for the exact bindings and limits. No DOI is fabricated or embedded in this source snapshot. If an archival record later assigns a DOI, that external record or a subsequent source revision should carry it without rewriting the frozen source tag. Security reports should follow `SECURITY.md`; ordinary defects and contribution proposals should follow `CONTRIBUTING.md`.
 
 ## Installation and a replayable example
 
@@ -27,9 +27,11 @@ python -m cdrse verify-result examples/forest_problem.json result.json
 ```
 
 The example selects `[0, 2]` with objective 5. `--output` is accepted before or
-after the subcommand. A wheel and source distribution are delivered separately
-in the phase package; this directory does not require a nonexistent local wheel.
-Dependency installation on another machine is a separate environment step.
+after the subcommand. No wheel or source distribution for this changed metadata
+profile is supplied by this source snapshot. New distribution envelopes require
+a fresh exact-backend build and separately recorded impact checks; old binaries
+must not be renamed rc2. Dependency installation on another machine is a separate
+environment step.
 
 ## Exact results, callback evaluations and limits
 
@@ -60,7 +62,7 @@ its separately stated transformed-cost scope. The trajectory construction is
 fixed-horizon/XP-type with explicit resource counters, not FPT in the horizon
 alone. Grassmann multistart gives stationary candidates, not global optima.
 
-## Verification evidence and current limits
+## Historical rc1 verification evidence and continuing limits
 
 The fresh rc1 execution authority is P10-SD34 and the latest integrated checkpoint is P10-SD35. Source and installed suites previously returned 1,280/1,280. QUICK passed. The initial parent FULL orchestration was interrupted and remains recorded as interrupted; 28/28 independently completed shards were subsequently reconciled, yielding `PASS_WITH_ORCHESTRATION_QUALIFICATION`. The interrupted parent attempt is not relabelled as a pass.
 
@@ -176,3 +178,7 @@ See `LICENSING.md`. Apache-2.0 applies to the software work; manuscript-facing a
 ## P10-SD40 bounded public-identity correction and full local re-freeze
 
 P10-SD39 removed private remote-operation plans from the public source tree, assigned durable repository metadata and replaced operational authorisation flags with artefact-stable qualification fields, but its local draft was not promoted because `src/cdrse/__init__.py` still described the software as private. P10-SD40 changes only that module docstring from the private-candidate wording to `CDRS-E auditable research software release candidate.` No other byte in that file changes. The remaining 28 registered files are byte-identical to SD37 and the AST after removing the module docstring is identical. The CLI reports the release channel and canonical repository rather than a transient boolean describing whether a remote publication operation has occurred.
+
+## Local rc2 source and qualification boundary
+
+This metadata successor preserves the exact phase06 runtime sources, including the K1 canonical-witness repair, and retains all scientific algorithms, numerical expectations, negative controls and historical successes and failures. The active recipe requires a fresh exact-backend build; the old SD37-envelope reassembler remains blocked. The NOT_EXECUTED fields describe this changed profile at source-snapshot creation. The active qualification binding separately identifies the predecessor D2 evidence and preserves Q09 FAIL from phase03, M06 UNRESOLVED from phase04 and M12 UNRESOLVED from phase05. The predecessor qualification does not establish a new build, scientific replay or independent-host reproduction for this profile. Changed rc1/P7 originals and all eight original identity-test files remain byte-for-byte under `release/history/rc1_p7/`; those archival copies are not collected as active tests. `release/SUCCESSOR_SOURCE_LINEAGE.json` and `release/RELEASE_NOTES_v0.1.0rc2_LOCAL_CANDIDATE.md` retain their prequalification preparation identities. New impact-check receipts must bind the changed source externally rather than rewriting this frozen snapshot. External release operations remain separate.

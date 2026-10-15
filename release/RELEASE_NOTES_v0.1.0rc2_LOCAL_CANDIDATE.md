@@ -1,0 +1,3 @@
+# CDRS-E 0.1.0rc2 — local source candidate
+
+`LOCAL_SOFTWARE_CANDIDATE_RC2` identifies a local successor prepared from P2. No new execution or public release is claimed. The canonical repository identity is preserved; this source embeds no DOI. The exact historical rc1/P7 records remain unchanged or are preserved under `release/history/rc1_p7/`. The K1 canonical-witness repair is inherited literally from P2, not re-run. Current metadata, pending qualification, output labels and identity assertions are separated from historical evidence. Fresh wheel/sdist backend builds and their source-bound software qualification remain NOT_EXECUTED. Scientific replay, manuscript changes, other evaluations and external promotion are separate operations.

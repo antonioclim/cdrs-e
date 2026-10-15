@@ -23,7 +23,7 @@ ROOT = Path(__file__).resolve().parents[2]
 
 def test_direct_cli_commands_and_failure(capsys, tmp_path: Path) -> None:
     assert cli.main(["version"]) == 0
-    assert json.loads(capsys.readouterr().out)["version"] == "0.1.0rc1"
+    assert json.loads(capsys.readouterr().out)["version"] == "0.1.0rc2"
     assert cli.main(["schema", "result"]) == 0
     assert json.loads(capsys.readouterr().out)["title"] == "CDRS-E solver result"
     assert cli.main(["validate-problem", str(ROOT / "examples/forest_problem.json")]) == 0

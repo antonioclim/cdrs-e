@@ -16,7 +16,7 @@ from ..certificates import AlgorithmicLayer, DecisionCertificate, EconomicLayer,
 from ..errors import ValidationError
 from ..exact_cut import rational, exact_weights, total_value, make_result, result_record
 from ..models import SelectionProblem
-from .common import Counters, SolverResult
+from .common import CANONICAL_WITNESS_POLICY, Counters, SolverResult, canonical_objective_key
 
 
 @dataclass(order=True)
@@ -111,6 +111,31 @@ def solve_branch_bound(
             return False
         return all(set(group) - excluded for group in c.coverage_groups)
 
+    def lexicographic_relaxation(included: frozenset[int], excluded: frozenset[int]) -> tuple[int, ...] | None:
+        """Smallest tuple in a relaxation of the node's feasible family.
+
+        Budget and coverage are deliberately ignored. The returned tuple is a
+        lower bound in lexicographic order for every genuinely feasible
+        completion, which makes equal-bound pruning safe.
+        """
+        fixed = tuple(sorted(included))
+        available = tuple(i for i in range(n) if i not in included and i not in excluded)
+        low = max(k_min, len(fixed))
+        high = min(k_max, len(fixed) + len(available))
+        if low > high:
+            return None
+        candidates: list[tuple[int, ...]] = []
+        for size in range(low, high + 1):
+            need = size - len(fixed)
+            candidates.append(tuple(sorted(fixed + available[:need])))
+        return min(candidates) if candidates else None
+
+    def can_prune_equal_bound(included: frozenset[int], excluded: frozenset[int]) -> bool:
+        if incumbent is None:
+            return False
+        relaxed = lexicographic_relaxation(included, excluded)
+        return relaxed is None or relaxed >= incumbent[1]
+
     def bound(included: frozenset[int], excluded: frozenset[int]) -> Fraction:
         counters.lower_bound_calls += 1
         available = [i for i in range(n) if i not in included and i not in excluded]
@@ -150,7 +175,10 @@ def solve_branch_bound(
             break
         node = heapq.heappop(heap)
         counters.nodes_expanded += 1
-        if exact and incumbent is not None and node.lower_bound >= incumbent[0]:
+        if exact and incumbent is not None and (
+            node.lower_bound > incumbent[0]
+            or (node.lower_bound == incumbent[0] and can_prune_equal_bound(node.included, node.excluded))
+        ):
             counters.nodes_pruned += 1
             continue
         undecided = [i for i in range(n) if i not in node.included and i not in node.excluded]
@@ -158,7 +186,7 @@ def solve_branch_bound(
             subset = tuple(sorted(node.included))
             if c.is_feasible(subset, n, problem.activation_costs):
                 candidate = (evaluate(subset), subset)
-                if incumbent is None or candidate < incumbent:
+                if incumbent is None or canonical_objective_key(candidate[0], candidate[1]) < canonical_objective_key(incumbent[0], incumbent[1]):
                     incumbent = candidate
             continue
         vertex = max(undecided, key=lambda i: (frequency[i], costs[i], -i))
@@ -170,7 +198,10 @@ def solve_branch_bound(
                 counters.nodes_pruned += 1
                 continue
             lb = bound(inc, exc)
-            if exact and incumbent is not None and lb >= incumbent[0]:
+            if exact and incumbent is not None and (
+                lb > incumbent[0]
+                or (lb == incumbent[0] and can_prune_equal_bound(frozenset(inc), frozenset(exc)))
+            ):
                 counters.nodes_pruned += 1
                 continue
             heapq.heappush(heap, _Node(lb, serial, frozenset(inc), frozenset(exc)))
@@ -182,6 +213,7 @@ def solve_branch_bound(
     meta = {'frontier_nodes_remaining': len(heap), 'objective_cache_size': len(cache),
             'information_bound_callback_used': False, 'scalability_claimed': False,
             'time_limit_semantics': 'cooperative; no pre-emption of running callbacks',
+            'tie_break_policy': CANONICAL_WITNESS_POLICY,
             'error_parameters': [numerical_error, statistical_error, cost_error, valuation_error]}
     if exact:
         lowers = [node.lower_bound for node in heap]

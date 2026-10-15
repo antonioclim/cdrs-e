@@ -1,5 +1,5 @@
 from .branch_bound import solve_branch_bound
-from .common import Counters, SolverResult
+from .common import CANONICAL_WITNESS_POLICY, Counters, SolverResult
 from .dynamic import (
     DynamicProblem,
     dynamic_objective,
@@ -15,6 +15,7 @@ from .robust import solve_scenarios_exhaustive
 from .treewidth import TreeDecomposition, approximate_decomposition, solve_treewidth_cut
 
 __all__ = [
+    "CANONICAL_WITNESS_POLICY",
     "Counters",
     "SolverResult",
     "solve_exhaustive",

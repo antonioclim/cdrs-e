@@ -1,6 +1,6 @@
 # Security and scientific-integrity reporting
 
-Supported release line: `0.1.0rc1`.
+Historical supported release line: `0.1.0rc1`. Local source candidate: `0.1.0rc2` (`LOCAL_SOFTWARE_CANDIDATE_RC2`), with separately bound predecessor D2 qualification. This changed metadata profile remains pending bounded impact checks; a supported rc2 release line has not been adopted.
 
 Report suspected vulnerabilities privately to `Antonio.clim@csie.ase.ro` with the subject `CDRS-E security report`. Include the affected version, a minimal reproduction, impact and any proposed mitigation. Do not include secrets, personal data or embargoed third-party material. When private vulnerability reporting is enabled for the canonical repository, its Security tab may also be used: `https://github.com/antonioclim/cdrs-e/security/policy`.
 

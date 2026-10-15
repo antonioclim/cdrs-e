@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use CDRS-E, cite this software version. Cite the associated article separately when it becomes available."
+title: "CDRS-E"
+version: "0.1.0rc1"
+type: software
+license: Apache-2.0
+authors:
+  - family-names: "Clim"
+    given-names: "Antonio"
+    orcid: "https://orcid.org/0000-0003-4745-0431"
+    email: "Antonio.clim@csie.ase.ro"
+    affiliation: "Department of Economic Informatics and Cybernetics, Faculty of Cybernetics, Statistics and Economic Informatics, Bucharest University of Economic Studies, 15–17 Calea Dorobanți, Sector 1, 010552 Bucharest, Romania"
+abstract: "Software-only release candidate for auditable coordinate-constrained dynamical representation selection. Manuscript, supplementary, evidence and private provenance materials are not part of this software surface."
+keywords:
+  - multivariate time series
+  - sensor selection
+  - dynamical dependence
+  - certified optimisation
+repository-code: "https://github.com/antonioclim/cdrs-e"
+url: "https://github.com/antonioclim/cdrs-e"

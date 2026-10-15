@@ -31,5 +31,5 @@
   "runtimePlatform": "Python 3.11 or later",
   "softwareHelp": "https://github.com/antonioclim/cdrs-e/blob/main/README.md",
   "url": "https://github.com/antonioclim/cdrs-e",
-  "version": "0.1.0rc1"
+  "version": "0.1.0rc2"
 }

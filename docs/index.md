@@ -1,6 +1,6 @@
 # CDRS-E documentation
 
-Active software identity: `0.1.0rc1`. Publication-durable bounded correction and local re-freeze: P10-SD40. Fresh execution authority: P10-SD34. Latest integrated documentary checkpoint: P10-SD35.
+Local source identity: `0.1.0rc2`; status `LOCAL_SOFTWARE_CANDIDATE_RC2`; metadata profile `PREPUBLICATION_PROFILE_PENDING_IMPACT_CHECKS`. The active binding in `release/QUALIFICATION_STATE.json` identifies the separately qualified phase06 predecessor. Its 36 inherited criteria and new Q33 PASS are not reassigned to this changed profile. The M12 acceptance-method extension was designed after phase05. NOT_EXECUTED fields describe the changed profile at source-snapshot creation. The copied rc1 history retains its P10-SD40, P10-SD34 and P10-SD35 scope.
 
 This is a software-only tree. Manuscript, supplementary, figure, evidence, private-provenance and generated-report materials are excluded. Apache-2.0 applies to the included software surface. Operational publication authority is external to the artefact.
 
