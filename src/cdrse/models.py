@@ -83,6 +83,8 @@ class VARModel:
     def validate(self) -> None:
         if not self.coefficients:
             raise ValidationError("at least one lag matrix is required")
+        if any(a.ndim != 2 for a in self.coefficients):
+            raise ValidationError("all lag matrices must be two-dimensional")
         n = self.coefficients[0].shape[0]
         if n == 0 or any(a.shape != (n, n) for a in self.coefficients):
             raise ValidationError("all lag matrices must be non-empty and n-by-n")

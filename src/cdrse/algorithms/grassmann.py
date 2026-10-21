@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass, asdict
-from itertools import combinations
+from itertools import combinations, islice
 from typing import Callable, Sequence
 import math
 
@@ -72,7 +72,7 @@ def optimise_multistart(
     rng = np.random.default_rng(seed)
     start_list = [orthonormalise(start) for start in starts]
     coordinate_count = min(math.comb(n, k), max(1, random_starts // 2))
-    for indices in list(combinations(range(n), k))[:coordinate_count]:
+    for indices in islice(combinations(range(n), k), coordinate_count):
         start_list.append(np.eye(n)[:, indices])
     for _ in range(random_starts):
         start_list.append(orthonormalise(rng.normal(size=(n, k))))

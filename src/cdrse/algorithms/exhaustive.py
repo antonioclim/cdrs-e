@@ -6,7 +6,7 @@ import math
 from ..models import SelectionProblem
 from ..errors import ValidationError
 from ..exact_cut import total_value, make_result, result_record
-from .common import Counters, SolverResult
+from .common import CANONICAL_WITNESS_POLICY, Counters, SolverResult, canonical_objective_key
 
 
 def solve_exhaustive(problem: SelectionProblem, objective: Callable[[tuple[int, ...]], float] | None = None) -> SolverResult:
@@ -32,16 +32,17 @@ def solve_exhaustive(problem: SelectionProblem, objective: Callable[[tuple[int, 
                 value = problem.information_weight * information + problem.cost_weight * sum(problem.activation_costs[i] for i in subset)
                 if not math.isfinite(value):
                     raise ValidationError('weighted callback value is non-finite')
-            candidate = (value, subset)
+            candidate = canonical_objective_key(value, subset)
             if best is None or candidate < best:
                 best = candidate
     selected, value = (None, None) if best is None else (best[1], best[0])
     if exact:
-        return make_result(problem, selected, value, counters, reason='COMPLETE' if best else 'PROVED_INFEASIBLE', metadata={'feasible_subsets': feasible_count})
+        return make_result(problem, selected, value, counters, reason='COMPLETE' if best else 'PROVED_INFEASIBLE', metadata={'feasible_subsets': feasible_count, 'tie_break_policy': CANONICAL_WITNESS_POLICY})
     record = result_record(problem, selected, None, None, counters, True, 'COMPLETE', exact=False, estimate=value)
     infeasible = record['proof_status'] == 'PROVED_INFEASIBLE'
     return SolverResult('INFEASIBLE' if infeasible else 'OPTIMAL', selected, value, infeasible, infeasible, record['termination_reason'],
         0.0 if best else None, value, counters,
         {'feasible_subsets': feasible_count, 'result_contract': record,
          'optimality_scope': 'enumerated callback evaluations',
+         'tie_break_policy': CANONICAL_WITNESS_POLICY,
          'legacy_bounds_semantics': 'diagnostic only; no validated numerical enclosure'})

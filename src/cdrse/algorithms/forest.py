@@ -13,7 +13,7 @@ from ..economics import pareto_front, supported_points
 from ..errors import ValidationError
 from ..models import SelectionProblem
 from ..objectives import directed_cut
-from .common import Counters, SolverResult
+from .common import CANONICAL_WITNESS_POLICY, Counters, SolverResult, canonical_objective_key
 
 Array = NDArray[np.float64]
 
@@ -63,12 +63,43 @@ def _prune(
         grouped.setdefault((count, mask), []).append((spend, candidate))
     result: dict[tuple[int, int, int], _Candidate] = {}
     for (count, mask), rows in grouped.items():
-        best_value = float("inf")
+        best: _Candidate | None = None
         for spend, candidate in sorted(rows, key=lambda item: (item[0], item[1].value, item[1].selected)):
-            if candidate.value < best_value:
+            # A higher-spend state is dominated only when a no-more-expensive state
+            # has a strictly better objective, or the same objective with a
+            # lexicographically no-larger witness. Keeping equal-value lexicographic
+            # improvements is required by the canonical witness contract.
+            if best is None or canonical_objective_key(candidate.value, candidate.selected) < canonical_objective_key(best.value, best.selected):
                 result[(count, spend, mask)] = candidate
-                best_value = candidate.value
+                best = candidate
     return result
+
+
+def _zero_information_witness(problem: SelectionProblem, counters: Counters) -> tuple[int, ...]:
+    """Recover the cost-only canonical witness without discarding the cut frontier.
+
+    The cut DP retains minimum unweighted cuts for its resource states. When
+    information_weight is zero, a larger cut can have the same declared
+    objective and a lexicographically earlier witness. An edgeless resource
+    DP retains that witness under the original constraints and costs. Its unit
+    information weight prevents a second refinement; every auxiliary cut is
+    exactly zero. This additional pseudo-polynomial work is counted below.
+    """
+    auxiliary = SelectionProblem(
+        model=None,
+        constraints=problem.constraints,
+        activation_costs=problem.activation_costs,
+        cut_weights=np.zeros((problem.n, problem.n), dtype=float),
+        information_weight=1.0,
+        cost_weight=problem.cost_weight,
+    )
+    result = solve_forest_cut(auxiliary)
+    if result.selected is None:
+        raise AssertionError("zero-information refinement lost a feasible family")
+    for name, value in result.counters.to_dict().items():
+        old = getattr(counters, name)
+        setattr(counters, name, max(old, value) if name == "peak_frontier" else old + value)
+    return result.selected
 
 
 def solve_forest_cut(problem: SelectionProblem, *, tolerance: float = 1e-12) -> SolverResult:
@@ -211,9 +242,17 @@ def solve_forest_cut(problem: SelectionProblem, *, tolerance: float = 1e-12) -> 
     if not feasible:
         return make_result(problem, None, None, counters, metadata={'pareto_front': [], 'arithmetic': 'exact-stored-rational'})
     alpha, beta = rational(problem.information_weight), rational(problem.cost_weight)
-    best = min(feasible, key=lambda row: (alpha * row["loss"] + beta * row["cost"], row["cost"], row["loss"], row["selected"]))
+    best = min(feasible, key=lambda row: canonical_objective_key(alpha * row["loss"] + beta * row["cost"], tuple(row["selected"])))
     front = exact_front(feasible)
     objective = alpha * best["loss"] + beta * best["cost"]
+    if alpha == 0:
+        selected = _zero_information_witness(problem, counters)
+        cost = sum(costs[i] for i in selected)
+        if beta * cost != objective:
+            raise AssertionError("zero-information refinement changed the optimal objective")
+        best = {"selected": list(selected), "loss": cut_value(weights, selected), "cost": cost}
     meta = {"cut_value": float(best["loss"]), "activation_cost": best["cost"], "pareto_front": front,
-            "tolerance_argument_applied": False, "warning": "DD exactness requires a separate transfer certificate"}
+            "tolerance_argument_applied": False, "tie_break_policy": CANONICAL_WITNESS_POLICY, "warning": "DD exactness requires a separate transfer certificate"}
+    if alpha == 0:
+        meta["zero_information_witness_refinement"] = "edgeless exact resource DP; original cut frontier retained"
     return make_result(problem, tuple(best["selected"]), objective, counters, status="OPTIMAL_CUT_SURROGATE", metadata=meta)

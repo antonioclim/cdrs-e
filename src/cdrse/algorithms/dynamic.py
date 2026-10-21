@@ -44,11 +44,22 @@ class DynamicProblem:
             raise ValidationError("one n-by-n spatial matrix is required per period")
         if self.switching_costs.shape != (max(0, self.T - 1), self.n):
             raise ValidationError("switching_costs shape mismatch")
+        if (
+            not np.all(np.isfinite(self.unary_costs))
+            or not np.all(np.isfinite(self.switching_costs))
+            or any(not np.all(np.isfinite(weight)) for weight in self.spatial_weights)
+        ):
+            raise ValidationError("dynamic costs and spatial weights must be finite")
         if np.any(self.switching_costs < 0) or any(np.any(weight < -1e-12) for weight in self.spatial_weights):
             raise ValidationError("switching and spatial weights must be non-negative")
         if self.exact_cardinalities is not None:
-            if len(self.exact_cardinalities) != self.T or any(not 0 <= k <= self.n for k in self.exact_cardinalities):
-                raise ValidationError("invalid exact cardinality vector")
+            if len(self.exact_cardinalities) != self.T or any(
+                isinstance(k, (bool, np.bool_))
+                or not isinstance(k, (int, np.integer))
+                or not 0 <= k <= self.n
+                for k in self.exact_cardinalities
+            ):
+                raise ValidationError("exact cardinalities must be integers in [0, n]")
         if self.mandatory_by_time and len(self.mandatory_by_time) != self.T:
             raise ValidationError("mandatory_by_time length mismatch")
         if self.forbidden_by_time and len(self.forbidden_by_time) != self.T:
@@ -202,6 +213,12 @@ def solve_explicit_families(problem: DynamicProblem, feasible_families: Sequence
 
 
 def solve_edgeless_constant_cardinality(problem: DynamicProblem, *, integer_scale: int = 1) -> dict:
+    if (
+        isinstance(integer_scale, (bool, np.bool_))
+        or not isinstance(integer_scale, (int, np.integer))
+        or integer_scale <= 0
+    ):
+        raise ValidationError("integer_scale must be a strictly positive integer")
     if problem.exact_cardinalities is None or len(set(problem.exact_cardinalities)) != 1:
         raise ValidationError("constant exact cardinality is required")
     if any(np.max(np.abs(weight)) > 1e-12 for weight in problem.spatial_weights):

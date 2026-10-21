@@ -15,7 +15,8 @@ from ..economics import pareto_front, supported_points
 from ..errors import ValidationError
 from ..models import SelectionProblem
 from ..objectives import directed_cut
-from .common import Counters, SolverResult
+from .common import CANONICAL_WITNESS_POLICY, Counters, SolverResult, canonical_objective_key
+from .forest import _zero_information_witness
 
 Array = NDArray[np.float64]
 
@@ -232,11 +233,19 @@ def solve_treewidth_cut(
     if not feasible:
         return make_result(problem, None, None, counters, metadata={'decomposition': decomposition.to_dict(), 'pareto_front': []})
     alpha, beta = rational(problem.information_weight), rational(problem.cost_weight)
-    best = min(feasible, key=lambda row: (alpha * row["loss"] + beta * row["cost"], row["cost"], row["loss"], row["selected"]))
+    best = min(feasible, key=lambda row: canonical_objective_key(alpha * row["loss"] + beta * row["cost"], tuple(row["selected"])))
     front = exact_front(feasible)
     objective = alpha * best["loss"] + beta * best["cost"]
+    if alpha == 0:
+        selected = _zero_information_witness(problem, counters)
+        cost = sum(costs[i] for i in selected)
+        if beta * cost != objective:
+            raise AssertionError("zero-information refinement changed the optimal objective")
+        best = {"selected": list(selected), "loss": cut_value(weights, selected), "cost": cost}
     meta = {"cut_value": float(best["loss"]), "activation_cost": best["cost"], "pareto_front": front,
-            "tolerance_argument_applied": False, "warning": "DD exactness requires a separate transfer certificate"}
+            "tolerance_argument_applied": False, "tie_break_policy": CANONICAL_WITNESS_POLICY, "warning": "DD exactness requires a separate transfer certificate"}
+    if alpha == 0:
+        meta["zero_information_witness_refinement"] = "edgeless exact resource DP; original cut frontier retained"
     meta["decomposition"] = decomposition.to_dict()
     meta["decomposition_finding_exact"] = False
     return make_result(problem, tuple(best["selected"]), objective, counters, status="OPTIMAL_GIVEN_VALID_TREE_DECOMPOSITION", metadata=meta)

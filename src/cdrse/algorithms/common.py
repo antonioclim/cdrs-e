@@ -7,6 +7,16 @@ import math
 from ..errors import ValidationError
 
 
+CANONICAL_WITNESS_POLICY = (
+    "lexicographically smallest selected tuple among equal declared objective values"
+)
+
+
+def canonical_objective_key(value: Any, selected: tuple[int, ...]) -> tuple[Any, tuple[int, ...]]:
+    """Return the public deterministic ordering for equal-objective witnesses."""
+    return value, tuple(selected)
+
+
 @dataclass
 class Counters:
     objective_calls: int = 0
