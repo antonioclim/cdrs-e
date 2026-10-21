@@ -1,20 +1,31 @@
-name: CI
+name: Authorised rc3 validation
 
+# This workflow contains no publication or deployment step.
+# Automatic triggers of rc2 are preserved verbatim in release/history/rc2_profile.
+# Repository owner must disable Actions before the first remote write or PR.
 on:
-  push:
-  pull_request:
   workflow_dispatch:
+    inputs:
+      authorisation:
+        description: 'Type AUTHORISE_CDRSE_RC3_VALIDATION only after approving the exact commit, commands and resource limits'
+        required: true
+        type: string
 
 permissions:
   contents: read
 
 jobs:
-  test:
+  validate:
+    if: ${{ inputs.authorisation == 'AUTHORISE_CDRSE_RC3_VALIDATION' }}
+    timeout-minutes: 30
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
         python-version: ["3.11", "3.12", "3.13"]
+    env:
+      QA_DIR: ${{ runner.temp }}/cdrse-rc3-${{ matrix.python-version }}
+      BUILD_DIR: ${{ runner.temp }}/cdrse-rc3-build-${{ matrix.python-version }}
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
@@ -23,12 +34,38 @@ jobs:
           cache: pip
       - run: python -m pip install --require-hashes -r build-system.lock.txt
       - run: python -m pip install --no-build-isolation -e ".[dev]"
-      - run: python -m coverage run -m pytest -q
+      - run: mkdir -p "$QA_DIR"
+      - run: python -m coverage run -m pytest -q --junitxml="$QA_DIR/tests.junit.xml"
       - run: python -m coverage report --fail-under=85
+      - run: python -m coverage json -o "$QA_DIR/coverage.json"
+      - name: Prepare a fresh source copy for building
+        run: |
+          set -euo pipefail
+          mkdir "$BUILD_DIR"
+          git archive --format=tar "$GITHUB_SHA" | tar -x -C "$BUILD_DIR"
       - run: python scripts/build_distributions.py
-      - run: python -m cdrse self-check --json
-
-  no-publish:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "This CI workflow performs verification only and contains no publication or deployment step."
+        working-directory: ${{ env.BUILD_DIR }}
+      - run: python scripts/build_source_archive.py
+        working-directory: ${{ env.BUILD_DIR }}
+      - run: python scripts/verify_distribution.py
+        working-directory: ${{ env.BUILD_DIR }}
+      - run: python -m cdrse self-check --json --output "$QA_DIR/self_check.json"
+      - name: Complete the authoritative finite release-validation route
+        if: matrix.python-version == '3.12'
+        run: python scripts/run_rc3_release_validation.py --commit "$GITHUB_SHA" --qa-dir "$QA_DIR"
+        working-directory: ${{ env.BUILD_DIR }}
+      - run: python scripts/write_distribution_manifest.py --commit "$GITHUB_SHA" --qa-dir "$QA_DIR"
+        working-directory: ${{ env.BUILD_DIR }}
+      # Resolve/verify this third-party action tag before an authorised dispatch.
+      # A version tag is not claimed to be an immutable audited commit.
+      - name: Preserve artefacts and available partial evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cdrse-rc3-${{ matrix.python-version }}-${{ github.sha }}
+          path: |
+            ${{ env.BUILD_DIR }}/dist/*
+            ${{ env.BUILD_DIR }}/build/verification/*
+            ${{ env.QA_DIR }}/**
+          if-no-files-found: warn
+          retention-days: 14
