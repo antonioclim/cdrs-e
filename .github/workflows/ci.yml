@@ -1,4 +1,4 @@
-name: Authorised rc3 validation
+name: Authorised 0.1.0 validation
 
 # This workflow contains no publication or deployment step.
 # Automatic triggers of rc2 are preserved verbatim in release/history/rc2_profile.
@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
     inputs:
       authorisation:
-        description: 'Type AUTHORISE_CDRSE_RC3_VALIDATION only after approving the exact commit, commands and resource limits'
+        description: 'Type AUTHORISE_CDRSE_010_VALIDATION only after approving the exact commit, commands and resource limits'
         required: true
         type: string
 
@@ -16,7 +16,7 @@ permissions:
 
 jobs:
   validate:
-    if: ${{ inputs.authorisation == 'AUTHORISE_CDRSE_RC3_VALIDATION' }}
+    if: ${{ inputs.authorisation == 'AUTHORISE_CDRSE_010_VALIDATION' }}
     timeout-minutes: 30
     runs-on: ubuntu-latest
     strategy:
@@ -24,8 +24,8 @@ jobs:
       matrix:
         python-version: ["3.11", "3.12", "3.13"]
     env:
-      QA_DIR: ${{ runner.temp }}/cdrse-rc3-${{ matrix.python-version }}
-      BUILD_DIR: ${{ runner.temp }}/cdrse-rc3-build-${{ matrix.python-version }}
+      QA_DIR: ${{ runner.temp }}/cdrse-0.1.0-${{ matrix.python-version }}
+      BUILD_DIR: ${{ runner.temp }}/cdrse-0.1.0-build-${{ matrix.python-version }}
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
@@ -62,7 +62,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: cdrse-rc3-${{ matrix.python-version }}-${{ github.sha }}
+          name: cdrse-0.1.0-${{ matrix.python-version }}-${{ github.sha }}
           path: |
             ${{ env.BUILD_DIR }}/dist/*
             ${{ env.BUILD_DIR }}/build/verification/*
