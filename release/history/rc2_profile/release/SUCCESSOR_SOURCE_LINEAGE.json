@@ -1,0 +1,728 @@
+{
+  "candidate_status": "LOCAL_SOFTWARE_CANDIDATE_RC2",
+  "historical_K1_patch_record": {
+    "path": "release/APEX_P7_LOCAL_PATCHSET.json",
+    "sha256": "e5891f7b8b3bd4778e06752f09e4ffdf4c2bcb46f67bc39aaf6837c5bf9f5160"
+  },
+  "historical_algorithmic_registry": {
+    "path": "release/ALGORITHMIC_PAYLOAD_IDENTITY.json",
+    "scope": "SD37_TO_SD40 only; not the current K1/P2/rc2 scientific-source identity.",
+    "sha256": "b8886a35b9a249b3ea950aac58930306fb71249592582254efcf526feb73a92c"
+  },
+  "historical_preservation_manifest": "release/history/rc1_p7/HISTORY_MANIFEST_SHA256.json",
+  "new_build_status": "NOT_EXECUTED",
+  "new_test_status": "NOT_EXECUTED",
+  "schema": "CDRSE_RC2_SUCCESSOR_SOURCE_LINEAGE_V1",
+  "scientific_algorithms_changed": false,
+  "software_version": "0.1.0rc2",
+  "source_baseline_archive_sha256": "97360a18dcd684b4524b915f2c06386f5feb2c4b95afb7fb5ba7847f862ff7a0",
+  "source_baseline_package": "P2_V33_LOCAL_PUBLIC_CANDIDATE_01",
+  "source_files": [
+    {
+      "P2_sha256": "2a8830cb2807ae1aaf96828fa90cc590c3c9b83f5e2eaf0daebc4c06e4e8ba3c",
+      "disposition": "RETAIN_LITERAL",
+      "path": ".github/workflows/ci.yml"
+    },
+    {
+      "P2_sha256": "4c38c2c9118775e639e515285c6b43cd1f4a4f86d8ad6370b36b8c7156ea56f7",
+      "disposition": "RETAIN_LITERAL",
+      "path": ".gitignore"
+    },
+    {
+      "P2_sha256": "749198ff4faecf44432b45d263b79025f5146581159dee86b41028563553b637",
+      "disposition": "RETAIN_LITERAL",
+      "path": "CHANGELOG.md"
+    },
+    {
+      "P2_sha256": "0293a7912fb94735ba5df6207a3dc14b0c814cb1bbbe5899813a452f176def1e",
+      "disposition": "IDENTITY_OR_PACKAGING_GUARD_CHANGE_WITH_EXACT_HISTORY",
+      "path": "CITATION.cff"
+    },
+    {
+      "P2_sha256": "a8562466f9c4e130996c42bbc34d0098c3e35fae65b63c1345325cb5aec4c255",
+      "disposition": "RETAIN_LITERAL",
+      "path": "CONTRIBUTING.md"
+    },
+    {
+      "P2_sha256": "f0944b55a4eba9ad628775efe2a337369f6b04b0060d53767460cec127066137",
+      "disposition": "RETAIN_LITERAL",
+      "path": "ENVIRONMENT_OBSERVED_P7.json"
+    },
+    {
+      "P2_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "disposition": "RETAIN_LITERAL",
+      "path": "LICENSE"
+    },
+    {
+      "P2_sha256": "07b8d333fc5817ead4bf76e72e6ab51f4056e65c77bfbc79d0c73d219ec05765",
+      "disposition": "RETAIN_LITERAL",
+      "path": "LICENSING.md"
+    },
+    {
+      "P2_sha256": "9b6cf731e233508fb83ab68a2d4882ce11b4eae3b96bdb1e15d920582ddbd2d7",
+      "disposition": "IDENTITY_OR_PACKAGING_GUARD_CHANGE_WITH_EXACT_HISTORY",
+      "path": "MANIFEST.in"
+    },
+    {
+      "P2_sha256": "556a0b672bd88e5ea2baa0ea4b78cbb9451724ff221d382df80d65d2f0ec6afb",
+      "disposition": "RETAIN_LITERAL",
+      "path": "Makefile"
+    },
+    {
+      "P2_sha256": "10068f1b9b651a8cd38bc5de11c284bc757fdd2dcc714d7d7886af7b42cbfcad",
+      "disposition": "RETAIN_LITERAL",
+      "path": "NOTICE"
+    },
+    {
+      "P2_sha256": "da3118fd8a005be343435b6d622697d220cff5a0143201e8ff2415b382605655",
+      "disposition": "RETAIN_LITERAL",
+      "path": "PUBLIC_RELEASE_LICENCE_GATE.md"
+    },
+    {
+      "P2_sha256": "c1dfe7cc7bb59b87db6afff3a364ebc138cf2c02d06ea58ad80b4f9c73eae7b7",
+      "disposition": "IDENTITY_OR_PACKAGING_GUARD_CHANGE_WITH_EXACT_HISTORY",
+      "path": "README.md"
+    },
+    {
+      "P2_sha256": "c1dfe7cc7bb59b87db6afff3a364ebc138cf2c02d06ea58ad80b4f9c73eae7b7",
+      "disposition": "IDENTITY_OR_PACKAGING_GUARD_CHANGE_WITH_EXACT_HISTORY",
+      "path": "README_FINAL_CANDIDATE.md"
+    },
+    {
+      "P2_sha256": "851576354e6c329f6edaaac352c59abb2253f7a491600b27e2c0ef85b5f0e38d",
+      "disposition": "IDENTITY_OR_PACKAGING_GUARD_CHANGE_WITH_EXACT_HISTORY",
+      "path": "SECURITY.md"
+    },
+    {
+      "P2_sha256": "551c471f7e16b5f1bdbe44bbbe8ae52d740fb1da63b6cb4def69db9f49c27550",
+      "disposition": "IDENTITY_OR_PACKAGING_GUARD_CHANGE_WITH_EXACT_HISTORY",
+      "path": "build-recipe.json"
+    },
+    {
+      "P2_sha256": "e7d9cf7d09ec8b7f5315eac35d279d13ab54187099b1560673715f33a7f65a06",
+      "disposition": "RETAIN_LITERAL",
+      "path": "build-system.lock.txt"
+    },
+    {
+      "P2_sha256": "c31eee4525350babac1b2a92814134e1e9aecd5d8c2969ef11e6b25d93ca1fdd",
+      "disposition": "IDENTITY_OR_PACKAGING_GUARD_CHANGE_WITH_EXACT_HISTORY",
+      "path": "codemeta.json"
+    },
+    {
+      "P2_sha256": "66c57acd07b31bbb48969340adff377f7094f73727fbdb45a0861473bf0a0dac",
+      "disposition": "RETAIN_LITERAL",
+      "path": "containers/Dockerfile"
+    },
+    {
+      "P2_sha256": "012b7364fa12cf1cf0cd848ec11157bcaaad849a6e6b6ab40a21528677e3a2ee",
+      "disposition": "RETAIN_LITERAL",
+      "path": "containers/README.md"
+    },
+    {
+      "P2_sha256": "d7e26f2a8f9fd67b2de3ab15cde2539a995dd997c3513f997711197d215634d2",
+      "disposition": "RETAIN_LITERAL",
+      "path": "docs/LOCAL_P7_CONTRACT.md"
+    },
+    {
+      "P2_sha256": "e4617a95427eb4961fbee71dbfcc8f901f5d3fc9ee73fa3ad9f957e0c2c25e5e",
+      "disposition": "RETAIN_LITERAL",
+      "path": "docs/P10_PUBLIC_RESULT_CONTRACT.md"
+    },
+    {
+      "P2_sha256": "8f743cbbb6c2f6368a3ce2ee383a11649d2a2c33c36802f8f5dc871636c36b10",
+      "disposition": "RETAIN_LITERAL",
+      "path": "docs/P10_SD10_CANDIDATE_INTEGRITY_CONTRACT.md"
+    },
+    {
+      "P2_sha256": "48c6d9427473d36a15a0740ca5d3f0cbed2ccdf8995213617774daa919064d8d",
+      "disposition": "RETAIN_LITERAL",
+      "path": "docs/P10_SD12_UPSTREAM_ARTIFACT_AND_LOCAL_QUALIFICATION_CONTRACT.md"
+    },
+    {
+      "P2_sha256": "758e6378bd535beab467608b8b9f105335d06474f41780d9f882d4f673249b09",
+      "disposition": "RETAIN_LITERAL",
+      "path": "docs/P10_SD2_COMPOSITIONAL_CONTRACT.md"
+    },
+    {
+      "P2_sha256": "932806bf44528f54359f7448d0b14e9152c8c1f1f79aff9090d595196cde4e1d",
+      "disposition": "RETAIN_LITERAL",
+      "path": "docs/P10_SD32_RC1_LICENCE_AND_PROMOTION_CONTRACT.md"
+    },
+    {
+      "P2_sha256": "0f7da8476e04ca9d3ca3eb59bbb6a37b86629af835c59a4aa60bd1cb76dfb046",
+      "disposition": "RETAIN_LITERAL",
+      "path": "docs/P10_SD37_SOFTWARE_ONLY_RELEASE_CONTRACT.md"
+    },
+    {
+      "P2_sha256": "a91c30d1f6799ba229323634717babf11ddc93b794d6a76db02037328e77732a",
+      "disposition": "RETAIN_LITERAL",
+      "path": "docs/P10_SD40_BOUNDED_PUBLIC_IDENTITY_CORRECTION_CONTRACT.md"
+    },
+    {
+      "P2_sha256": "1e40029b77e134b75295b7901c967b01c6b2c0723ee6bfb41d6f875bf2fa8abf",
+      "disposition": "RETAIN_LITERAL",
+      "path": "docs/P10_SD4_ECONOMIC_BOUNDARY_CONTRACT.md"
+    },
+    {
+      "P2_sha256": "899499de6611b37f42c9dfbcce3afbdd514c1282629b45a4c44f3a4869ea8523",
+      "disposition": "RETAIN_LITERAL",
+      "path": "docs/P10_SD6_SOURCE_BOUNDARY_CONTRACT.md"
+    },
+    {
+      "P2_sha256": "2cffe5d9bb704fba3970827ad7757bbced3cd71261888595e03361886c8fe469",
+      "disposition": "RETAIN_LITERAL",
+      "path": "docs/P10_SD8_BUILD_CLOSURE_CONTRACT.md"
+    },
+    {
+      "P2_sha256": "4ce0e8920dd01f540262e12e5a2cf85f2058e25721cc9673787d2b184c9423cd",
+      "disposition": "RETAIN_LITERAL",
+      "path": "docs/P10_SD9_UPSTREAM_PROVENANCE_CONTRACT.md"
+    },
+    {
+      "P2_sha256": "fa75510664dfb83afd041b25604263fb188ef23352cd9c47bd04075c348645bd",
+      "disposition": "IDENTITY_OR_PACKAGING_GUARD_CHANGE_WITH_EXACT_HISTORY",
+      "path": "docs/REVIEWER_QUICK_START.md"
+    },
+    {
+      "P2_sha256": "365b3f3bd710a7a414bd492cb4647c81261c4ebe774770d704dd9f27a90c8026",
+      "disposition": "RETAIN_LITERAL",
+      "path": "docs/api/public-api.md"
+    },
+    {
+      "P2_sha256": "ce1c019ebeb0cb095c9c869d31df821ad496af0993bf8c1c3f1c9e35f91a194a",
+      "disposition": "RETAIN_LITERAL",
+      "path": "docs/design/architecture.md"
+    },
+    {
+      "P2_sha256": "5ec3183659e5d43a7105f918b868ac21db4aaa16421be871eedb17d019bcbc19",
+      "disposition": "RETAIN_LITERAL",
+      "path": "docs/design/canonical-witness-policy.md"
+    },
+    {
+      "P2_sha256": "0258b7c9e7e3e92492b27002bc3621dc6b3d5f05803a102a6fe343c7222adfde",
+      "disposition": "RETAIN_LITERAL",
+      "path": "docs/design/certificate-semantics.md"
+    },
+    {
+      "P2_sha256": "6f5264cc4e43e6bd4c55f9b8b2b5422e75cde8fd6c22314ee9e41e79f9fbbd28",
+      "disposition": "RETAIN_LITERAL",
+      "path": "docs/design/limitations.md"
+    },
+    {
+      "P2_sha256": "8ddba1bf54979e9bba0550216226eb1c006be2d9323f14e9125ced855fd737d0",
+      "disposition": "RETAIN_LITERAL",
+      "path": "docs/design/reproducibility.md"
+    },
+    {
+      "P2_sha256": "3e1835226ad1be0d53bfaceec1bca1deab2b16bc344f66b1e9ba917aca39594b",
+      "disposition": "RETAIN_LITERAL",
+      "path": "docs/design/scientific-semantics.md"
+    },
+    {
+      "P2_sha256": "f87c1a69f56d2321d6bbad7a66255adae3120d4877436b837a87ea304d4e362a",
+      "disposition": "IDENTITY_OR_PACKAGING_GUARD_CHANGE_WITH_EXACT_HISTORY",
+      "path": "docs/index.md"
+    },
+    {
+      "P2_sha256": "d4cb2b1170099a30542be81194782517edf37b8b4f28116e5e1e0377e981bf8c",
+      "disposition": "RETAIN_LITERAL",
+      "path": "docs/tutorials/cli.md"
+    },
+    {
+      "P2_sha256": "f340261bb14e7b5c7c8b70aeb04825a11f6b8d17e4522b3f210572081502e73d",
+      "disposition": "RETAIN_LITERAL",
+      "path": "docs/tutorials/python-api.md"
+    },
+    {
+      "P2_sha256": "763e30ea2fa13a48dc7798e60e0c563ef70db96cef9d5d3caf2248ee8cef9e7f",
+      "disposition": "RETAIN_LITERAL",
+      "path": "environment.yml"
+    },
+    {
+      "P2_sha256": "1364f98a3c2fa78f85061d97ac97c020712c541dd262a11e03087c5834151508",
+      "disposition": "RETAIN_LITERAL",
+      "path": "examples/cross_backend_witness.py"
+    },
+    {
+      "P2_sha256": "9b4f4cdf34da3fd260c5a0235824f9069ed317d795d7e6353bdf6c069aab1cad",
+      "disposition": "RETAIN_LITERAL",
+      "path": "examples/dsrg_witness_model.json"
+    },
+    {
+      "P2_sha256": "8e6917062be8ba8f2540355a9987cb28994b894511c3c3120cbf5274ae8b9d96",
+      "disposition": "RETAIN_LITERAL",
+      "path": "examples/forest_problem.json"
+    },
+    {
+      "P2_sha256": "ef3845daa1d017c7d1c1364b27abdc9855e68b18ccec473f51de0d6f95889474",
+      "disposition": "RETAIN_LITERAL",
+      "path": "examples/frozen_protocol.json"
+    },
+    {
+      "P2_sha256": "2edbbc4a638f198264a5829e6963d780ca66df3fc9ad19ad56ca8a622119aa84",
+      "disposition": "RETAIN_LITERAL",
+      "path": "examples/invalid_certificate.json"
+    },
+    {
+      "P2_sha256": "7a45e05ba4d1a17433b0875904ac486b46872287529ad4617968bedf55eb7ea0",
+      "disposition": "RETAIN_LITERAL",
+      "path": "examples/quickstart.py"
+    },
+    {
+      "P2_sha256": "8e13bf9ee1f46464ab08b691ab1406edda882de6448a8718a53a870f493bc8d5",
+      "disposition": "RETAIN_LITERAL",
+      "path": "examples/valid_certificate.json"
+    },
+    {
+      "P2_sha256": "5717221798c0062039e3ffae63df623702406fdb49782b9cb1eaa4bf03acd486",
+      "disposition": "IDENTITY_OR_PACKAGING_GUARD_CHANGE_WITH_EXACT_HISTORY",
+      "path": "pyproject.toml"
+    },
+    {
+      "P2_sha256": "ec8f7276b2fa89ff84228ac8bb13bb83e8dd11ca6dab99d67632520301ee6322",
+      "disposition": "IDENTITY_OR_PACKAGING_GUARD_CHANGE_WITH_EXACT_HISTORY",
+      "path": "release-gates.json"
+    },
+    {
+      "P2_sha256": "b8886a35b9a249b3ea950aac58930306fb71249592582254efcf526feb73a92c",
+      "disposition": "RETAIN_LITERAL",
+      "path": "release/ALGORITHMIC_PAYLOAD_IDENTITY.json"
+    },
+    {
+      "P2_sha256": "e5891f7b8b3bd4778e06752f09e4ffdf4c2bcb46f67bc39aaf6837c5bf9f5160",
+      "disposition": "RETAIN_LITERAL",
+      "path": "release/APEX_P7_LOCAL_PATCHSET.json"
+    },
+    {
+      "P2_sha256": "31292ea157e16a2d2b74cbaf414a2cf1f2f26c1147cf6cae1c2056267fdb0875",
+      "disposition": "RETAIN_LITERAL",
+      "path": "release/ARCHIVAL_METADATA_POLICY.md"
+    },
+    {
+      "P2_sha256": "67491f7fcf3ab3d124384bac0e5ccb3eb7ac24c80e431fdb97a40d44cf2ebd27",
+      "disposition": "RETAIN_LITERAL",
+      "path": "release/BUILD_DERIVATION.json"
+    },
+    {
+      "P2_sha256": "98b6e7827839785778c4458b03ae8bac92b2348b05d706dc8bd1789bc8cfadb5",
+      "disposition": "IDENTITY_OR_PACKAGING_GUARD_CHANGE_WITH_EXACT_HISTORY",
+      "path": "release/PUBLICATION_IDENTITY.json"
+    },
+    {
+      "P2_sha256": "ae90a749846c198b9992e3e6ed2fb2e44c6688657ffb76adf506ee0a54686a96",
+      "disposition": "RETAIN_LITERAL",
+      "path": "release/PUBLIC_SURFACE_SCOPE.json"
+    },
+    {
+      "P2_sha256": "9cdf5f50aa647ec5ce19e8a9648df7bbbda23ad9dee1adc1e305950109c7547f",
+      "disposition": "IDENTITY_OR_PACKAGING_GUARD_CHANGE_WITH_EXACT_HISTORY",
+      "path": "release/QUALIFICATION_STATE.json"
+    },
+    {
+      "P2_sha256": "a97368a2d700737db99bd9317003691c7f2260ea1996623c529f18c6f57e04eb",
+      "disposition": "RETAIN_LITERAL",
+      "path": "release/RELEASE_NOTES_v0.1.0rc1.md"
+    },
+    {
+      "P2_sha256": "aee0f80002b3e3762833f67c21e9d60c20b500c2a1f3707667ce64d02848ffaf",
+      "disposition": "RETAIN_LITERAL",
+      "path": "release/TOOLCHAIN_LOCK.json"
+    },
+    {
+      "P2_sha256": "b495b5ddd407d95a3c91970089d17c1a99779827994962f4eac9caa544d59348",
+      "disposition": "RETAIN_LITERAL",
+      "path": "requirements-dev.txt"
+    },
+    {
+      "P2_sha256": "710274eb8df6394a2d5d5ac17d508b8925f82c1b81af19ffa5b51de0224d2651",
+      "disposition": "RETAIN_LITERAL",
+      "path": "requirements-lock.txt"
+    },
+    {
+      "P2_sha256": "dc59190bf6974e1655df3cb07b2bd4427df037f64eee9610d034d43d8aa90428",
+      "disposition": "IDENTITY_OR_PACKAGING_GUARD_CHANGE_WITH_EXACT_HISTORY",
+      "path": "scripts/build_distributions.py"
+    },
+    {
+      "P2_sha256": "dc0a5d8bdb030cd501e52b76858b221cf033da8c2eba10b033d6a0859c6a8c73",
+      "disposition": "RETAIN_LITERAL",
+      "path": "scripts/build_software_report.py"
+    },
+    {
+      "P2_sha256": "b0c57bfde025c7ad92a88f530a52255169a44249845904df7f70406af6bbaa45",
+      "disposition": "IDENTITY_OR_PACKAGING_GUARD_CHANGE_WITH_EXACT_HISTORY",
+      "path": "scripts/build_source_archive.py"
+    },
+    {
+      "P2_sha256": "6f3952f1ca7da13c5874766bf8143fe0e54806b01138287010e720a127852ad9",
+      "disposition": "RETAIN_LITERAL",
+      "path": "scripts/clean_room_verify.py"
+    },
+    {
+      "P2_sha256": "d8d242055088853b68b5a57dbd66b708a5b8e7f1bd00db6f320014120aa84e53",
+      "disposition": "RETAIN_LITERAL",
+      "path": "scripts/generate_phase_xlii_reports.py"
+    },
+    {
+      "P2_sha256": "5db57ac4827dfc7b2bb5906079b5a69731cfdae882be571eed24b3e0c7d3c529",
+      "disposition": "RETAIN_LITERAL",
+      "path": "scripts/generate_software_report_figures.py"
+    },
+    {
+      "P2_sha256": "cba55d1fdff80e14b14f0d2a89c19145b30b51c2e90d5bcbf60a314dcd092eaf",
+      "disposition": "RETAIN_LITERAL",
+      "path": "scripts/project_dependency_check.py"
+    },
+    {
+      "P2_sha256": "0a73e0dcc21a2e94afb25f89b46fce639f49fe3fc26d1f811465e3e70aebc50b",
+      "disposition": "IDENTITY_OR_PACKAGING_GUARD_CHANGE_WITH_EXACT_HISTORY",
+      "path": "scripts/reassemble_qualified_assets.py"
+    },
+    {
+      "P2_sha256": "cfc059bbaf1ad3cfb14ca19e43ec3e66d396786fa6867046fd3f547d8a6e0d6c",
+      "disposition": "IDENTITY_OR_PACKAGING_GUARD_CHANGE_WITH_EXACT_HISTORY",
+      "path": "scripts/reviewer_quick_start.py"
+    },
+    {
+      "P2_sha256": "106a425a04295b56d7381d28d720b6c10ee4caf31ab1f628cda2fa7d340b9aef",
+      "disposition": "IDENTITY_OR_PACKAGING_GUARD_CHANGE_WITH_EXACT_HISTORY",
+      "path": "scripts/run_reviewer_pipeline.py"
+    },
+    {
+      "P2_sha256": "f7eeeba775d14c8154a25f6a37b2ecc603d690600d0d662b1c7143abc3f27728",
+      "disposition": "IDENTITY_OR_PACKAGING_GUARD_CHANGE_WITH_EXACT_HISTORY",
+      "path": "scripts/run_scoped_mutation_audit.py"
+    },
+    {
+      "P2_sha256": "d98903a0ca2412a23199c83c73132b4fe62a4b89a788e4dbc26f5f2aa51c26cf",
+      "disposition": "RETAIN_LITERAL",
+      "path": "scripts/security_audit.py"
+    },
+    {
+      "P2_sha256": "7637c7b556f14a89f58d855b3790f2781e8544e9f714fa4876db25e028a75235",
+      "disposition": "RETAIN_LITERAL",
+      "path": "scripts/type_contract_audit.py"
+    },
+    {
+      "P2_sha256": "77ee46a5fe781652026eaa34a7144320c900c50a4cb307385d151ecfb8b77a7a",
+      "disposition": "RETAIN_LITERAL",
+      "path": "scripts/verify_distribution.py"
+    },
+    {
+      "P2_sha256": "62db9be7bdda3353629f9f702980da4b338895be82647c3c80ee2103a69eb368",
+      "disposition": "RETAIN_LITERAL",
+      "path": "scripts/write_phase_xlii_documents.py"
+    },
+    {
+      "P2_sha256": "8c665738a4fd70125764ccb5ccefd1708e3ad699d165a3f1716ba203b19f41aa",
+      "disposition": "RETAIN_LITERAL",
+      "path": "src/cdrse/__init__.py"
+    },
+    {
+      "P2_sha256": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+      "disposition": "RETAIN_LITERAL",
+      "path": "src/cdrse/__main__.py"
+    },
+    {
+      "P2_sha256": "f678b165bf65163150bdb1bd435d70bd66a6830153c15ad5d10c53cd602894d7",
+      "disposition": "IDENTITY_OR_PACKAGING_GUARD_CHANGE_WITH_EXACT_HISTORY",
+      "path": "src/cdrse/_version.py"
+    },
+    {
+      "P2_sha256": "09e349d925f80cc3f72e41ec92a660a4d7792c97173554800ab0630063a476d2",
+      "disposition": "RETAIN_LITERAL",
+      "path": "src/cdrse/algorithms/__init__.py"
+    },
+    {
+      "P2_sha256": "e76d789e900d3454b9e11cfefb7e4b3d3bd4582c026226e28564103a7d7dee42",
+      "disposition": "RETAIN_LITERAL",
+      "path": "src/cdrse/algorithms/branch_bound.py"
+    },
+    {
+      "P2_sha256": "b864d43a5e4248f2206a8010e6bffd06222014d0573aabc32ecb6ccaa2582a7d",
+      "disposition": "RETAIN_LITERAL",
+      "path": "src/cdrse/algorithms/common.py"
+    },
+    {
+      "P2_sha256": "0cfc261398f556f66753a768fbbd4951d670a6ce028ddefa104a86e2fcb086d9",
+      "disposition": "RETAIN_LITERAL",
+      "path": "src/cdrse/algorithms/dynamic.py"
+    },
+    {
+      "P2_sha256": "cf04d7d784142eafba00d07f53f9e7f261203d7efee0d17d768efd66f45db5bc",
+      "disposition": "RETAIN_LITERAL",
+      "path": "src/cdrse/algorithms/exhaustive.py"
+    },
+    {
+      "P2_sha256": "20e0b278f07d5def1dc3ee9d85f8d0181ef693f11a7aaa9bd27b85e3bd5111cd",
+      "disposition": "RETAIN_LITERAL",
+      "path": "src/cdrse/algorithms/forest.py"
+    },
+    {
+      "P2_sha256": "83f433bc0f04487db7448c9d51085f691da47446fc9d303aae3cbeba32d10683",
+      "disposition": "RETAIN_LITERAL",
+      "path": "src/cdrse/algorithms/grassmann.py"
+    },
+    {
+      "P2_sha256": "c87ad49736b1854e9e2ff696d5d428d7542c9d0fb13b4bdf738f00ce75afe4c0",
+      "disposition": "RETAIN_LITERAL",
+      "path": "src/cdrse/algorithms/robust.py"
+    },
+    {
+      "P2_sha256": "efe519c595eab6b9613ea68d54371b59d506ab4f7f8db9b65eacac08ee1890f2",
+      "disposition": "RETAIN_LITERAL",
+      "path": "src/cdrse/algorithms/treewidth.py"
+    },
+    {
+      "P2_sha256": "af96a4780d444734839c74e1ad3dd542c3ee63cab066782ff16d14ec996b1bd3",
+      "disposition": "RETAIN_LITERAL",
+      "path": "src/cdrse/backends.py"
+    },
+    {
+      "P2_sha256": "5e0377dcdee9490a16fb066b2ddefecc1f011ab5c8e3d0f970f445c9eb2c0e55",
+      "disposition": "RETAIN_LITERAL",
+      "path": "src/cdrse/certificates.py"
+    },
+    {
+      "P2_sha256": "c8cefa1bae247faecf466d66fc5e148e4fc0676cda461394475cb3b329d2af29",
+      "disposition": "IDENTITY_OR_PACKAGING_GUARD_CHANGE_WITH_EXACT_HISTORY",
+      "path": "src/cdrse/cli.py"
+    },
+    {
+      "P2_sha256": "e0aa6429499e841f1507a590255483c4ebf5cf60facb60e4ec16a7db4bfd4003",
+      "disposition": "RETAIN_LITERAL",
+      "path": "src/cdrse/economics.py"
+    },
+    {
+      "P2_sha256": "c2d4f146d0da8a26e5d7582a97c3760704b9650f20b3c8df2b75dc5713db085e",
+      "disposition": "RETAIN_LITERAL",
+      "path": "src/cdrse/errors.py"
+    },
+    {
+      "P2_sha256": "2dbc2115e16164c6f4a1cddb342afaa18a6297e03ea70124deac458b1c8f69bc",
+      "disposition": "RETAIN_LITERAL",
+      "path": "src/cdrse/exact_cut.py"
+    },
+    {
+      "P2_sha256": "38818d57a2eaf19f915a2bf868a01b985ea583e872dba0bed8ba380b72fac4c0",
+      "disposition": "RETAIN_LITERAL",
+      "path": "src/cdrse/hashing.py"
+    },
+    {
+      "P2_sha256": "2929411a4663bf15c511e4e76e69d05571ab8447da80feb586225a2398268850",
+      "disposition": "RETAIN_LITERAL",
+      "path": "src/cdrse/models.py"
+    },
+    {
+      "P2_sha256": "41449035ffe4201cf9ee9dd6981671465872751e06d76061e7bc46581c1442bb",
+      "disposition": "RETAIN_LITERAL",
+      "path": "src/cdrse/objectives.py"
+    },
+    {
+      "P2_sha256": "c79908d1cdd7ce75655debd436558b4772bc7684de32a4f29fcc25c10694ca2b",
+      "disposition": "RETAIN_LITERAL",
+      "path": "src/cdrse/protocols.py"
+    },
+    {
+      "P2_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "disposition": "RETAIN_LITERAL",
+      "path": "src/cdrse/py.typed"
+    },
+    {
+      "P2_sha256": "61862dad758caa0b8d704ec3949bc930a873f5826d48432b6a1d995a1adabb6f",
+      "disposition": "RETAIN_LITERAL",
+      "path": "src/cdrse/reporting.py"
+    },
+    {
+      "P2_sha256": "06212648cf4047bbb860bfa84ed83188d724804ec9f793eb8659c9187f355417",
+      "disposition": "RETAIN_LITERAL",
+      "path": "src/cdrse/schema_files/__init__.py"
+    },
+    {
+      "P2_sha256": "d550393c781870341a0800be0ab16d41565fe6490f34656774a734c7b9b4bd67",
+      "disposition": "RETAIN_LITERAL",
+      "path": "src/cdrse/schema_files/certificate.schema.json"
+    },
+    {
+      "P2_sha256": "3809ac47c3a112af826622daba61c717b6d38caaea0a732020d32557066fd8bb",
+      "disposition": "RETAIN_LITERAL",
+      "path": "src/cdrse/schema_files/problem.schema.json"
+    },
+    {
+      "P2_sha256": "854dc0eadf4934e284e62ac5ab2be1a91159e532c4a421e42c477d276534b3e6",
+      "disposition": "RETAIN_LITERAL",
+      "path": "src/cdrse/schema_files/protocol.schema.json"
+    },
+    {
+      "P2_sha256": "90c4e728073cda6b8bfd52fedd71eb89d8e0021292a0498f8219fc520bd8fb23",
+      "disposition": "RETAIN_LITERAL",
+      "path": "src/cdrse/schema_files/result.schema.json"
+    },
+    {
+      "P2_sha256": "a7b6f545342795b2cd0b29312973ed323079ca5e421662e78dbb60b6ca29ddd0",
+      "disposition": "IDENTITY_OR_PACKAGING_GUARD_CHANGE_WITH_EXACT_HISTORY",
+      "path": "src/cdrse/schema_files/result_contract.schema.json"
+    },
+    {
+      "P2_sha256": "f849fdc79b27438b2dd5bc6c91f8db0e05a3d7f8d824da53d9adc366366a4fb4",
+      "disposition": "RETAIN_LITERAL",
+      "path": "src/cdrse/schemas.py"
+    },
+    {
+      "P2_sha256": "255cc35c7dfbd00a17d4a3376fe090d5a2503d2860d58429426fdcc732375119",
+      "disposition": "RETAIN_LITERAL",
+      "path": "src/cdrse/verification.py"
+    },
+    {
+      "P2_sha256": "4542b773286f01b4a94164ff775833df246a77dbf38552a9a26cbc706f49294f",
+      "disposition": "RETAIN_LITERAL",
+      "path": "tests/claims/test_executable_claims.py"
+    },
+    {
+      "P2_sha256": "6507db28ac1eda648b660d4a148ca2d2be9d696657325f92727573594e1d7ee9",
+      "disposition": "RETAIN_LITERAL",
+      "path": "tests/conftest.py"
+    },
+    {
+      "P2_sha256": "0a01e8e71e32a28d8424688bb24684fe790921649bbfaef99acdda39453d6906",
+      "disposition": "IDENTITY_OR_PACKAGING_GUARD_CHANGE_WITH_EXACT_HISTORY",
+      "path": "tests/integration/test_cli.py"
+    },
+    {
+      "P2_sha256": "1f09e52c5328af5c0f4c4ff2c8a55a4273321951f48b7ed41e6a86735b69a134",
+      "disposition": "IDENTITY_OR_PACKAGING_GUARD_CHANGE_WITH_EXACT_HISTORY",
+      "path": "tests/integration/test_metadata_and_resources.py"
+    },
+    {
+      "P2_sha256": "6514be267c30b34511a6bb199293d4f873134a9fa01869e8f4401e9bb79e75f7",
+      "disposition": "RETAIN_LITERAL",
+      "path": "tests/property/test_algorithms_properties.py"
+    },
+    {
+      "P2_sha256": "1467db27cd27b84417d6cac7de70250166de7fa662cddb98da5ec00179020477",
+      "disposition": "RETAIN_LITERAL",
+      "path": "tests/property/test_metamorphic.py"
+    },
+    {
+      "P2_sha256": "49ac72d62b8d07796a694b1c74774a37145b6972961eebbb5b479a4f0586ffbb",
+      "disposition": "RETAIN_LITERAL",
+      "path": "tests/qualification/test_adverse_regressions_P3.py"
+    },
+    {
+      "P2_sha256": "a28f5b6317ad292fb4fa8599cd2f3930f8f824a84a0f201a437b5f25bf1cbf78",
+      "disposition": "RETAIN_LITERAL",
+      "path": "tests/qualification/test_boundary_contracts_p72.py"
+    },
+    {
+      "P2_sha256": "3c036a226f0a2f040dc29a18832fcf6834c47d9c0e94aa35b3aa201ccd2f4189",
+      "disposition": "RETAIN_LITERAL",
+      "path": "tests/qualification/test_canonical_witness_policy.py"
+    },
+    {
+      "P2_sha256": "3943137de9c2816170246fbbcbf4945a18a5a5771ba0408838f969fcc092a007",
+      "disposition": "RETAIN_LITERAL",
+      "path": "tests/qualification/test_exact_contracts.py"
+    },
+    {
+      "P2_sha256": "9feb37bcbdc25ec37921e70808e284a5c7962a9e1e380acf7264e03bebda4663",
+      "disposition": "RETAIN_LITERAL",
+      "path": "tests/qualification/test_p10_parser_regressions.py"
+    },
+    {
+      "P2_sha256": "ec59d8ffba978adfa435bd9a5ea7fe0161e0a4d1b7f43ebd54c195baf8768d8b",
+      "disposition": "RETAIN_LITERAL",
+      "path": "tests/qualification/test_p10_payload_regressions.py"
+    },
+    {
+      "P2_sha256": "a1ccc5efb206e324a7f47acacddb4f31259cda88fbfae56f428f8d833a4647e0",
+      "disposition": "RETAIN_LITERAL",
+      "path": "tests/qualification/test_public_contract_adversarial.py"
+    },
+    {
+      "P2_sha256": "1a351e160b2aea8776c0fba619916334b1502e3c146d9c1beb31892c5ebaff8c",
+      "disposition": "RETAIN_LITERAL",
+      "path": "tests/qualification/test_zero_information_witness.py"
+    },
+    {
+      "P2_sha256": "3fcbd7e21d39ba59594a54af7af1bd051e2f1f37abeab3f40ee9eaa14648e862",
+      "disposition": "RETAIN_LITERAL",
+      "path": "tests/regression/test_negative_results.py"
+    },
+    {
+      "P2_sha256": "adf1ab4fdb228187a73240af51805e1e2b86ba2a0feae807914d311e7c98e3a5",
+      "disposition": "IDENTITY_OR_PACKAGING_GUARD_CHANGE_WITH_EXACT_HISTORY",
+      "path": "tests/regression/test_sd10_candidate_integrity.py"
+    },
+    {
+      "P2_sha256": "db1885a9aae5a3f4fa05fae67579bf1e5eb2420e8ed6d2f6d35cbc028f395e40",
+      "disposition": "RETAIN_LITERAL",
+      "path": "tests/regression/test_sd12_sdist_determinism.py"
+    },
+    {
+      "P2_sha256": "fcfb77d7586936687a480110214b183c22de56956b21e0114cc78f576863ded5",
+      "disposition": "IDENTITY_OR_PACKAGING_GUARD_CHANGE_WITH_EXACT_HISTORY",
+      "path": "tests/regression/test_sd12_upstream_local_qualification.py"
+    },
+    {
+      "P2_sha256": "38dc00e95014b5b55bb3e0d0b77b4428f4b3b3a47583b7cd1947701dc260ddde",
+      "disposition": "RETAIN_LITERAL",
+      "path": "tests/regression/test_sd1_certificate_boundary.py"
+    },
+    {
+      "P2_sha256": "887364ebbf6804bd900784e2984e60547f41115f8c3e22ad3f9a622d48cd4331",
+      "disposition": "IDENTITY_OR_PACKAGING_GUARD_CHANGE_WITH_EXACT_HISTORY",
+      "path": "tests/regression/test_sd32_rc1_license_release.py"
+    },
+    {
+      "P2_sha256": "d8b0a729bcf5ab89c567921dd6055ef0eec326ec67393c8f6b843b7d85252a44",
+      "disposition": "RETAIN_LITERAL",
+      "path": "tests/regression/test_sd3_cvar_refinement.py"
+    },
+    {
+      "P2_sha256": "9e9d9afa19e6d0856c7a8c20134bced8a58293b41b5dbbdcfaf5cfea49c8876e",
+      "disposition": "RETAIN_LITERAL",
+      "path": "tests/regression/test_sd3_economic_boundary.py"
+    },
+    {
+      "P2_sha256": "1b7491bdf0ef4d5c5fcfb5455159bc618467af85ace0458ce7d532b10b57d7ed",
+      "disposition": "RETAIN_LITERAL",
+      "path": "tests/regression/test_sd5_source_boundary.py"
+    },
+    {
+      "P2_sha256": "2fe3e18b27788ead37a95f44117792668e87796995f3f0fa79da629716011e80",
+      "disposition": "IDENTITY_OR_PACKAGING_GUARD_CHANGE_WITH_EXACT_HISTORY",
+      "path": "tests/regression/test_sd8_build_closure.py"
+    },
+    {
+      "P2_sha256": "a3596d7e8ae267ac850ed9e4fce39ae7aea7fa37aeab90ded25ac02ef97af993",
+      "disposition": "IDENTITY_OR_PACKAGING_GUARD_CHANGE_WITH_EXACT_HISTORY",
+      "path": "tests/regression/test_sd9_upstream_provenance.py"
+    },
+    {
+      "P2_sha256": "4738dd27d56d9566fb17eea38d089150055ae9e019feabddc3e0f312ac371109",
+      "disposition": "IDENTITY_OR_PACKAGING_GUARD_CHANGE_WITH_EXACT_HISTORY",
+      "path": "tests/unit/test_additional_coverage.py"
+    },
+    {
+      "P2_sha256": "a460bb24646673973c591db2db1fc847af53108d3112da8098ebb429725f38ed",
+      "disposition": "RETAIN_LITERAL",
+      "path": "tests/unit/test_economics_certificates.py"
+    },
+    {
+      "P2_sha256": "83743dde2aa413a47b1f641b46bc2c787639dcc42085d7eb9b54d44429f22412",
+      "disposition": "RETAIN_LITERAL",
+      "path": "tests/unit/test_hashing_models.py"
+    },
+    {
+      "P2_sha256": "4283ae690d62abe987a7b2b5cd49158f5e63ec6037ab6d68993796edb26abd5c",
+      "disposition": "RETAIN_LITERAL",
+      "path": "tests/unit/test_objectives_backends.py"
+    },
+    {
+      "P2_sha256": "5eb7918c76ba65555154b0df53a9cb2934c96ec854062d6112a2f6c10b17999c",
+      "disposition": "RETAIN_LITERAL",
+      "path": "tests/unit/test_schemas_protocols.py"
+    }
+  ],
+  "source_files_count": 141
+}
