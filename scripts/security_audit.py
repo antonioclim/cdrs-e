@@ -13,7 +13,7 @@ FORBIDDEN_CALLS = {"eval", "exec", "compile", "pickle.loads", "yaml.load", "subp
 
 # Exact prepared administrative driver only; a byte change requires fresh review.
 # This does not permit arbitrary subprocess use or prove process containment.
-REVIEWED_PROCESS_DRIVER = ("scripts/run_rc3_release_validation.py", "27614f780affa57719365a62dc8eed58ef4edfea33364f24dd97d561b1c27695")
+REVIEWED_PROCESS_DRIVER = ("scripts/run_rc3_release_validation.py", "a11c32afbe6ee74b5dc70a0a94093f27714af85a173e4b71b9f6c9eee8451997")
 
 
 def dotted(node: ast.AST) -> str:

@@ -1,8 +1,8 @@
 {
-  "artifact_state_model": "PREPARED_RC3_REQUIRES_VALIDATION",
+  "artifact_state_model": "PREPARED_010_EXECUTION_UNRUN",
   "author_email": "Antonio.clim@csie.ase.ro",
-  "candidate_status": "PREPARED_CANDIDATE_RC3",
-  "candidate_version": "0.1.0rc3",
+  "candidate_status": "PREPARED_RELEASE_010",
+  "candidate_version": "0.1.0",
   "canonical_repository_url": "https://github.com/antonioclim/cdrs-e",
   "historical_rc2_record": {
     "path": "release/history/rc2_profile/release-gates.json",
@@ -32,21 +32,21 @@
   },
   "publication_identity": {
     "package_name": "cdrs-e",
-    "release_channel": "release-candidate",
-    "tag": "v0.1.0rc3",
-    "version": "0.1.0rc3"
+    "release_channel": "release",
+    "tag": "v0.1.0",
+    "version": "0.1.0"
   },
   "qualification": {
-    "build": "NOT_EXECUTED",
-    "coverage": "NOT_EXECUTED",
+    "build": "UNRUN",
+    "coverage": "UNRUN",
     "historical_results_relabelled_as_rc2": false,
-    "installed_tests": "NOT_EXECUTED",
-    "scientific_replay": "NOT_EXECUTED",
-    "source_tests": "NOT_EXECUTED"
+    "installed_tests": "UNRUN",
+    "scientific_replay": "UNRUN",
+    "source_tests": "UNRUN"
   },
   "qualification_binding": "release/QUALIFICATION_STATE.json#/active_qualification_binding",
-  "qualification_status_scope": "NOT_EXECUTED fields describe this changed metadata profile at source-snapshot creation, not the separately recorded predecessor D2 execution.",
-  "release_track": "LOCAL_SOURCE_CANDIDATE",
+  "qualification_status_scope": "UNRUN fields describe the 0.1.0 source snapshot at preparation; historical qualification remains attached to the recorded predecessor identities.",
+  "release_track": "LOCAL_SOURCE_RELEASE_PREPARATION",
   "reproducibility_limits": {
     "docker_digest_execution": false,
     "independent_machine_execution": false,
@@ -54,6 +54,7 @@
     "setuptools_84_executed_in_p10_sd40": false
   },
   "schema": "CDRSE_RC3_LOCAL_RELEASE_GATES_V1",
+  "schema_identifier_policy": "The RC3 schema identifier is retained for format compatibility; software_version identifies the current version.",
   "scientific_open_gates": {
     "f03": "OPEN",
     "f15": "OPEN",
@@ -64,7 +65,7 @@
     "submission_ready": false,
     "ts0": "NOT_MET"
   },
-  "software_version": "0.1.0rc3",
+  "software_version": "0.1.0",
   "source_snapshot_archival_identity": {
     "doi_embedded": false,
     "successor_commit": null,

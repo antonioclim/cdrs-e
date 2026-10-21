@@ -1,6 +1,6 @@
-# Reviewer quick start — prepared CDRS-E 0.1.0rc3
+# Reviewer quick start — prepared CDRS-E 0.1.0
 
-Status: `PREPARED_CANDIDATE_RC3`; all rc3 execution is UNRUN. The public rc2 predecessor and its separate historical D2 and Component C records do not establish a new execution of this source.
+Status: `PREPARED_RELEASE_010`; all 0.1.0 execution is UNRUN. The public rc2 predecessor and its separate historical D2 and Component C records do not establish a new execution of this source.
 
 After separate execution authorisation and dependency preparation:
 

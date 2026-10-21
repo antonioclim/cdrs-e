@@ -16,8 +16,8 @@
     }
   ],
   "codeRepository": "https://github.com/antonioclim/cdrs-e",
-  "description": "Software-only release candidate for auditable coordinate-constrained dynamical representation selection.",
-  "developmentStatus": "active release candidate",
+  "description": "Research software for auditable coordinate-constrained dynamical representation selection.",
+  "developmentStatus": "active research software",
   "issueTracker": "https://github.com/antonioclim/cdrs-e/issues",
   "keywords": [
     "multivariate time series",
@@ -31,5 +31,5 @@
   "runtimePlatform": "Python 3.11 or later",
   "softwareHelp": "https://github.com/antonioclim/cdrs-e/blob/main/README.md",
   "url": "https://github.com/antonioclim/cdrs-e",
-  "version": "0.1.0rc3"
+  "version": "0.1.0"
 }

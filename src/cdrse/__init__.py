@@ -1,4 +1,4 @@
-"""CDRS-E auditable research software release candidate."""
+"""CDRS-E auditable research software release."""
 
 from ._version import __version__
 from .backends import ExactRationalBackend, Float64Backend, HighPrecisionAuditBackend

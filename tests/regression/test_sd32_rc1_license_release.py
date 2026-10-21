@@ -5,7 +5,7 @@ import sys
 from pathlib import Path
 import tomllib
 ROOT = Path(__file__).resolve().parents[2]
-VERSION = "0.1.0rc3"
+VERSION = "0.1.0"
 REPOSITORY = "https://github.com/antonioclim/cdrs-e"
 VOLATILE_KEYS = {"public_release_authorized", "public_release_authorised", "remote_actions_performed", "remote_actions_authorised", "tag_authorized", "github_release_authorized", "github_publication_authorized", "github_actions_authorized", "zenodo_deposit_authorized", "doi_reservation_authorized", "pypi_upload_authorized", "submission_authorized"}
 def _json(path: str) -> dict: return json.loads((ROOT / path).read_text(encoding="utf-8"))
@@ -24,15 +24,15 @@ def test_sd32_05_codemeta_is_licensed_and_publication_durable() -> None:
 def test_sd32_06_release_gates_separate_artifact_state_from_operations() -> None:
     g = _json("release-gates.json"); assert g["licence_selected"] is True and g["licence_spdx"] == "Apache-2.0" and g["operational_authority_embedded"] is False and VOLATILE_KEYS.isdisjoint(g)
 def test_sd32_07_release_track_and_tag_are_bound() -> None:
-    g = _json("release-gates.json"); assert g["release_track"] == "LOCAL_SOURCE_CANDIDATE" and g["publication_identity"]["tag"] == "v0.1.0rc3"
+    g = _json("release-gates.json"); assert g["release_track"] == "LOCAL_SOURCE_RELEASE_PREPARATION" and g["publication_identity"]["tag"] == "v0.1.0"
 def test_sd32_08_build_recipe_is_publication_durable_and_fixed_epoch() -> None:
-    r = _json("build-recipe.json"); assert r["software_version"] == VERSION and r["candidate_status"] == "PREPARED_CANDIDATE_RC3" and r["source_date_epoch"] == 1789689600
+    r = _json("build-recipe.json"); assert r["software_version"] == VERSION and r["candidate_status"] == "PREPARED_RELEASE_010" and r["source_date_epoch"] == 1789689600
 def test_sd32_09_build_script_enforces_sd40_recipe() -> None:
-    t = (ROOT / "scripts/build_distributions.py").read_text(); assert 'recipe["software_version"] != "0.1.0rc3"' in t and 'EXPECTED_STATUS = "PREPARED_CANDIDATE_RC3"' in t
+    t = (ROOT / "scripts/build_distributions.py").read_text(); assert 'recipe["software_version"] != "0.1.0"' in t and 'EXPECTED_STATUS = "PREPARED_RELEASE_010"' in t
 def test_sd32_10_cli_version_reports_durable_release_identity() -> None:
-    p = _cli("version"); assert p["version"] == VERSION and p["release_candidate"] is True and p["publication_profile"] == "prepared-candidate" and p["canonical_repository"] == REPOSITORY and "public_release" not in p
+    p = _cli("version"); assert p["version"] == VERSION and p["release_candidate"] is False and p["publication_profile"] == "prepared-release" and p["canonical_repository"] == REPOSITORY and "public_release" not in p
 def test_sd32_11_self_check_reports_same_release_identity() -> None:
-    p = _cli("self-check", "--json"); assert p["status"] == "PASS" and p["version"] == VERSION and p["publication_profile"] == "prepared-candidate" and p["canonical_repository"] == REPOSITORY and "public_release" not in p
+    p = _cli("self-check", "--json"); assert p["status"] == "PASS" and p["version"] == VERSION and p["publication_profile"] == "prepared-release" and p["canonical_repository"] == REPOSITORY and "public_release" not in p
 def test_sd32_12_scientific_payload_identity_is_transparently_bounded() -> None:
     r = _json("release/ALGORITHMIC_PAYLOAD_IDENTITY.json"); init = next(x for x in r["files"] if x["path"] == "src/cdrse/__init__.py"); others = [x for x in r["files"] if x["path"] != "src/cdrse/__init__.py"]; assert r["all_identical"] is False and r["file_count"] == 29 and r["byte_identical_count"] == 28 and r["docstring_only_correction_count"] == 1 and len(others) == 28 and all(x["identical_to_sd37"] for x in others) and init["identical_to_sd37"] is False and init["only_first_line_changed"] is True and init["bytes_after_first_line_identical"] is True and init["ast_excluding_module_docstring_identical"] is True
 def test_sd32_13_result_contract_title_uses_rc2_identity() -> None: assert VERSION in _json("src/cdrse/schema_files/result_contract.schema.json")["title"]
@@ -41,7 +41,7 @@ def test_sd32_14_manifest_and_distribution_verifier_enforce_clean_surface() -> N
 def test_sd32_15_private_remote_operation_plans_are_absent() -> None:
     for p in ("release/GITHUB_PUBLIC_REPOSITORY_PLAN.json", "release/ZENODO_DEPOSIT_PLAN.json", "release/REMOTE_AUTHORITY_BOUNDARY.md", "release/zenodo-metadata-DRAFT.json", "release/RELEASE_NOTES_v0.1.0rc1_DRAFT.md"): assert not (ROOT / p).exists()
 def test_sd32_16_publication_identity_is_complete() -> None:
-    p = _json("release/PUBLICATION_IDENTITY.json"); assert p["canonical_repository_url"] == REPOSITORY and p["tag"] == "v0.1.0rc3" and p["release_channel"] == "release-candidate"
+    p = _json("release/PUBLICATION_IDENTITY.json"); assert p["canonical_repository_url"] == REPOSITORY and p["tag"] == "v0.1.0" and p["release_channel"] == "release"
 def test_sd32_17_source_snapshot_has_no_fabricated_doi() -> None:
     assert "doi:" not in (ROOT / "CITATION.cff").read_text().lower(); assert "doi" not in _json("codemeta.json"); assert _json("release/PUBLICATION_IDENTITY.json")["doi_embedded_in_source_snapshot"] is False
 def test_sd32_18_public_release_gate_is_artifact_stable() -> None:

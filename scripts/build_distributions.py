@@ -16,7 +16,7 @@ DIST = ROOT / "dist"
 RECIPE_PATH = ROOT / "build-recipe.json"
 EXPECTED_SETUPTOOLS = "84.0.0"
 EXPECTED_SOURCE_DATE_EPOCH = "1789689600"
-EXPECTED_STATUS = "PREPARED_CANDIDATE_RC3"
+EXPECTED_STATUS = "PREPARED_RELEASE_010"
 FORBIDDEN_TOP_LEVEL = {"paper", "evidence", "provenance", "reports"}
 
 
@@ -29,16 +29,16 @@ def validate_public_surface() -> None:
 def validate_build_environment() -> dict[str, str]:
     validate_public_surface()
     recipe = json.loads(RECIPE_PATH.read_text(encoding="utf-8"))
-    if recipe["software_version"] != "0.1.0rc3":
-        raise RuntimeError("build-recipe.json does not describe 0.1.0rc3")
+    if recipe["software_version"] != "0.1.0":
+        raise RuntimeError("build-recipe.json does not describe 0.1.0")
     if recipe["candidate_status"] != EXPECTED_STATUS:
-        raise RuntimeError("build recipe is not the prepared rc3 software-only recipe")
+        raise RuntimeError("build recipe is not the prepared 0.1.0 software-only recipe")
     if recipe["planned_derivation_method"] != "FRESH_EXACT_BACKEND_BUILD" or recipe["old_qualified_assets_permitted_as_build_inputs"] is not False:
-        raise RuntimeError("rc3 requires a fresh exact-backend build; historical envelopes are forbidden")
+        raise RuntimeError("0.1.0 requires a fresh exact-backend build; historical envelopes are forbidden")
     project = tomllib.loads((ROOT / "pyproject.toml").read_text(encoding="utf-8"))["project"]
-    if project["version"] != "0.1.0rc3" or (ROOT / "src/cdrse/_version.py").read_text(encoding="utf-8") != '__version__ = "0.1.0rc3"\n':
+    if project["version"] != "0.1.0" or (ROOT / "src/cdrse/_version.py").read_text(encoding="utf-8") != '__version__ = "0.1.0"\n':
         raise RuntimeError("source and build-recipe identities disagree")
-    if json.loads((ROOT / "codemeta.json").read_text(encoding="utf-8"))["version"] != "0.1.0rc3" or 'version: "0.1.0rc3"' not in (ROOT / "CITATION.cff").read_text(encoding="utf-8"):
+    if json.loads((ROOT / "codemeta.json").read_text(encoding="utf-8"))["version"] != "0.1.0" or 'version: "0.1.0"' not in (ROOT / "CITATION.cff").read_text(encoding="utf-8"):
         raise RuntimeError("citation metadata and build-recipe identities disagree")
     if recipe["source_date_epoch"] != int(EXPECTED_SOURCE_DATE_EPOCH):
         raise RuntimeError("build recipe and fixed normalisation epoch disagree")

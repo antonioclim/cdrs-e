@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "CDRS-E 0.1.0rc3 stored-input result contract",
+  "title": "CDRS-E 0.1.0 stored-input result contract",
   "description": "Local implementation of the adopted P6B contract. Schema acceptance alone is not semantic verification. NODE_BUDGET completes the adopted expanded-node counter vocabulary.",
   "type": "object",
   "required": [

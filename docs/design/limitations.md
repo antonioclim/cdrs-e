@@ -8,7 +8,7 @@
 - the min-fill decomposition is heuristic;
 - B&B can be exponential;
 - the container candidate was not executed in the recorded local runtime;
-- historical Generation-2 campaign records retain their original execution and validity boundaries; this rc3 preparation performs no new empirical campaign;
+- historical Generation-2 campaign records retain their original execution and validity boundaries; the 0.1.0 version promotion performs no new empirical campaign;
 - exact supplied-operand aggregation is not a validated numerical enclosure;
 - scenario callbacks, feasibility predicates and economic provenance are not authenticated;
 - `supported_points` returns extreme lower-hull representatives, not every tied label;

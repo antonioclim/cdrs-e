@@ -16,11 +16,11 @@ def test_sd9_04_private_remote_plans_are_not_publicly_distributed() -> None:
 def test_sd9_05_release_notes_are_publication_accurate() -> None:
     t = (ROOT / "release/RELEASE_NOTES_v0.1.0rc1.md").read_text(); assert "canonical repository identity" in t and "embeds no DOI" in t and "unauthorised" not in t.lower()
 def test_sd9_06_archival_policy_prohibits_fabrication() -> None:
-    t = (ROOT / "release/ARCHIVAL_METADATA_POLICY.md").read_text(); assert "no fabricated DOI" in t and "frozen release-candidate tag must not be rewritten" in t
+    t = (ROOT / "release/ARCHIVAL_METADATA_POLICY.md").read_text(); assert "no fabricated DOI" in t and "frozen release tag must not be rewritten" in t
 def test_sd9_07_publication_contract_separates_artifact_and_operation_state() -> None:
     t = (ROOT / "docs/P10_SD40_BOUNDED_PUBLIC_IDENTITY_CORRECTION_CONTRACT.md").read_text(); assert "contains no conversational or account-level authorisation flags" in t and "performed outside the artefact" in t
 def test_sd9_08_source_archive_builder_uses_durable_identity() -> None:
-    t = (ROOT / "scripts/build_source_archive.py").read_text(); assert "CDRS_E_0.1.0rc3_SOURCE_AND_TESTS" in t and "Operational publication authority is external" in t
+    t = (ROOT / "scripts/build_source_archive.py").read_text(); assert "CDRS_E_0.1.0_SOURCE_AND_TESTS" in t and "Operational publication authority is external" in t
 def test_sd9_09_ci_is_verification_only() -> None:
     t = (ROOT / ".github/workflows/ci.yml").read_text(); assert "contents: read" in t and "contains no publication or deployment step" in t and "twine upload" not in t and "zenodo" not in t.lower()
 def test_sd9_10_algorithmic_identity_registry_is_closed() -> None:

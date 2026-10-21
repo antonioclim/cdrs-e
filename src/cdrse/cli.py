@@ -37,9 +37,9 @@ def command_version(_: argparse.Namespace) -> dict:
     return {
         "name": "cdrs-e",
         "version": __version__,
-        "release_candidate": True,
-        "release_channel": "release-candidate",
-        "publication_profile": "prepared-candidate",
+        "release_candidate": False,
+        "release_channel": "release",
+        "publication_profile": "prepared-release",
         "canonical_repository": "https://github.com/antonioclim/cdrs-e",
         "licence_selected": True,
         "licence": "Apache-2.0",
@@ -166,9 +166,9 @@ def command_self_check(args: argparse.Namespace) -> dict:
         "high_precision_value": str(high_precision),
         "high_precision_audit": audit,
         "float64_high_precision_difference": difference,
-        "release_candidate": True,
-        "release_channel": "release-candidate",
-        "publication_profile": "prepared-candidate",
+        "release_candidate": False,
+        "release_channel": "release",
+        "publication_profile": "prepared-release",
         "canonical_repository": "https://github.com/antonioclim/cdrs-e",
         "licence_selected": True,
         "licence": "Apache-2.0",
@@ -176,7 +176,7 @@ def command_self_check(args: argparse.Namespace) -> dict:
 
 
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(prog="cdrse", description="Auditable CDRS-E research software release candidate")
+    parser = argparse.ArgumentParser(prog="cdrse", description="Auditable CDRS-E research software release")
     parser.add_argument("--output", help="write JSON output to this path")
     sub = parser.add_subparsers(dest="command", required=True)
     version = sub.add_parser("version", help="print package version and release status")

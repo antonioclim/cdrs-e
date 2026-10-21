@@ -19,8 +19,9 @@ from cdrse import (
 ```
 
 Algorithm APIs live under `cdrse.algorithms`. The package follows semantic
-versioning; however, `0.1.0rc3` is a release candidate and may change before
-the first stable release.
+versioning. Version `0.1.0` uses a normal release identifier. The 0.x API may
+evolve; pin the actual version and source or distribution digest. This version
+identifier does not establish runtime qualification or production support.
 
 ## Result records and finite verification
 

@@ -1,6 +1,12 @@
 {
-  "candidate_status": "PREPARED_CANDIDATE_RC3",
+  "candidate_status": "PREPARED_RELEASE_010",
   "historical_rc2_lineage": "release/history/rc2_profile/release/SUCCESSOR_SOURCE_LINEAGE.json",
+  "immediate_source_snapshot": {
+    "commit": "6a9f2d43c62d45e78ec619ef2be582e4915ef50f",
+    "role": "PREPARED_RC3_SOURCE_NOT_A_PUBLISHED_RELEASE",
+    "tree": "d742e6316887e1ea2cc4aafcd8e46ca5ca7a0dd0",
+    "version": "0.1.0rc3"
+  },
   "new_build_status": "UNRUN",
   "new_test_status": "UNRUN",
   "predecessor_commit": "c4bedf30c3b5967ade38b0aeac897529a67a7672",
@@ -8,6 +14,7 @@
   "predecessor_tag": "v0.1.0rc2",
   "runtime_contract_corrections_present": true,
   "schema": "CDRSE_RC3_SOURCE_LINEAGE_V1",
-  "scope": "Current release has separately documented runtime-contract and engineering corrections. Historical D2 and Component C records remain attached to their exact predecessor identities. No qualification transfers to this source by identity alone.",
-  "software_version": "0.1.0rc3"
+  "schema_identifier_policy": "The RC3 schema identifier is retained for format compatibility; software_version identifies the current version.",
+  "scope": "Normal 0.1.0 source-release preparation derives immediately from the reviewed rc3 source snapshot. The public predecessor remains rc2. Historical D2 and Component C records remain attached to their exact predecessor identities. Neither version promotion nor publication transfers qualification to this source.",
+  "software_version": "0.1.0"
 }

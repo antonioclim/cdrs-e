@@ -13,8 +13,8 @@ from zipfile import ZIP_DEFLATED, ZipFile, ZipInfo
 
 ROOT = Path(__file__).resolve().parents[1]
 EPOCH = 1789689600
-VERSION = "0.1.0rc3"
-ARCHIVE_ROOT = "CDRS_E_0.1.0rc3_SOURCE_AND_TESTS"
+VERSION = "0.1.0"
+ARCHIVE_ROOT = "CDRS_E_0.1.0_SOURCE_AND_TESTS"
 FORBIDDEN = {"paper", "evidence", "provenance", "reports"}
 EXCLUDED_PARTS = {"__pycache__", ".pytest_cache", ".mypy_cache", ".ruff_cache", "build", "dist", ".venv", ".git"}
 GENERATED_NAMES = {"SOURCE_ARCHIVE_README.md", "SOURCE_MANIFEST_SHA256.json"}
@@ -54,8 +54,8 @@ def build_source_archive(output: Path, *, root: Path = ROOT) -> dict[str, object
         if (root / name).exists():
             raise RuntimeError(f"forbidden public path exists: {name}")
     recipe = json.loads((root / "build-recipe.json").read_text(encoding="utf-8"))
-    if recipe["software_version"] != VERSION or recipe["candidate_status"] != "PREPARED_CANDIDATE_RC3" or recipe["source_date_epoch"] != EPOCH:
-        raise RuntimeError("source archive recipe does not identify prepared rc3")
+    if recipe["software_version"] != VERSION or recipe["candidate_status"] != "PREPARED_RELEASE_010" or recipe["source_date_epoch"] != EPOCH:
+        raise RuntimeError("source archive recipe does not identify prepared 0.1.0")
     files = public_files(root)
     payloads = {}
     total = 0
@@ -70,7 +70,7 @@ def build_source_archive(output: Path, *, root: Path = ROOT) -> dict[str, object
     manifest = {name: {"bytes": len(payload), "sha256": hashlib.sha256(payload).hexdigest()} for name, payload in payloads.items()}
     generated = {
         "SOURCE_ARCHIVE_README.md": (
-            "# CDRS-E 0.1.0rc3 source-and-tests archive\n\n"
+            "# CDRS-E 0.1.0 source-and-tests archive\n\n"
             "The source profile was prepared with execution UNRUN. Later execution or publication must be established by separate receipts bound to these bytes. "
             "The two SOURCE_* envelope members are generated and excluded from the source manifest. "
             "Operational publication authority is external to this artefact.\n"

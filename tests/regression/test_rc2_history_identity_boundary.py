@@ -14,7 +14,7 @@ def test_rc2_exact_historical_copies_are_preserved() -> None:
 
 def test_rc2_new_state_does_not_inherit_historical_pass() -> None:
     q = json.loads((ROOT / "release/QUALIFICATION_STATE.json").read_text())
-    assert q["candidate_status"] == "PREPARED_CANDIDATE_RC3"
+    assert q["candidate_status"] == "PREPARED_RELEASE_010"
     for key in ("build", "source_tests", "installed_runtime", "installed_tests", "coverage", "scoped_mutation_audit", "scientific_replay"):
         assert q[key] == "UNRUN"
     assert q["global_scientific_PASS_claimed"] is False

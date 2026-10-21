@@ -1,15 +1,17 @@
-# CDRS-E 0.1.0rc3 — prepared software-only release candidate
+# CDRS-E 0.1.0 — research software release
 
 Author and maintainer: Antonio Clim. Contact: Antonio.clim@csie.ase.ro. ORCID: https://orcid.org/0000-0003-4745-0431.
 Canonical repository: https://github.com/antonioclim/cdrs-e.
 
 ## Source identity and current assurance
 
-This is the prepared `0.1.0rc3` source, with status `PREPARED_CANDIDATE_RC3`. Its build, tests, installation, coverage, mutation assessment and runtime checks are **UNRUN** in this preparation. Source review and syntactic checks do not establish execution or universal correctness. The current source includes separately documented runtime-contract and release-engineering corrections; earlier test counts are not assigned to these changed bytes.
+This source prepares normal version `0.1.0`, with status `PREPARED_RELEASE_010` and release channel `release`. Its build, tests, installation, coverage, mutation assessment and runtime checks are **UNRUN** for these bytes. Source review and syntactic checks do not establish execution or universal correctness.
 
-The public predecessor is `v0.1.0rc2`, commit `c4bedf30c3b5967ade38b0aeac897529a67a7672`, software DOI https://doi.org/10.5281/zenodo.23409442. Historical rc1 retains https://doi.org/10.5281/zenodo.22841999. The proposed rc3 tag must identify the exact reviewed commit integrated into `main`; no rc3 commit, release date or version DOI is asserted here. Later publication and execution are established by external receipts bound to the actual source and artefact hashes. This file records preparation, not a live publication registry.
+The immediate parent is the reviewed `0.1.0rc3` source snapshot at commit `6a9f2d43c62d45e78ec619ef2be582e4915ef50f`, tree `d742e6316887e1ea2cc4aafcd8e46ca5ca7a0dd0`. That prepared snapshot was not a published rc3 release. Version 0.1.0 retains its runtime-contract and release-engineering corrections; the promotion synchronises version metadata without claiming a new algorithmic execution.
 
-The associated manuscript is *Which Channels Should We Keep? Uniform Bounds for Cut-Based Selection in Gaussian Vector Autoregressions*. Its editorial R1.3 identity is separate from this software source. The source does not include manuscript files, article figures, private wrappers or raw third-party datasets.
+The public predecessor remains `v0.1.0rc2`, commit `c4bedf30c3b5967ade38b0aeac897529a67a7672`, software DOI https://doi.org/10.5281/zenodo.23409442. Historical rc1 retains https://doi.org/10.5281/zenodo.22841999. The `v0.1.0` tag must identify the exact reviewed 0.1.0 commit integrated into `main`. No new commit, publication date or version DOI is guessed in this snapshot; actual publication and any later execution are recorded externally with their exact identities.
+
+The associated manuscript is *Which Channels Should We Keep? Uniform Bounds for Cut-Based Selection in Gaussian Vector Autoregressions*. Its editorial R1.4 identity is separate from this software source and is a derivative of the verified v15 corpus, not historical V5.1. The source does not include manuscript files, article figures, private wrappers or raw third-party datasets.
 
 ## Installation and a replayable example
 
@@ -35,11 +37,11 @@ Canonical witness selection, endpoint checks, counters, bounds and interruption 
 ## Verification and release engineering
 
 1. Preserve the historical tags, archives, reports, failed attempts and their identifiers.
-2. Perform the explicitly authorised tests and fresh builds on the exact candidate source. Never rename rc2 binaries to rc3.
-3. Compare source package bytes with wheel and sdist, verify RECORD, reject unsafe or duplicate archive paths and rebuild the source archive after extraction.
-4. Integrate the reviewed source into `main`, verify the actual commit/tree, then create the new tag and release. Build and publication evidence remain external and must identify those exact bytes.
+2. Record any explicitly authorised execution on the exact source separately from publication. Tests, fresh builds and installed-form checks remain UNRUN for 0.1.0; no wheel or sdist is supplied by this preparation. Never relabel historical binaries as 0.1.0.
+3. Future distribution qualification must compare source package bytes with wheel and sdist, verify RECORD, reject unsafe or duplicate archive paths and rebuild the source archive after extraction.
+4. Integrate the reviewed 0.1.0 source into `main`, verify the actual commit/tree, then create the normal `v0.1.0` release without the pre-release flag. Source packaging and publication do not establish an executed build or test result. Publication identity remains external and must identify those exact bytes. See [docs/NORMAL_RELEASE_0_1_0.md](docs/NORMAL_RELEASE_0_1_0.md).
 
-Automatic CI triggers are absent from this candidate. Its workflow is manual-only and requires an explicit authorisation input. The repository owner must disable Actions **before the first remote write or pull request**, because the earlier remote workflow can trigger independently of the candidate file. No workflow has been started by preparing this source.
+The retained validation workflow is manual-only, requires separate execution authorisation and is not required to create the normal source release. Actions remains disabled during manual source integration and publication. This preparation starts no workflow and uses no Cloud environment.
 
 The historical mutation runner is blocked. A nonzero pytest return code alone cannot establish a killed mutant. See [docs/MUTATION_REVIEW_PROTOCOL.md](docs/MUTATION_REVIEW_PROTOCOL.md).
 

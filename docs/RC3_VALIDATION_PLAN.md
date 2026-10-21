@@ -1,6 +1,8 @@
-# Rc3 validation plan — UNRUN
+# Finite validation plan for CDRS-E 0.1.0 — UNRUN
 
-Preparing or reading these instructions does not authorise execution. The exact source hash, environment, commands, resource limits, output locations and stop policy must be adopted separately. Preserve every failed or partial attempt. Do not run scientific replay, raw-data fitting, new simulations, new fixtures from scientific payloads or a mutation campaign under this plan.
+The `RC3_VALIDATION_PLAN.md` filename, `run_rc3_release_validation.py` entry point, regression filenames and `CDRSE_RC3_*` schema identifiers are retained compatibility names. The current software version is `0.1.0`; these names do not make it a release candidate.
+
+Preparing or reading these instructions does not authorise execution. The exact source hash, environment, commands, resource limits, output locations and stop policy must be adopted separately. A normal source release does not claim these checks have executed. Preserve every failed or partial attempt. Do not run scientific replay, raw-data fitting, new simulations, new fixtures from scientific payloads or a mutation campaign under this plan.
 
 ## Source and finite regression checks
 
@@ -30,7 +32,7 @@ Compare the two wheels, sdists and curated source ZIPs byte for byte in the reco
 
 Install wheel and sdist separately into new environments using an explicit dependency policy. Verify actual import provenance, version, schema resources and the declared finite installed checks. Rebuild a wheel from the sdist and compare it under the same recorded recipe. Run source-bound identity checks before producing artefacts, or in a separate pristine copy, because the identity suite forbids committed distribution envelopes under dist/.
 
-The workflow is a manual-only candidate. Before the first remote write or PR, the owner must disable the earlier repository Actions workflow or separately authorise its execution. Re-enabling and dispatching validation requires a distinct decision. The authorisation input is `AUTHORISE_CDRSE_RC3_VALIDATION`; supplying it is an execution action, not a document check.
+The retained workflow is manual-only and is optional for the normal source release. Before the first remote write or PR, the owner must disable the earlier repository Actions workflow or separately authorise its execution. Re-enabling and dispatching validation requires a distinct decision. The authorisation input is `AUTHORISE_CDRSE_010_VALIDATION`; supplying it is an execution action, not a document check.
 
 ## Receipt boundary
 
@@ -40,7 +42,7 @@ Do not insert a guessed commit, release date or DOI into source. After reviewed 
 
 Only the Python 3.12 job is the candidate authoritative build for a later release. Python 3.11 and 3.13 outputs are diagnostic matrix products; do not assume byte identity across interpreters. After all required steps succeed, the job creates ARTIFACT_MANIFEST.json and SHA256SUMS.txt with the exact observed job commit and file hashes. It does not infer that this commit has been integrated into main. Later integration must compare the reviewed source tree with the actual main/tag identity.
 
-The workflow attempts to preserve available files, including partial evidence, as `cdrse-rc3-<Python version>-<job commit>`. An early failure may produce no downloadable artifact. Failed or partial output is not qualified for release. Before dispatch, verify the official `actions/upload-artifact@v4` reference and other third-party action references; this phase has not resolved that tag to a newly checked immutable commit.
+The workflow attempts to preserve available files, including partial evidence, as `cdrse-0.1.0-<Python version>-<job commit>`. An early failure may produce no downloadable artifact. Failed or partial output is not qualified for release. Before dispatch, verify the official `actions/upload-artifact@v4` reference and other third-party action references; this phase has not resolved that tag to a newly checked immutable commit.
 
 The workflow builds from a separate fresh `git archive` copy of the exact job commit. This avoids overwriting or reusing build/egg-info material created by the earlier editable installation and tests. Its artefact paths therefore lie under the runner's temporary build directory, with QA outputs in a separate temporary directory. The downloaded artifact may preserve directory structure; select release candidates by ARTIFACT_MANIFEST.json and SHA256SUMS.txt, not by an assumed flattened ZIP layout. The authoritative Python 3.12 job now calls `scripts/run_rc3_release_validation.py`, which encodes the repeated-build, source-ZIP roundtrip, sdist-to-wheel and declared installed-form routes described below. These are prepared commands, not executed evidence.
 

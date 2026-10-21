@@ -1,3 +1,10 @@
+# 0.1.0 — normal source-release preparation; execution UNRUN
+
+- Promote the reviewed rc3 source to version `0.1.0` and planned normal tag `v0.1.0`, without the GitHub pre-release flag.
+- Synchronise current package, citation, release, documentation and version-guard metadata while preserving historical source profiles and records.
+- Retain the runtime-contract and release-engineering corrections prepared in rc3. No new test, build, installed-form qualification or scientific replay is claimed.
+- See `release/RELEASE_NOTES_v0.1.0.md` and `docs/NORMAL_RELEASE_0_1_0.md`. Actual main commit, tag, publication date and DOI are established by external publication evidence.
+
 # Prepared 0.1.0rc3 — execution UNRUN
 
 See `release/RELEASE_NOTES_v0.1.0rc3_PREPARED.md`. Historical entries below retain their original source and execution scope.
