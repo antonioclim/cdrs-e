@@ -1,178 +1,56 @@
-# CDRS-E 0.1.0rc1 — publication-durable software-only release candidate
+# CDRS-E 0.1.0rc3 — prepared software-only release candidate
 
-**Author and maintainer: Antonio Clim. Apache-2.0 applies to the software-only surface. Canonical repository: `https://github.com/antonioclim/cdrs-e`.**
+Author and maintainer: Antonio Clim. Contact: Antonio.clim@csie.ase.ro. ORCID: https://orcid.org/0000-0003-4745-0431.
+Canonical repository: https://github.com/antonioclim/cdrs-e.
 
-This working version implements the P6B stored-input weighted-cut contract.
-`solve_forest_cut`, `solve_treewidth_cut`, `solve_exhaustive(problem)` and
-`solve_branch_bound(problem)` use rational arithmetic for the stored matrix and
-weights. Binary64 matrix entries are embedded as their exact dyadic values; this
-does not recover an intended decimal or an unobserved physical coefficient.
-Budget dynamic programmes require exactly integral activation costs and budgets.
-Omitting a budget means a non-binding total-cost budget.
+## Source identity and current assurance
 
-## Publication identity and archival metadata
+This is the prepared `0.1.0rc3` source, with status `PREPARED_CANDIDATE_RC3`. Its build, tests, installation, coverage, mutation assessment and runtime checks are **UNRUN** in this preparation. Source review and syntactic checks do not establish execution or universal correctness. The current source includes separately documented runtime-contract and release-engineering corrections; earlier test counts are not assigned to these changed bytes.
 
-The canonical repository identity is `https://github.com/antonioclim/cdrs-e` and the release-candidate tag is `v0.1.0rc1`. `CITATION.cff`, CodeMeta and `pyproject.toml` carry this durable identity. No DOI is fabricated or embedded in this source snapshot. If an archival record later assigns a DOI, that external record or a subsequent source revision should carry it without rewriting the frozen source tag. Security reports should follow `SECURITY.md`; ordinary defects and contribution proposals should follow `CONTRIBUTING.md`.
+The public predecessor is `v0.1.0rc2`, commit `c4bedf30c3b5967ade38b0aeac897529a67a7672`, software DOI https://doi.org/10.5281/zenodo.23409442. Historical rc1 retains https://doi.org/10.5281/zenodo.22841999. The proposed rc3 tag must identify the exact reviewed commit integrated into `main`; no rc3 commit, release date or version DOI is asserted here. Later publication and execution are established by external receipts bound to the actual source and artefact hashes. This file records preparation, not a live publication registry.
+
+The associated manuscript is *Which Channels Should We Keep? Uniform Bounds for Cut-Based Selection in Gaussian Vector Autoregressions*. Its editorial R1.3 identity is separate from this software source. The source does not include manuscript files, article figures, private wrappers or raw third-party datasets.
 
 ## Installation and a replayable example
 
-From this source directory, in a Python environment containing its declared
-scientific dependencies:
+Select the intended version and verify its source/distribution digest before installation. A default-branch download is not a substitute for a tagged version. The following are instructions for a separately authorised execution with the declared scientific dependencies already available:
 
 ```text
 python -m pip install --no-build-isolation --no-deps .
-python -m cdrse self-check --json
+python -m cdrse version
 python -m cdrse solve-forest examples/forest_problem.json --output result.json
 python -m cdrse verify-result examples/forest_problem.json result.json
 ```
 
-The example selects `[0, 2]` with objective 5. `--output` is accepted before or
-after the subcommand. A wheel and source distribution are delivered separately
-in the phase package; this directory does not require a nonexistent local wheel.
-Dependency installation on another machine is a separate environment step.
+The retained example expects selection `[0, 2]` and objective 5. Those expectations are preserved; this preparation does not report a new execution. `--output` is accepted before or after the subcommand. Full validation and administrative packaging checks are specified in [docs/RC3_VALIDATION_PLAN.md](docs/RC3_VALIDATION_PLAN.md).
 
-## Exact results, callback evaluations and limits
+## Mathematical and computational scope
 
-The legacy result exposes floating-point display fields. Its
-`metadata.result_contract` (or Python `result.to_record()`) carries authoritative
-rational numerators and denominators, the objective and full problem digest,
-incumbent, bounds, counters and termination. Outward-rounded legacy bound fields
-must agree with that record. `verify-result` independently enumerates the small
-finite model, checks its inequalities and also detects inconsistent display
-fields. Its default ceiling is 16 vertices; it is not a scalable proof checker.
+The four exact static backends solve the declared stored-input weighted incoming-cut objective under their validated model and structural prerequisites. Binary64 inputs are embedded as exact dyadic values, without recovering an intended decimal or a physical coefficient. Budget dynamic programmes require integral activation costs and budgets. A missing budget means a non-binding total-cost budget.
 
-A user-supplied numerical callback has `exact=False`, `certified=False` and an
-`UNCERTIFIED_EVALUATION` record. Zero declared error is not proof of an exact
-oracle. Legacy bounds for that mode are diagnostics, not validated enclosures.
-Floating-point DD and high-precision DD retain their numerical status.
-`verify-certificate` checks consistency of the older layer container only;
-it explicitly does not replay a problem or verify an optimisation certificate.
+The authoritative rational result contract is distinct from floating-point display fields. `verify-result` enumerates a supported finite family with default ceiling 16 vertices; it is not a scalable proof checker. `verify-certificate` remains a legacy layer-consistency check with `certificate_verified=false`. Numerical callback evaluation remains uncertified. Generic numerical DD enclosure, population coverage, global Grassmann optimality, independent-host reproduction and new raw-data campaigns are not established by this preparation.
 
-B&B accepts `max_nodes`, `max_calls` and `time_limit`. All oracle calls, including
-the single seed evaluation, count towards `max_calls`. Time limits are
-cooperative and cannot pre-empt a callback already running. With no feasible
-incumbent the selection and upper bound are absent. A stopped search is never
-labelled infeasible merely because it has not found a solution.
+Canonical witness selection, endpoint checks, counters, bounds and interruption statuses retain version-specific contracts. An interrupted search without an incumbent is not a proof of infeasibility. Time limits are cooperative and cannot pre-empt a callback already running. Exact supplied-operand aggregation is separate from validating a scientific or monetary model.
 
-Scenario callbacks and floating-point dynamic solvers do not return a rigorous
-numerical exactness guarantee. The scaled-integer min-cost-flow routine retains
-its separately stated transformed-cost scope. The trajectory construction is
-fixed-horizon/XP-type with explicit resource counters, not FPT in the horizon
-alone. Grassmann multistart gives stationary candidates, not global optima.
+## Verification and release engineering
 
-## Verification evidence and current limits
+1. Preserve the historical tags, archives, reports, failed attempts and their identifiers.
+2. Perform the explicitly authorised tests and fresh builds on the exact candidate source. Never rename rc2 binaries to rc3.
+3. Compare source package bytes with wheel and sdist, verify RECORD, reject unsafe or duplicate archive paths and rebuild the source archive after extraction.
+4. Integrate the reviewed source into `main`, verify the actual commit/tree, then create the new tag and release. Build and publication evidence remain external and must identify those exact bytes.
 
-The fresh rc1 execution authority is P10-SD34 and the latest integrated checkpoint is P10-SD35. Source and installed suites previously returned 1,280/1,280. QUICK passed. The initial parent FULL orchestration was interrupted and remains recorded as interrupted; 28/28 independently completed shards were subsequently reconciled, yielding `PASS_WITH_ORCHESTRATION_QUALIFICATION`. The interrupted parent attempt is not relabelled as a pass.
+Automatic CI triggers are absent from this candidate. Its workflow is manual-only and requires an explicit authorisation input. The repository owner must disable Actions **before the first remote write or pull request**, because the earlier remote workflow can trigger independently of the candidate file. No workflow has been started by preparing this source.
 
-P10-SD37 was the packaging and licensing-surface remediation that removed every public path rooted at `paper/`, `evidence/`, `provenance/` or `reports/`. P10-SD39 prepared a publication-durable transition draft but was not promoted because the package module docstring still described the candidate as private. P10-SD40 applies the explicitly authorised one-line docstring correction, preserves the other 28 registered files byte-identically, proves AST identity after removing the docstring and regenerates and retests the source archive, wheel and sdist. Private excluded material remains outside the public software surface.
+The historical mutation runner is blocked. A nonzero pytest return code alone cannot establish a killed mutant. See [docs/MUTATION_REVIEW_PROTOCOL.md](docs/MUTATION_REVIEW_PROTOCOL.md).
 
-No finite suite proves universal correctness. DS1 concerns the stored-cut implementation and does not validate DD on real sensors, population confidence coverage, financial value or global Grassmann optimisation. Zero false certificates is an observation in the finite executed catalogues, not a universal guarantee or an undiscovered-defect probability. The original Phase XXXI named-sensor gate remains `FAIL_REAL_NAMED_SENSOR_GATE`. Phase XLIV remains invalid as scientific execution evidence. TS0 is not met, F03 and F15 remain open and programme completion is false.
+## History and limits
 
-Apache License 2.0 applies only to the software surface described in `LICENSING.md`. Operational publication authority is deliberately not encoded in this source tree. This source snapshot embeds no DOI and makes no claim that a Zenodo record, PyPI publication or journal submission forms part of the software artefact.
+Exact rc2 identity and engineering files are preserved under `release/history/rc2_profile/`. Earlier rc1/P7 copies remain under `release/history/rc1_p7/`. P10-SD34, P10-SD37 and P10-SD40 describe their original historical source and software-only qualification scopes. The distinct historical D2 and Component C records do not transfer a complete PASS to this source. No finite suite proves universal correctness.
 
-## P10 result and input contract repair
+Programme REWORK, H-02 FAIL, H-14 FAIL, scientific Q12 and the recorded scientific limitations retain their historical identities. This software preparation does not grant a global PASS, resolve G0 BLOCKED or lift HOLD. An editorially prepared manuscript is not a new scientific execution.
 
-`verify-result` checks every defined top-level assurance field against the
-authoritative record, including regret, proof state, termination and absent
-incumbent bounds. The public regret is the upward-rounded authoritative rational
-regret, not a subtraction of two rounded display endpoints. Unknown top-level
-assertions are rejected. Additional metadata are explicitly listed as unverified.
-Counter domain checks and agreement of the two mirrored counters do not
-authenticate an execution log or proof-reference identity.
+## Licensing and attribution
 
-For unenclosed callbacks, numerical objective and optimality claims remain
-uncertified. Finite service-family infeasibility is a separate check: it requires
-no evaluation of the callback. A stopped callback with no incumbent has canonical
-`NO_INCUMBENT` status; completed infeasibility has `PROVED_INFEASIBLE` termination.
+Apache-2.0 applies to the included software surface defined by `LICENSING.md`, with individual exceptions retained. Manuscript, figure, evidence, private-provenance, third-party data and third-party content rights remain separate. Operational publication authority is deliberately not encoded in this software tree. `LICENSE` and `NOTICE` are included in distributions.
 
-The direct Python parser preserves input types until validation. Cardinalities
-accept integers, excluding booleans, fractions and numeric strings. Endpoint
-flags require booleans. The source test changes update only three version-identity
-assertions and add the preserved P10 obligations and boundary controls.
-No scientific threshold or original numerical test expectation is weakened.
-
-## P10-SD2 compositional-layer repair (promoted in dev3 and retained in dev6)
-
-The separately audited SD1 patch is included in `DecisionCertificate`. Its
-composed expression is calculated exactly for the supplied integers and stored
-binary64 operands, then displayed at the least finite binary64 upper endpoint.
-Non-finite aggregate endpoints are refused. Boolean flags, coordinate indices,
-incumbent availability and explicitly supplied derived summaries are checked
-without lossy coercion. This does not authenticate the underlying problem,
-statistical event or valuation. `verify-certificate` remains a legacy layer
-consistency check with `certificate_verified=false`; `verify-result` is separate.
-
-The original 477-case suite (including protected P3 cases) and the unchanged
-280-case SD1 suite are the promotion obligations. Their observed dev3 results
-are in the accompanying SD2 qualification records, not in historical R1 logs.
-R1 coverage and mutation measurements describe dev2 only and do not quantify
-dev3. No clean-machine, universal-correctness or publication claim is made.
-
-## P10-SD4 economic frontier and finite-scenario repair (promoted in dev4 and retained in dev6)
-
-The hash-bound SD3 patch is promoted without changing its two repaired modules.
-Finite mean, worst-case and equiprobable empirical CVaR aggregation evaluate the
-accepted integer and stored binary64 operands exactly, then convert once to the
-nearest finite binary64 display. The display is not an outward enclosure and
-does not authenticate a callback, probability model or valuation. Explicit
-probability vectors remain unsupported for CVaR. Mean weights that pass the
-existing near-one check are used as supplied rather than silently normalised.
-
-`pareto_front` uses exact supplied coordinates for strict dominance.
-`supported_points` expects a nondominated front and returns extreme lower-hull
-representatives; it does not promise every duplicate label or collinear point
-that ties along a supporting segment. The robust finite enumerator validates its
-configuration before callback evaluation, compares exact aggregates before the
-display conversion and retains `exact=false` and `certified=false`. E0 synthetic
-regressions do not create E1 measurements or E2 monetary evidence.
-
-The promotion suite contains the preceding 757 obligations, the byte-preserved
-422-case SD3 suite fixed before the patch and the separately identified one-case
-CVaR refinement added after the initial 11/12 designed-mutation result. These
-1,180 case identities are finite, correlated software obligations, not
-independent empirical replications or a probability of universal correctness.
-R1 global coverage and mutations remain dev2 metrology; the SD3 two-module
-coverage and mutation records retain their bounded historical scope.
-
-## P10-SD10 corrected upstream-provenance source candidate (historical)
-
-SD10 established the coherent source-only dev7 candidate and retained dev6 as the last qualified distribution/runtime identity at that boundary. The private historical provenance objects are excluded from this public software-only tree. Their scoped conclusions are represented only through current public release-engineering records under `release/`. See `docs/P10_SD9_UPSTREAM_PROVENANCE_CONTRACT.md` and `docs/P10_SD10_CANDIDATE_INTEGRITY_CONTRACT.md`.
-
-## P10-SD8 deterministic build-envelope closure (local dev6)
-
-Dev6 retains all qualified dev5 source and behavioural repairs and promotes the F35 build-closure remedy. The build backend is pinned to setuptools 82.0.1 and the build script enforces `SOURCE_DATE_EPOCH=1789430400`. The six-case SD8 regression lock raises the ordinary source suite from 1,203 to 1,209 finite correlated obligations. Local wheel/sdist byte identity is qualified only for the recorded recipe. The captured backend wheel is not upstream-authenticated and no independent-machine or multi-platform reproduction is claimed. See `docs/P10_SD8_BUILD_CLOSURE_CONTRACT.md`.
-
-## P10-SD6 source-boundary and source-closure hardening (local dev5)
-
-The hash-bound SD5 patch is promoted without changing its seven repaired modules or its 23-case test file. `ExactRationalBackend.directed_cut` now requires canonical unique integer indices in range. Exact witness domains are decided rationally. Coordinate-DD endpoint shortcuts validate a finite positive tolerance. Direct Python models reject boolean numerical fields and textual numerical arrays, while canonical hashing requires textual mapping keys.
-
-The protected eight-case P3 regression file is now part of the ordinary test tree and source archive. The private K2 source candidate therefore collects all 1,180 historical obligations without borrowing that file from K3. The unchanged 23-case SD5 lock raises the dev5 promotion suite to 1,203 case identities. These are finite correlated software obligations, not independent empirical replications.
-
-The dependency, security and type-contract utilities create their report directory on a pristine extraction and explicitly describe their bounded checks. They do not establish a complete transitive advisory scan, taint analysis, native-extension audit or clean-machine reproduction. See `docs/P10_SD6_SOURCE_BOUNDARY_CONTRACT.md`.
-
-
-
-## P10-SD12 upstream-backed local dev7 qualification
-
-The exact `setuptools 84.0.0` and `pip 26.2.1` wheel bytes used by the P10-SD12 build were recovered from official PyPA release workflow artefacts and locally matched to the SHA-256 values bound from official PyPI metadata. The dev7 wheel, sdist, immutable runtime and declared QUICK/FULL replays are qualified only in the recorded local CPython 3.13 Linux x86_64 scope. This is not an independent-machine or multi-platform reproduction. At the P10-SD12 checkpoint, publication and deposition had not been executed; that statement is historical rather than a current release gate.
-
-
-## P10-SD32 Apache-2.0 rc1 promotion
-
-P10-SD32 established the `0.1.0rc1` identity and local Apache-2.0 software-licence decision. The scientific implementation inherited from dev7 was unchanged except for explicit release-identity surfaces.
-
-## P10-SD34/P10-SD35 qualification and integration
-
-P10-SD34 is authoritative for the fresh rc1 QUICK/FULL, DS1, solver, CLI, formal and coverage evidence. P10-SD35 is the latest integrated documentary checkpoint. Their finite findings retain their stated scope and do not close TS0, F03 or F15.
-
-## P10-SD37 software-only re-freeze
-
-P10-SD37 removes all deferred-content path classes from the proposed public repository and release assets, preserves the scientific source byte-for-byte, repairs current qualification metadata and reconstructs deterministic release assets. The exact setuptools 84.0.0 backend was not re-executed in this isolated remediation environment; the assets are transparently derived by deterministic reassembly from the qualified SD35 wheel and sdist, followed by complete source and installed-wheel testing.
-
-## Licensing scope
-
-See `LICENSING.md`. Apache-2.0 applies to the software work; manuscript-facing and non-code content remains deferred.
-
-## P10-SD40 bounded public-identity correction and full local re-freeze
-
-P10-SD39 removed private remote-operation plans from the public source tree, assigned durable repository metadata and replaced operational authorisation flags with artefact-stable qualification fields, but its local draft was not promoted because `src/cdrse/__init__.py` still described the software as private. P10-SD40 changes only that module docstring from the private-candidate wording to `CDRS-E auditable research software release candidate.` No other byte in that file changes. The remaining 28 registered files are byte-identical to SD37 and the AST after removing the module docstring is identical. The CLI reports the release channel and canonical repository rather than a transient boolean describing whether a remote publication operation has occurred.
+AI assistance in source review and preparation is described in [docs/AI_ASSISTANCE.md](docs/AI_ASSISTANCE.md). Tool assistance is not an independent authority or formal verification. Security reports should follow `SECURITY.md`; ordinary defects should follow `CONTRIBUTING.md`.

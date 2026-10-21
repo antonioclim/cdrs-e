@@ -1,5 +1,11 @@
 # Reproducibility
 
+## Current rc3 preparation
+
+The rc3 source, build, installed-form and distribution checks remain UNRUN. The current recipe requires a fresh exact-backend build and forbids reusing historical binary envelopes. The source-archive builder excludes its two generated envelope members and refuses existing destinations. The distribution verifier checks unique safe paths, regular member types, metadata, RECORD and literal package bytes. A complete future receipt must bind the actual main commit, tag and uploaded assets; no DOI, date or current execution is inferred here. See ../RC3_VALIDATION_PLAN.md.
+
+## Historical rc1 scope
+
 The package records deterministic seeds, canonical input hashes, algorithm counters, backend identity, tolerances and termination reasons. The canonical source-build contract pins `setuptools 84.0.0`, `pip 26.2.1` and `SOURCE_DATE_EPOCH=1789689600`.
 
 P10-SD34 is authoritative for the fresh rc1 source and installed tests, QUICK/FULL reconciliation, DS1, solver, CLI, formal and coverage evidence. The initial parent FULL orchestration remains recorded as interrupted; 28/28 independently completed shards were reconciled. No finite suite establishes universal correctness.

@@ -1,0 +1,3 @@
+# Use of AI-assisted technologies
+
+ChatGPT and Codex (OpenAI) assisted software review, debugging, restructuring, documentation and the preparation of additional validation-script and regression-test sources. Such assistance extends beyond copy-editing. In mathematical material, the author's stated scope was language editing and conversion of LaTeX expressions into Microsoft Word OMML equations, without proposing, correcting or verifying proof steps. AI output is not an independent authority or formal verification. Antonio Clim remains responsible for the final content and its approval. This prepared source reports no new project execution or scientific rerun.

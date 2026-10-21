@@ -1,14 +1,23 @@
 {
-  "artifact_state_model": "PUBLICATION_DURABLE",
+  "artifact_state_model": "PREPARED_RC3_REQUIRES_VALIDATION",
   "author_email": "Antonio.clim@csie.ase.ro",
-  "candidate_status": "PUBLICATION_DURABLE_SOFTWARE_ONLY_RC1",
-  "candidate_version": "0.1.0rc1",
+  "candidate_status": "PREPARED_CANDIDATE_RC3",
+  "candidate_version": "0.1.0rc3",
   "canonical_repository_url": "https://github.com/antonioclim/cdrs-e",
+  "historical_rc2_record": {
+    "path": "release/history/rc2_profile/release-gates.json",
+    "sha256": "8dc0c75bb52674434a087326442f3473a53d31d50fd024637ded72a907d1f178"
+  },
+  "historical_record": {
+    "path": "release/history/rc1_p7/release-gates.json",
+    "sha256": "ec8f7276b2fa89ff84228ac8bb13bb83e8dd11ca6dab99d67632520301ee6322"
+  },
+  "licence_scope": "Existing source-specific software work only; no extension to deferred content.",
   "licence_selected": true,
   "licence_spdx": "Apache-2.0",
   "operational_authority_embedded": false,
   "orcid": "0000-0003-4745-0431",
-  "phase": "P10-SD40",
+  "public_readiness": "UNRUN_AND_EXTERNAL_RECEIPTS",
   "public_surface": {
     "content_licence_outside_surface": "DEFER_OR_SOURCE_SPECIFIC",
     "deferred_path_count": 0,
@@ -24,34 +33,27 @@
   "publication_identity": {
     "package_name": "cdrs-e",
     "release_channel": "release-candidate",
-    "tag": "v0.1.0rc1",
-    "version": "0.1.0rc1"
+    "tag": "v0.1.0rc3",
+    "version": "0.1.0rc3"
   },
   "qualification": {
-    "authoritative_fresh_phase": "P10-SD34",
-    "ds1_total_previous": 33174,
-    "false_certificates_observed_in_finite_catalogues": 0,
-    "fresh_rc1_mutation_campaign": false,
-    "full_independent_shards_reconciled": "28/28",
-    "full_parent_interruption_relabelled_as_pass": false,
-    "full_parent_orchestration_interrupted": true,
-    "full_status": "PASS_WITH_ORCHESTRATION_QUALIFICATION",
-    "integrated_documentary_checkpoint": "P10-SD35",
-    "quick_status": "PASS",
-    "source_and_installed_refreeze_status": "PASS_1280_OF_1280_EACH_LOCAL_PHASE_EVIDENCE",
-    "universal_correctness_claimed": false,
-    "p10_sd40_scientific_campaigns_rerun": false,
-    "registered_identity_contract": "28_BYTE_IDENTICAL_PLUS_ONE_DOCSTRING_ONLY_CORRECTION",
-    "local_qualification_evidence_external_to_public_tree": true
+    "build": "NOT_EXECUTED",
+    "coverage": "NOT_EXECUTED",
+    "historical_results_relabelled_as_rc2": false,
+    "installed_tests": "NOT_EXECUTED",
+    "scientific_replay": "NOT_EXECUTED",
+    "source_tests": "NOT_EXECUTED"
   },
-  "release_track": "R-B_PROMOTED_RC",
+  "qualification_binding": "release/QUALIFICATION_STATE.json#/active_qualification_binding",
+  "qualification_status_scope": "NOT_EXECUTED fields describe this changed metadata profile at source-snapshot creation, not the separately recorded predecessor D2 execution.",
+  "release_track": "LOCAL_SOURCE_CANDIDATE",
   "reproducibility_limits": {
     "docker_digest_execution": false,
     "independent_machine_execution": false,
     "oci_runtime_certified": false,
     "setuptools_84_executed_in_p10_sd40": false
   },
-  "schema": "CDRSE_P10_SD40_RELEASE_QUALIFICATION_v1",
+  "schema": "CDRSE_RC3_LOCAL_RELEASE_GATES_V1",
   "scientific_open_gates": {
     "f03": "OPEN",
     "f15": "OPEN",
@@ -62,9 +64,10 @@
     "submission_ready": false,
     "ts0": "NOT_MET"
   },
-  "software_version": "0.1.0rc1",
+  "software_version": "0.1.0rc3",
   "source_snapshot_archival_identity": {
     "doi_embedded": false,
-    "doi_policy": "NO_FABRICATION; add only after a real archival record exists, normally in external metadata or a subsequent source revision"
+    "successor_commit": null,
+    "version_DOI": null
   }
 }

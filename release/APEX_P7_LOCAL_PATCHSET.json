@@ -1,0 +1,14 @@
+{
+  "schema": "APEX_P7_LOCAL_PATCHSET_V1",
+  "public_version": "0.1.0rc1",
+  "local_patch_set": "APEX-P7.1-NOT-PUBLISHED",
+  "status": "LOCAL_CREATE_ONLY_REVIEW_CANDIDATE",
+  "public_mutation_authorised": false,
+  "changes": [
+    "canonical equal-objective witness policy across exact static backends",
+    "fail-before/pass-after qualification tests",
+    "claims-as-tests",
+    "reviewer quick start and sharded verification pipeline",
+    "reviewer-facing scope documentation"
+  ]
+}

@@ -16,3 +16,9 @@ prune reports
 global-exclude *.py[cod]
 global-exclude __pycache__
 global-exclude .pytest_cache
+
+# Exact archival identity-test and source copies; not active pytest collection.
+recursive-include release/history *.py *.toml *.cff *.json *.md *.in
+
+# The shipped source regression suite reads the CI specification.
+include .github/workflows/ci.yml

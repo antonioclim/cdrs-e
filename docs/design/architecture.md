@@ -18,5 +18,4 @@ cdrse/
   cli.py              stable command-line entry point
 ```
 
-Phase XLII deliberately avoids a plug-in system. The backend boundary is kept
-explicit until Phase XLIV supplies evidence that extensibility is needed.
+The original Phase XLII architecture avoided a plug-in system. That design history is retained; rc3 keeps the backend boundary explicit and reports no new empirical evidence for extensibility.

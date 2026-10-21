@@ -1,3 +1,7 @@
+# Prepared 0.1.0rc3 — execution UNRUN
+
+See `release/RELEASE_NOTES_v0.1.0rc3_PREPARED.md`. Historical entries below retain their original source and execution scope.
+
 # 0.1.0rc1 — P10-SD40 bounded public-identity correction and full local re-freeze
 
 - Change only the first-line module docstring in `src/cdrse/__init__.py` from the private-candidate wording to `CDRS-E auditable research software release candidate.`

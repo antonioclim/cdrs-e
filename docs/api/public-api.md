@@ -19,7 +19,7 @@ from cdrse import (
 ```
 
 Algorithm APIs live under `cdrse.algorithms`. The package follows semantic
-versioning; however, `0.1.0rc1` is a release candidate and may change before
+versioning; however, `0.1.0rc3` is a release candidate and may change before
 the first stable release.
 
 ## Result records and finite verification

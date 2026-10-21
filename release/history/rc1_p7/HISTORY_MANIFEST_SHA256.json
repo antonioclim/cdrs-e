@@ -1,0 +1,187 @@
+{
+  "files": [
+    {
+      "bytes": 1039,
+      "original_path": "CITATION.cff",
+      "path": "release/history/rc1_p7/CITATION.cff",
+      "sha256": "0293a7912fb94735ba5df6207a3dc14b0c814cb1bbbe5899813a452f176def1e"
+    },
+    {
+      "bytes": 652,
+      "original_path": "MANIFEST.in",
+      "path": "release/history/rc1_p7/MANIFEST.in",
+      "sha256": "9b6cf731e233508fb83ab68a2d4882ce11b4eae3b96bdb1e15d920582ddbd2d7"
+    },
+    {
+      "bytes": 15081,
+      "original_path": "README.md",
+      "path": "release/history/rc1_p7/README.md",
+      "sha256": "c1dfe7cc7bb59b87db6afff3a364ebc138cf2c02d06ea58ad80b4f9c73eae7b7"
+    },
+    {
+      "bytes": 15081,
+      "original_path": "README_FINAL_CANDIDATE.md",
+      "path": "release/history/rc1_p7/README_FINAL_CANDIDATE.md",
+      "sha256": "c1dfe7cc7bb59b87db6afff3a364ebc138cf2c02d06ea58ad80b4f9c73eae7b7"
+    },
+    {
+      "bytes": 1102,
+      "original_path": "SECURITY.md",
+      "path": "release/history/rc1_p7/SECURITY.md",
+      "sha256": "851576354e6c329f6edaaac352c59abb2253f7a491600b27e2c0ef85b5f0e38d"
+    },
+    {
+      "bytes": 1957,
+      "original_path": "build-recipe.json",
+      "path": "release/history/rc1_p7/build-recipe.json",
+      "sha256": "551c471f7e16b5f1bdbe44bbbe8ae52d740fb1da63b6cb4def69db9f49c27550"
+    },
+    {
+      "bytes": 1397,
+      "original_path": "codemeta.json",
+      "path": "release/history/rc1_p7/codemeta.json",
+      "sha256": "c31eee4525350babac1b2a92814134e1e9aecd5d8c2969ef11e6b25d93ca1fdd"
+    },
+    {
+      "bytes": 963,
+      "original_path": "docs/REVIEWER_QUICK_START.md",
+      "path": "release/history/rc1_p7/docs/REVIEWER_QUICK_START.md",
+      "sha256": "fa75510664dfb83afd041b25604263fb188ef23352cd9c47bd04075c348645bd"
+    },
+    {
+      "bytes": 1294,
+      "original_path": "docs/index.md",
+      "path": "release/history/rc1_p7/docs/index.md",
+      "sha256": "f87c1a69f56d2321d6bbad7a66255adae3120d4877436b837a87ea304d4e362a"
+    },
+    {
+      "bytes": 2682,
+      "original_path": "pyproject.toml",
+      "path": "release/history/rc1_p7/pyproject.toml",
+      "sha256": "5717221798c0062039e3ffae63df623702406fdb49782b9cb1eaa4bf03acd486"
+    },
+    {
+      "bytes": 2572,
+      "original_path": "release-gates.json",
+      "path": "release/history/rc1_p7/release-gates.json",
+      "sha256": "ec8f7276b2fa89ff84228ac8bb13bb83e8dd11ca6dab99d67632520301ee6322"
+    },
+    {
+      "bytes": 442,
+      "original_path": "release/PUBLICATION_IDENTITY.json",
+      "path": "release/history/rc1_p7/release/PUBLICATION_IDENTITY.json",
+      "sha256": "98b6e7827839785778c4458b03ae8bac92b2348b05d706dc8bd1789bc8cfadb5"
+    },
+    {
+      "bytes": 2530,
+      "original_path": "release/QUALIFICATION_STATE.json",
+      "path": "release/history/rc1_p7/release/QUALIFICATION_STATE.json",
+      "sha256": "9cdf5f50aa647ec5ce19e8a9648df7bbbda23ad9dee1adc1e305950109c7547f"
+    },
+    {
+      "bytes": 3687,
+      "original_path": "scripts/build_distributions.py",
+      "path": "release/history/rc1_p7/scripts/build_distributions.py",
+      "sha256": "dc59190bf6974e1655df3cb07b2bd4427df037f64eee9610d034d43d8aa90428"
+    },
+    {
+      "bytes": 3377,
+      "original_path": "scripts/build_source_archive.py",
+      "path": "release/history/rc1_p7/scripts/build_source_archive.py",
+      "sha256": "b0c57bfde025c7ad92a88f530a52255169a44249845904df7f70406af6bbaa45"
+    },
+    {
+      "bytes": 7448,
+      "original_path": "scripts/reassemble_qualified_assets.py",
+      "path": "release/history/rc1_p7/scripts/reassemble_qualified_assets.py",
+      "sha256": "0a73e0dcc21a2e94afb25f89b46fce639f49fe3fc26d1f811465e3e70aebc50b"
+    },
+    {
+      "bytes": 3564,
+      "original_path": "scripts/reviewer_quick_start.py",
+      "path": "release/history/rc1_p7/scripts/reviewer_quick_start.py",
+      "sha256": "cfc059bbaf1ad3cfb14ca19e43ec3e66d396786fa6867046fd3f547d8a6e0d6c"
+    },
+    {
+      "bytes": 3965,
+      "original_path": "scripts/run_reviewer_pipeline.py",
+      "path": "release/history/rc1_p7/scripts/run_reviewer_pipeline.py",
+      "sha256": "106a425a04295b56d7381d28d720b6c10ee4caf31ab1f628cda2fa7d340b9aef"
+    },
+    {
+      "bytes": 6286,
+      "original_path": "scripts/run_scoped_mutation_audit.py",
+      "path": "release/history/rc1_p7/scripts/run_scoped_mutation_audit.py",
+      "sha256": "f7eeeba775d14c8154a25f6a37b2ecc603d690600d0d662b1c7143abc3f27728"
+    },
+    {
+      "bytes": 25,
+      "original_path": "src/cdrse/_version.py",
+      "path": "release/history/rc1_p7/src/cdrse/_version.py",
+      "sha256": "f678b165bf65163150bdb1bd435d70bd66a6830153c15ad5d10c53cd602894d7"
+    },
+    {
+      "bytes": 10248,
+      "original_path": "src/cdrse/cli.py",
+      "path": "release/history/rc1_p7/src/cdrse/cli.py",
+      "sha256": "c8cefa1bae247faecf466d66fc5e148e4fc0676cda461394475cb3b329d2af29"
+    },
+    {
+      "bytes": 9145,
+      "original_path": "src/cdrse/schema_files/result_contract.schema.json",
+      "path": "release/history/rc1_p7/src/cdrse/schema_files/result_contract.schema.json",
+      "sha256": "a7b6f545342795b2cd0b29312973ed323079ca5e421662e78dbb60b6ca29ddd0"
+    },
+    {
+      "bytes": 2429,
+      "original_path": "tests/integration/test_cli.py",
+      "path": "release/history/rc1_p7/tests/integration/test_cli.py",
+      "sha256": "0a01e8e71e32a28d8424688bb24684fe790921649bbfaef99acdda39453d6906"
+    },
+    {
+      "bytes": 1323,
+      "original_path": "tests/integration/test_metadata_and_resources.py",
+      "path": "release/history/rc1_p7/tests/integration/test_metadata_and_resources.py",
+      "sha256": "1f09e52c5328af5c0f4c4ff2c8a55a4273321951f48b7ed41e6a86735b69a134"
+    },
+    {
+      "bytes": 4954,
+      "original_path": "tests/regression/test_sd10_candidate_integrity.py",
+      "path": "release/history/rc1_p7/tests/regression/test_sd10_candidate_integrity.py",
+      "sha256": "adf1ab4fdb228187a73240af51805e1e2b86ba2a0feae807914d311e7c98e3a5"
+    },
+    {
+      "bytes": 3777,
+      "original_path": "tests/regression/test_sd12_upstream_local_qualification.py",
+      "path": "release/history/rc1_p7/tests/regression/test_sd12_upstream_local_qualification.py",
+      "sha256": "fcfb77d7586936687a480110214b183c22de56956b21e0114cc78f576863ded5"
+    },
+    {
+      "bytes": 6697,
+      "original_path": "tests/regression/test_sd32_rc1_license_release.py",
+      "path": "release/history/rc1_p7/tests/regression/test_sd32_rc1_license_release.py",
+      "sha256": "887364ebbf6804bd900784e2984e60547f41115f8c3e22ad3f9a622d48cd4331"
+    },
+    {
+      "bytes": 2802,
+      "original_path": "tests/regression/test_sd8_build_closure.py",
+      "path": "release/history/rc1_p7/tests/regression/test_sd8_build_closure.py",
+      "sha256": "2fe3e18b27788ead37a95f44117792668e87796995f3f0fa79da629716011e80"
+    },
+    {
+      "bytes": 3710,
+      "original_path": "tests/regression/test_sd9_upstream_provenance.py",
+      "path": "release/history/rc1_p7/tests/regression/test_sd9_upstream_provenance.py",
+      "sha256": "a3596d7e8ae267ac850ed9e4fce39ae7aea7fa37aeab90ded25ac02ef97af993"
+    },
+    {
+      "bytes": 7569,
+      "original_path": "tests/unit/test_additional_coverage.py",
+      "path": "release/history/rc1_p7/tests/unit/test_additional_coverage.py",
+      "sha256": "4738dd27d56d9566fb17eea38d089150055ae9e019feabddc3e0f312ac371109"
+    }
+  ],
+  "rule": "Exact original bytes; no collection as current pytest files and no old qualification relabelling.",
+  "schema": "CDRSE_RC2_HISTORICAL_SOURCE_MANIFEST_V1",
+  "source_P2_archive_sha256": "97360a18dcd684b4524b915f2c06386f5feb2c4b95afb7fb5ba7847f862ff7a0"
+}

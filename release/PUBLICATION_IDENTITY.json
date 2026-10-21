@@ -1,12 +1,26 @@
 {
+  "candidate_status": "PREPARED_CANDIDATE_RC3",
   "canonical_repository_url": "https://github.com/antonioclim/cdrs-e",
   "citation_metadata_source": "CITATION.cff",
   "doi_embedded_in_source_snapshot": false,
+  "historical_rc2_record": {
+    "path": "release/history/rc2_profile/release/PUBLICATION_IDENTITY.json",
+    "sha256": "18c64e732114444ab3c4b801bd78025689811c6dce2cf8f8effde14313f8806a"
+  },
+  "historical_record": {
+    "path": "release/history/rc1_p7/release/PUBLICATION_IDENTITY.json",
+    "sha256": "98b6e7827839785778c4458b03ae8bac92b2348b05d706dc8bd1789bc8cfadb5"
+  },
   "issue_tracker_url": "https://github.com/antonioclim/cdrs-e/issues",
   "package_name": "cdrs-e",
   "release_channel": "release-candidate",
-  "schema": "CDRSE_P10_SD40_PUBLICATION_IDENTITY_v1",
+  "release_date": null,
+  "schema": "CDRSE_RC3_LOCAL_PUBLICATION_IDENTITY_V1",
   "security_policy": "SECURITY.md",
-  "tag": "v0.1.0rc1",
-  "version": "0.1.0rc1"
+  "successor_commit": null,
+  "tag": "v0.1.0rc3",
+  "tag_collision_check": "NOT_CHECKED",
+  "target_branch": "main",
+  "version": "0.1.0rc3",
+  "version_DOI": null
 }

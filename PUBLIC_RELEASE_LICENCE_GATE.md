@@ -1,6 +1,6 @@
 # Public software licence and scope boundary
 
-The sole author and maintainer is Antonio Clim. Apache License 2.0 has been selected for and applies to the included software-only `0.1.0rc1` surface. `LICENSE` and `NOTICE` are included in source and binary distributions.
+The sole author and maintainer is Antonio Clim. Apache License 2.0 has been selected for and applies to the included software-only surface of this source version. `LICENSE` and `NOTICE` are included in source and binary distributions.
 
 The public software surface excludes every path rooted at `paper/`, `evidence/`, `provenance/` or `reports/`. Manuscripts, supplementary documents, article figures, research evidence, private provenance, generated reports and third-party materials are not conveyed by this repository or its release assets. Their content licence remains `DEFER` or source-specific.
 
