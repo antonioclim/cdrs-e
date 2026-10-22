@@ -1,17 +1,17 @@
-# CDRS-E 0.1.0 — research software release
+# CDRS-E 0.1.1 — research software release (local candidate)
 
 Author and maintainer: Antonio Clim. Contact: Antonio.clim@csie.ase.ro. ORCID: https://orcid.org/0000-0003-4745-0431.
 Canonical repository: https://github.com/antonioclim/cdrs-e.
 
 ## Source identity and current assurance
 
-This source prepares normal version `0.1.0`, with status `PREPARED_RELEASE_010` and release channel `release`. Its build, tests, installation, coverage, mutation assessment and runtime checks are **UNRUN** for these bytes. Source review and syntactic checks do not establish execution or universal correctness.
+This local candidate prepares normal version `0.1.1`, with status `PREPARED_RELEASE_011`. It is not published. It addresses the five QA2 software findings: CLI error contracts, selected-run Grassmann status, backend parameter validation, wheel licence binding and installed-module provenance. See [QA2 scope](docs/QA2_0_1_1_SCOPE.md).
 
-The immediate parent is the reviewed `0.1.0rc3` source snapshot at commit `6a9f2d43c62d45e78ec619ef2be582e4915ef50f`, tree `d742e6316887e1ea2cc4aafcd8e46ca5ca7a0dd0`. That prepared snapshot was not a published rc3 release. Version 0.1.0 retains its runtime-contract and release-engineering corrections; the promotion synchronises version metadata without claiming a new algorithmic execution.
+The immediate predecessor is public `0.1.0`, commit `b8333fb0b72f6b07c4fd1fa4969d0704c48b12f7`, tree `17c208e9909b097c07ba7bb84991b94231eea819`, source-archive SHA-256 `061e5e3412bbb6335a4b9aa28dd54595faf866a6487359429a808be0e6a05c86`. Its recorded software DOI is https://doi.org/10.5281/zenodo.23535035. These predecessor identifiers are retained records, not a new online inspection. No commit, tag, publication date or DOI is invented for 0.1.1.
 
-The public predecessor remains `v0.1.0rc2`, commit `c4bedf30c3b5967ade38b0aeac897529a67a7672`, software DOI https://doi.org/10.5281/zenodo.23409442. Historical rc1 retains https://doi.org/10.5281/zenodo.22841999. The `v0.1.0` tag must identify the exact reviewed 0.1.0 commit integrated into `main`. No new commit, publication date or version DOI is guessed in this snapshot; actual publication and any later execution are recorded externally with their exact identities.
+The source metadata are frozen before finite QA2 validation. Their UNRUN fields describe that freeze; later execution evidence must bind these exact bytes externally. Targeted finite success, if demonstrated, does not mean full-suite or global scientific qualification. Original public 0.1.0 and all earlier results remain intact.
 
-The associated manuscript is *Which Channels Should We Keep? Uniform Bounds for Cut-Based Selection in Gaussian Vector Autoregressions*. Its editorial R1.4 identity is separate from this software source and is a derivative of the verified v15 corpus, not historical V5.1. The source does not include manuscript files, article figures, private wrappers or raw third-party datasets.
+The associated manuscript is *Which Channels Should We Keep? Uniform Bounds for Cut-Based Selection in Gaussian Vector Autoregressions*. Its R1.6 editorial identity is separate and derives from the verified v15 corpus, not a recovered V5.1. No manuscript files, article figures, private wrappers or raw third-party datasets are included.
 
 ## Installation and a replayable example
 
@@ -24,7 +24,7 @@ python -m cdrse solve-forest examples/forest_problem.json --output result.json
 python -m cdrse verify-result examples/forest_problem.json result.json
 ```
 
-The retained example expects selection `[0, 2]` and objective 5. Those expectations are preserved; this preparation does not report a new execution. `--output` is accepted before or after the subcommand. Full validation and administrative packaging checks are specified in [docs/RC3_VALIDATION_PLAN.md](docs/RC3_VALIDATION_PLAN.md).
+The retained example expects selection `[0, 2]` and objective 5. These are example expectations, not a report of a new execution in this source snapshot. `--output` is accepted before or after the subcommand. Full validation and administrative packaging checks are specified in [docs/RC3_VALIDATION_PLAN.md](docs/RC3_VALIDATION_PLAN.md).
 
 ## Mathematical and computational scope
 
@@ -36,20 +36,17 @@ Canonical witness selection, endpoint checks, counters, bounds and interruption 
 
 ## Verification and release engineering
 
-1. Preserve the historical tags, archives, reports, failed attempts and their identifiers.
-2. Record any explicitly authorised execution on the exact source separately from publication. Tests, fresh builds and installed-form checks remain UNRUN for 0.1.0; no wheel or sdist is supplied by this preparation. Never relabel historical binaries as 0.1.0.
-3. Future distribution qualification must compare source package bytes with wheel and sdist, verify RECORD, reject unsafe or duplicate archive paths and rebuild the source archive after extraction.
-4. Integrate the reviewed 0.1.0 source into `main`, verify the actual commit/tree, then create the normal `v0.1.0` release without the pre-release flag. Source packaging and publication do not establish an executed build or test result. Publication identity remains external and must identify those exact bytes. See [docs/NORMAL_RELEASE_0_1_0.md](docs/NORMAL_RELEASE_0_1_0.md).
+This is a local 0.1.1 candidate intended for a normal release, not a published release. Publication, tag creation and online mutation are separate decisions. Public0.1.0 remains unchanged; its literal source profile is retained under `release/history/public_0_1_0/` and in the baseline archive.
 
-The retained validation workflow is manual-only, requires separate execution authorisation and is not required to create the normal source release. Actions remains disabled during manual source integration and publication. This preparation starts no workflow and uses no Cloud environment.
+The frozen source records execution status before the bounded QA2 phase. Consult the separately delivered, hash-bound QA2 evidence for any subsequent targeted tests, baseline witnesses, distributions and installation-origin checks. The complete source suite, coverage qualification, multi-platform validation and empirical campaigns are not implied. The retained full validation pipeline remains UNRUN unless separately evidenced. No finite suite proves universal correctness.
 
-The historical mutation runner is blocked. A nonzero pytest return code alone cannot establish a killed mutant. See [docs/MUTATION_REVIEW_PROTOCOL.md](docs/MUTATION_REVIEW_PROTOCOL.md).
+The manual-only Actions workflow and legacy full-validation helpers are retained with current version guards. They are not started or qualified by this source preparation. Historical mutation classification remains outside the QA2 phase.
 
 ## History and limits
 
-Exact rc2 identity and engineering files are preserved under `release/history/rc2_profile/`. Earlier rc1/P7 copies remain under `release/history/rc1_p7/`. P10-SD34, P10-SD37 and P10-SD40 describe their original historical source and software-only qualification scopes. The distinct historical D2 and Component C records do not transfer a complete PASS to this source. No finite suite proves universal correctness.
+Historical rc1/rc2 records and their source hashes remain unchanged. The original public 0.1.0 preparation profile is under `release/history/public_0_1_0/`; old normal-release notes describe that predecessor. Historical D2 and Component C records do not transfer a complete PASS to 0.1.1.
 
-Programme REWORK, H-02 FAIL, H-14 FAIL, scientific Q12 and the recorded scientific limitations retain their historical identities. This software preparation does not grant a global PASS, resolve G0 BLOCKED or lift HOLD. An editorially prepared manuscript is not a new scientific execution.
+Programme REWORK, H-02 FAIL, H-14 FAIL, scientific Q12 and recorded scientific limitations retain their identities. STOP33/A156, G0 BLOCKED, HOLD and the unrecovered historical receipt remain unchanged. No new scientific campaign or mathematical-proof check is claimed.
 
 ## Licensing and attribution
 

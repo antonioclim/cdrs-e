@@ -17,7 +17,7 @@ def run(*args: str):
 def test_cli_version_and_schema() -> None:
     result = run("version")
     assert result.returncode == 0
-    assert json.loads(result.stdout)["version"] == "0.1.0"
+    assert json.loads(result.stdout)["version"] == "0.1.1"
     schema = run("schema", "problem")
     assert schema.returncode == 0 and json.loads(schema.stdout)["title"] == "CDRS-E selection problem"
 

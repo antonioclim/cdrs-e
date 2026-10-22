@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Prepared finite 0.1.0 release-validation driver; execution is UNRUN.
+"""Prepared finite 0.1.1 release-validation driver; execution is UNRUN.
 
 No project module is imported by this driver. Its future commands deliberately
 execute separately authorised finite tests and builds. Historical qualification
@@ -23,8 +23,8 @@ import xml.etree.ElementTree as ET
 from zipfile import ZipFile
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = "0.1.0"
-ARCHIVE_ROOT = "CDRS_E_0.1.0_SOURCE_AND_TESTS"
+VERSION = "0.1.1"
+ARCHIVE_ROOT = "CDRS_E_0.1.1_SOURCE_AND_TESTS"
 SOURCE_ZIP = ARCHIVE_ROOT + ".zip"
 EPOCH = "1789689600"
 MAX_WALL_SECONDS = 1200
@@ -124,7 +124,7 @@ class Driver:
         self.started = time.monotonic()
         self.out = qa_dir / "release_validation"
         self.out.mkdir(parents=True, exist_ok=False)
-        self.work = Path(tempfile.mkdtemp(prefix="cdrse-0.1.0-release-validation-"))
+        self.work = Path(tempfile.mkdtemp(prefix="cdrse-0.1.1-release-validation-"))
         self.env = os.environ.copy()
         for key in ("PYTHONPATH", "PYTHONHOME"):
             self.env.pop(key, None)
@@ -251,7 +251,7 @@ class Driver:
         return {"source_copy": str(destination), "extraction": extracted, "assets": inventory(destination/"dist")}
 
     def provenance(self, python, cwd, label):
-        code = "import cdrse,json,sys;from pathlib import Path;from importlib import metadata;p=Path(cdrse.__file__).resolve();root=Path(sys.prefix).resolve();assert p.is_relative_to(root) and 'site-packages' in p.parts,(str(p),str(root));assert cdrse.__version__=='0.1.0';print(json.dumps({'module_file':str(p),'venv_prefix':str(root),'version':cdrse.__version__,'setuptools':metadata.version('setuptools'),'pip':metadata.version('pip')}))"
+        code = "import cdrse,json,sys;from pathlib import Path;from importlib import metadata;p=Path(cdrse.__file__).resolve();root=Path(sys.prefix).resolve();assert p.is_relative_to(root) and 'site-packages' in p.parts,(str(p),str(root));assert cdrse.__version__=='0.1.1';print(json.dumps({'module_file':str(p),'venv_prefix':str(root),'version':cdrse.__version__,'setuptools':metadata.version('setuptools'),'pip':metadata.version('pip')}))"
         observed = json.loads(self.run([python,"-I","-B","-c",code],cwd=cwd,label=label))
         if observed["setuptools"] != "84.0.0":
             raise RuntimeError("installed environment backend is not setuptools 84.0.0")

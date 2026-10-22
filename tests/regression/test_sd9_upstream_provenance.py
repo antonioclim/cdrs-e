@@ -20,7 +20,7 @@ def test_sd9_06_archival_policy_prohibits_fabrication() -> None:
 def test_sd9_07_publication_contract_separates_artifact_and_operation_state() -> None:
     t = (ROOT / "docs/P10_SD40_BOUNDED_PUBLIC_IDENTITY_CORRECTION_CONTRACT.md").read_text(); assert "contains no conversational or account-level authorisation flags" in t and "performed outside the artefact" in t
 def test_sd9_08_source_archive_builder_uses_durable_identity() -> None:
-    t = (ROOT / "scripts/build_source_archive.py").read_text(); assert "CDRS_E_0.1.0_SOURCE_AND_TESTS" in t and "Operational publication authority is external" in t
+    t = (ROOT / "scripts/build_source_archive.py").read_text(); assert "CDRS_E_0.1.1_SOURCE_AND_TESTS" in t and "Operational publication authority is external" in t
 def test_sd9_09_ci_is_verification_only() -> None:
     t = (ROOT / ".github/workflows/ci.yml").read_text(); assert "contents: read" in t and "contains no publication or deployment step" in t and "twine upload" not in t and "zenodo" not in t.lower()
 def test_sd9_10_algorithmic_identity_registry_is_closed() -> None:

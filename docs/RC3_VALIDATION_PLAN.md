@@ -1,3 +1,5 @@
+> Historical predecessor plan for 0.1.0; not an instruction to publish this local 0.1.1 candidate. The current bounded QA2 scope is in [QA2_0_1_1_SCOPE.md](QA2_0_1_1_SCOPE.md). The full legacy pipeline remains UNRUN.
+
 # Finite validation plan for CDRS-E 0.1.0 — UNRUN
 
 The `RC3_VALIDATION_PLAN.md` filename, `run_rc3_release_validation.py` entry point, regression filenames and `CDRSE_RC3_*` schema identifiers are retained compatibility names. The current software version is `0.1.0`; these names do not make it a release candidate.

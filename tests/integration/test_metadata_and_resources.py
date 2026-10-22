@@ -12,7 +12,7 @@ def test_pyproject_static_identity() -> None:
     data = tomllib.loads((ROOT / "pyproject.toml").read_text())
     project = data["project"]
     assert project["name"] == "cdrs-e"
-    assert project["version"] == "0.1.0"
+    assert project["version"] == "0.1.1"
     assert project["authors"] == [{"name": "Antonio Clim", "email": "Antonio.clim@csie.ase.ro"}]
     assert project["license"] == "Apache-2.0"
     assert project["license-files"] == ["LICENSE", "NOTICE"]

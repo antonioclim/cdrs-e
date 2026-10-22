@@ -1,0 +1,42 @@
+{
+  "algorithmic_ast_changed": true,
+  "build_backend": "setuptools.build_meta",
+  "build_status": "UNRUN",
+  "candidate_status": "PREPARED_RELEASE_010",
+  "canonical_repository_url": "https://github.com/antonioclim/cdrs-e",
+  "canonical_source_rebuild_requires_exact_backend": true,
+  "code_licence": "Apache-2.0",
+  "content_licence": "DEFER_OR_SOURCE_SPECIFIC",
+  "current_derivation_method": "UNRUN",
+  "derived_asset_hashes": null,
+  "execution_status_scope": "UNRUN fields describe this 0.1.0 source snapshot at preparation, not the separately recorded historical D2 execution.",
+  "historical_rc2_record": {
+    "path": "release/history/rc2_profile/build-recipe.json",
+    "sha256": "0b2fa8e1d6ef5ad4f757e76cf9d4e8096d5346c37ddeb4dd461135d3029d69ae"
+  },
+  "historical_record": {
+    "path": "release/history/rc1_p7/build-recipe.json",
+    "sha256": "551c471f7e16b5f1bdbe44bbbe8ae52d740fb1da63b6cb4def69db9f49c27550"
+  },
+  "independent_machine_reproduction": false,
+  "normal_release_promotion_scope": "Version and current metadata synchronisation; the prepared rc3 mathematical algorithms and runtime corrections are retained without new project execution.",
+  "old_qualified_assets_permitted_as_build_inputs": false,
+  "operational_authority_embedded": false,
+  "phase": "NORMAL_010_SOURCE_RELEASE_PREPARATION",
+  "pip_version_bound_in_toolchain_lineage": "26.2.1",
+  "planned_derivation_method": "FRESH_EXACT_BACKEND_BUILD",
+  "proposed_tag": "v0.1.0",
+  "public_metadata_profile": "PREPARED_010_EXECUTION_UNRUN",
+  "public_surface": "SOFTWARE_ONLY",
+  "qualification_binding": "release/QUALIFICATION_STATE.json#/active_qualification_binding",
+  "qualified_toolchain_for_new_build": null,
+  "schema": "CDRSE_RC3_LOCAL_BUILD_RECIPE_V1",
+  "schema_identifier_policy": "The RC3 schema identifier is retained for format compatibility; software_version identifies the current version.",
+  "scientific_source_changed": true,
+  "scope": "Normal 0.1.0 source-release preparation promotes the previously prepared rc3 runtime-contract and engineering corrections. Fresh source, build and installed-artifact validation remains UNRUN. Historical artefacts are not build inputs.",
+  "setuptools_version": "84.0.0",
+  "setuptools_wheel_sha256": "51a52592b3b99e102b609654876bd65f19f999935166d1352678931132b0c670",
+  "software_version": "0.1.0",
+  "source_date_epoch": 1789689600,
+  "source_date_epoch_rule": "Retained deterministic normalisation parameter; not a successor commit date, release date or timestamp observation."
+}

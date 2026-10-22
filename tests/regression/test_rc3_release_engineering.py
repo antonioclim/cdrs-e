@@ -68,7 +68,7 @@ def test_rc3_tar_multiple_roots_are_rejected():
 def test_rc3_generated_archive_members_are_excluded_on_roundtrip(tmp_path):
     module = administrative_module('build_source_archive')
     root = tmp_path/'source';root.mkdir()
-    (root/'build-recipe.json').write_text(json.dumps({'software_version':'0.1.0','candidate_status':'PREPARED_RELEASE_010','source_date_epoch':1789689600}))
+    (root/'build-recipe.json').write_text(json.dumps({'software_version':'0.1.1','candidate_status':'PREPARED_RELEASE_011','source_date_epoch':1789689600}))
     (root/'content.txt').write_bytes(b'administrative-packaging-test\n')
     a = tmp_path/'a.zip';module.build_source_archive(a,root=root)
     copy = tmp_path/'copy';copy.mkdir()
@@ -124,14 +124,14 @@ def test_rc3_workflow_has_no_automatic_event():
     text=(ROOT/'.github/workflows/ci.yml').read_text()
     assert '  push:' not in text and '  pull_request:' not in text
     assert '  workflow_dispatch:' in text
-    assert "inputs.authorisation == 'AUTHORISE_CDRSE_010_VALIDATION'" in text
+    assert "inputs.authorisation == 'AUTHORISE_CDRSE_011_VALIDATION'" in text
     assert 'timeout-minutes: 30' in text
 
 
 def test_rc3_release_identifiers_remain_unasserted_until_observed():
     identity=json.loads((ROOT/'release/PUBLICATION_IDENTITY.json').read_text())
-    assert identity['version']=='0.1.0' and identity['target_branch']=='main'
+    assert identity['version']=='0.1.1' and identity['target_branch']=='main'
     assert identity['successor_commit'] is None and identity['release_date'] is None and identity['version_DOI'] is None
     state=json.loads((ROOT/'release/QUALIFICATION_STATE.json').read_text())
-    assert state['software_version']=='0.1.0' and state['build']=='UNRUN'
+    assert state['software_version']=='0.1.1' and state['build']=='UNRUN'
     assert state['global_scientific_PASS_claimed'] is False

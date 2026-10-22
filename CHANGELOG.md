@@ -1,3 +1,10 @@
+# 0.1.1 — local QA2 remediation candidate
+
+- Prepare targeted corrections to CLI input/error contracts, selected-run Grassmann convergence labels, high-precision backend parameter validation, wheel licence byte binding and installed-module provenance.
+- Synchronise current package/citation/build/version guards without changing scientific schema identifiers or historical source profiles.
+- Freeze source before the finite QA2 validation; any subsequent results are external and hash-bound. Full-suite, multi-platform and scientific qualification are not claimed.
+- Public0.1.0 remains unchanged. No 0.1.1 publication, tag, DOI or submission is implied.
+
 # 0.1.0 — normal source-release preparation; execution UNRUN
 
 - Promote the reviewed rc3 source to version `0.1.0` and planned normal tag `v0.1.0`, without the GitHub pre-release flag.

@@ -23,7 +23,17 @@ from .schemas import load_schema, validate_json
 
 
 def _read_json(path: str | Path) -> dict:
-    return json.loads(Path(path).read_text(encoding="utf-8"))
+    payload = json.loads(Path(path).read_text(encoding="utf-8"))
+    if not isinstance(payload, dict):
+        raise ValidationError("JSON input must be an object")
+    return payload
+
+
+class _JSONArgumentParser(argparse.ArgumentParser):
+    """Report usage errors through the CLI JSON error boundary."""
+
+    def error(self, message: str) -> None:
+        raise ValidationError(message)
 
 
 def _write(payload: dict, output: str | None) -> None:
@@ -97,6 +107,16 @@ def command_verify_result(args: argparse.Namespace) -> dict:
 
 def command_dd(args: argparse.Namespace) -> dict:
     model_payload = _read_json(args.model)
+    for key in ("coefficients", "innovation_covariance"):
+        if key not in model_payload:
+            raise ValidationError(f"model input is missing required key: {key}")
+        if not isinstance(model_payload[key], list):
+            raise ValidationError(f"model {key} must be an array")
+    channel_names = model_payload.get("channel_names", [])
+    if not isinstance(channel_names, list) or any(not isinstance(name, str) for name in channel_names):
+        raise ValidationError("model channel_names must be an array of strings")
+    if not isinstance(model_payload.get("metadata", {}), dict):
+        raise ValidationError("model metadata must be an object")
     model = VARModel.from_dict(model_payload)
     subset = tuple(int(token) for token in args.subset.split(",") if token.strip())
     value, diagnostics = coordinate_dd(model, subset, tolerance=args.tolerance)
@@ -139,7 +159,10 @@ def command_schema(args: argparse.Namespace) -> dict:
 
 
 def command_witness(args: argparse.Namespace) -> dict:
-    parameter = Fraction(args.parameter)
+    try:
+        parameter = Fraction(args.parameter)
+    except (ValueError, ZeroDivisionError) as error:
+        raise ValidationError("witness parameter must be a valid rational with a non-zero denominator") from error
     exact = ExactRationalBackend.dsrg_swap_witness(parameter)
     numeric = dsrg_swap_witness(float(parameter))
     return {"status": "PASS", "exact_expression": str(exact), "numeric": numeric}
@@ -176,7 +199,7 @@ def command_self_check(args: argparse.Namespace) -> dict:
 
 
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(prog="cdrse", description="Auditable CDRS-E research software release")
+    parser = _JSONArgumentParser(prog="cdrse", description="Auditable CDRS-E research software release")
     parser.add_argument("--output", help="write JSON output to this path")
     sub = parser.add_subparsers(dest="command", required=True)
     version = sub.add_parser("version", help="print package version and release status")
@@ -229,8 +252,8 @@ def build_parser() -> argparse.ArgumentParser:
 
 def main(argv: list[str] | None = None) -> int:
     parser = build_parser()
-    args = parser.parse_args(argv)
     try:
+        args = parser.parse_args(argv)
         payload = args.handler(args)
         _write(payload, args.output)
         return 0

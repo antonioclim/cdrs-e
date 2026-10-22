@@ -1,9 +1,13 @@
 {
-  "artifact_state_model": "PREPARED_010_EXECUTION_UNRUN",
+  "artifact_state_model": "PREPARED_011_EXECUTION_UNRUN",
   "author_email": "Antonio.clim@csie.ase.ro",
-  "candidate_status": "PREPARED_RELEASE_010",
-  "candidate_version": "0.1.0",
+  "candidate_status": "PREPARED_RELEASE_011",
+  "candidate_version": "0.1.1",
   "canonical_repository_url": "https://github.com/antonioclim/cdrs-e",
+  "historical_0_1_0_record": {
+    "path": "release/history/public_0_1_0/release-gates.json",
+    "sha256": "2de0362b050cfb1fb6259e65cf0939d52460dfcad85e277be9c4b33317b54373"
+  },
   "historical_rc2_record": {
     "path": "release/history/rc2_profile/release-gates.json",
     "sha256": "8dc0c75bb52674434a087326442f3473a53d31d50fd024637ded72a907d1f178"
@@ -33,8 +37,8 @@
   "publication_identity": {
     "package_name": "cdrs-e",
     "release_channel": "release",
-    "tag": "v0.1.0",
-    "version": "0.1.0"
+    "tag": "v0.1.1",
+    "version": "0.1.1"
   },
   "qualification": {
     "build": "UNRUN",
@@ -45,7 +49,7 @@
     "source_tests": "UNRUN"
   },
   "qualification_binding": "release/QUALIFICATION_STATE.json#/active_qualification_binding",
-  "qualification_status_scope": "UNRUN fields describe the 0.1.0 source snapshot at preparation; historical qualification remains attached to the recorded predecessor identities.",
+  "qualification_status_scope": "UNRUN fields describe this 0.1.1 source snapshot at its pre-validation freeze. Any subsequent finite QA2 execution is recorded externally and bound to the exact frozen bytes; it is not a full-suite, multi-platform or scientific qualification.",
   "release_track": "LOCAL_SOURCE_RELEASE_PREPARATION",
   "reproducibility_limits": {
     "docker_digest_execution": false,
@@ -65,7 +69,7 @@
     "submission_ready": false,
     "ts0": "NOT_MET"
   },
-  "software_version": "0.1.0",
+  "software_version": "0.1.1",
   "source_snapshot_archival_identity": {
     "doi_embedded": false,
     "successor_commit": null,

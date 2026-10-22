@@ -1,6 +1,6 @@
 # Security and scientific-integrity reporting
 
-Current normal version prepared for release: `0.1.0` (`PREPARED_RELEASE_010`). Build, runtime, regression and distribution checks for this source remain UNRUN. Public rc2 and the separately bound historical D2/rc1 records retain their own identities; this preparation claims no new execution or production-support qualification.
+Current local candidate: `0.1.1` (`PREPARED_RELEASE_011`), not published. Frozen metadata precede bounded QA2 validation; subsequent results are external and hash-bound. Public0.1.0 and historical qualifications remain intact. No production-support qualification or complete scientific validation is implied.
 
 Report suspected vulnerabilities privately to `Antonio.clim@csie.ase.ro` with the subject `CDRS-E security report`. Include the affected version, a minimal reproduction, impact and any proposed mitigation. Do not include secrets, personal data or embargoed third-party material. When private vulnerability reporting is enabled for the canonical repository, its Security tab may also be used: `https://github.com/antonioclim/cdrs-e/security/policy`.
 

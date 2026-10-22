@@ -83,7 +83,7 @@ def main():
     passed = len(runs) == len(SHARDS)+1 and all(r["returncode"] == 0 for r in runs)
     if not args.skip_coverage:
         passed = passed and cov is not None and len(cov["shards"]) == len(SHARDS) and coverage_succeeded(cov)
-    record = {"schema":"CDRSE_RC3_REVIEWER_PIPELINE_RESULTS_V1","status":"PASS_SCOPED_REVIEWER_PIPELINE" if passed else "FAIL","software_candidate_version":__version__,"candidate_status":"PREPARED_RELEASE_010","coverage_scope":"SKIPPED_BY_EXPLICIT_OPTION" if args.skip_coverage else "REQUIRED_WITH_THRESHOLD_85","elapsed_seconds":time.perf_counter()-started,"runs":runs,"coverage":cov,"file_manifest":files,"scientific_replay":False,"global_PASS":False,"limits":"Finite software checks only; no raw-data campaign, population theorem verification or mutation classification."}
+    record = {"schema":"CDRSE_RC3_REVIEWER_PIPELINE_RESULTS_V1","status":"PASS_SCOPED_REVIEWER_PIPELINE" if passed else "FAIL","software_candidate_version":__version__,"candidate_status":"PREPARED_RELEASE_011","coverage_scope":"SKIPPED_BY_EXPLICIT_OPTION" if args.skip_coverage else "REQUIRED_WITH_THRESHOLD_85","elapsed_seconds":time.perf_counter()-started,"runs":runs,"coverage":cov,"file_manifest":files,"scientific_replay":False,"global_PASS":False,"limits":"Finite software checks only; no raw-data campaign, population theorem verification or mutation classification."}
     (out/"pipeline_manifest.json").write_text(json.dumps(record,indent=2,sort_keys=True)+"\n")
     print(record["status"])
     return 0 if passed else 1

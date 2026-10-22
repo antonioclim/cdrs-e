@@ -10,9 +10,9 @@ PIP_SHA = "71138adf1f4ca900cdb7d289c21b7494329f2332b6d85f0e1c42108c0384ed3e"
 PIP_SDIST_SHA = "f6ad667e89a1fe78046c8f13232b247200f5258d7828f3f7883d660878e0813f"
 def _json(path: str) -> dict: return json.loads((ROOT / path).read_text(encoding="utf-8"))
 def test_sd10_01_version_surfaces_are_consistent() -> None:
-    assert tomllib.loads((ROOT / "pyproject.toml").read_text())["project"]["version"] == "0.1.0"; assert '__version__ = "0.1.0"' in (ROOT / "src/cdrse/_version.py").read_text(); assert 'version: "0.1.0"' in (ROOT / "CITATION.cff").read_text(); assert _json("codemeta.json")["version"] == "0.1.0"
+    assert tomllib.loads((ROOT / "pyproject.toml").read_text())["project"]["version"] == "0.1.1"; assert '__version__ = "0.1.1"' in (ROOT / "src/cdrse/_version.py").read_text(); assert 'version: "0.1.1"' in (ROOT / "CITATION.cff").read_text(); assert _json("codemeta.json")["version"] == "0.1.1"
 def test_sd10_02_release_gates_match_publication_identity() -> None:
-    g = _json("release-gates.json"); assert g["software_version"] == "0.1.0" and g["canonical_repository_url"] == REPOSITORY and g["artifact_state_model"] == "PREPARED_010_EXECUTION_UNRUN" and _json("build-recipe.json")["public_metadata_profile"] == g["artifact_state_model"]
+    g = _json("release-gates.json"); assert g["software_version"] == "0.1.1" and g["canonical_repository_url"] == REPOSITORY and g["artifact_state_model"] == "PREPARED_011_EXECUTION_UNRUN" and _json("build-recipe.json")["public_metadata_profile"] == g["artifact_state_model"]
 def test_sd10_03_setuptools_record_binds_official_files() -> None:
     f = _json("release/TOOLCHAIN_LOCK.json")["files"]; assert f["setuptools-84.0.0-py3-none-any.whl"]["sha256"] == SETUPTOOLS_SHA and f["setuptools-84.0.0-py3-none-any.whl"]["size"] == 818216 and f["setuptools-84.0.0.tar.gz"]["sha256"] == SETUPTOOLS_SDIST_SHA
 def test_sd10_04_pip_record_binds_official_files() -> None:

@@ -1,10 +1,10 @@
 # CDRS-E documentation
 
-Prepared normal source version: `0.1.0`, `PREPARED_RELEASE_010`. Execution remains UNRUN. Start with the current contract and validation plan; the P10 contracts below describe version-bound history.
+Current local candidate: `0.1.1`, `PREPARED_RELEASE_011`, not published. Source-freeze metadata precede the bounded QA2 execution; the accompanying hash-bound evidence determines which checks actually ran. Full-suite and scientific qualification are not implied.
 
 1. [Current contract and installation](../README.md)
-2. [Normal release 0.1.0 scope](NORMAL_RELEASE_0_1_0.md)
-3. [Retained finite validation plan](RC3_VALIDATION_PLAN.md)
+2. [QA2 0.1.1 scope](QA2_0_1_1_SCOPE.md)
+3. [Retained full validation plan — UNRUN](RC3_VALIDATION_PLAN.md)
 4. [Architecture](design/architecture.md)
 5. [Scientific semantics](design/scientific-semantics.md)
 6. [Certificate semantics](design/certificate-semantics.md)
@@ -17,4 +17,4 @@ Prepared normal source version: `0.1.0`, `PREPARED_RELEASE_010`. Execution remai
 
 ## Historical contracts
 
-P10-SD40, P10-SD37, P10-SD32 and P10-SD34 retain their original qualification scope. Their historical PASS observations do not qualify the current 0.1.0 bytes. Exact identity copies are preserved under `release/history` and excluded from active test collection.
+[Normal release 0.1.0 scope](NORMAL_RELEASE_0_1_0.md) and P10 contracts describe version-bound predecessor states. Their PASS records do not qualify current 0.1.1. Literal profiles remain under `release/history`; the original public 0.1.0 current profile is retained in `release/history/public_0_1_0/`.

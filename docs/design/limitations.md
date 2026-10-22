@@ -14,3 +14,5 @@
 - `supported_points` returns extreme lower-hull representatives, not every tied label;
 - explicit probability vectors are not supported by the reference CVaR helper;
 - finite E0 software regressions do not establish E1 measurements or E2 monetary value.
+
+Local candidate 0.1.1 addresses only the five QA2 software findings. Targeted finite tests, if evidenced, do not establish a new empirical campaign or full-suite qualification.

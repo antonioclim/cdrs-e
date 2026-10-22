@@ -1,0 +1,74 @@
+{
+  "artifact_state_model": "PREPARED_010_EXECUTION_UNRUN",
+  "author_email": "Antonio.clim@csie.ase.ro",
+  "candidate_status": "PREPARED_RELEASE_010",
+  "candidate_version": "0.1.0",
+  "canonical_repository_url": "https://github.com/antonioclim/cdrs-e",
+  "historical_rc2_record": {
+    "path": "release/history/rc2_profile/release-gates.json",
+    "sha256": "8dc0c75bb52674434a087326442f3473a53d31d50fd024637ded72a907d1f178"
+  },
+  "historical_record": {
+    "path": "release/history/rc1_p7/release-gates.json",
+    "sha256": "ec8f7276b2fa89ff84228ac8bb13bb83e8dd11ca6dab99d67632520301ee6322"
+  },
+  "licence_scope": "Existing source-specific software work only; no extension to deferred content.",
+  "licence_selected": true,
+  "licence_spdx": "Apache-2.0",
+  "operational_authority_embedded": false,
+  "orcid": "0000-0003-4745-0431",
+  "public_readiness": "UNRUN_AND_EXTERNAL_RECEIPTS",
+  "public_surface": {
+    "content_licence_outside_surface": "DEFER_OR_SOURCE_SPECIFIC",
+    "deferred_path_count": 0,
+    "forbidden_top_level_segments": [
+      "paper",
+      "evidence",
+      "provenance",
+      "reports"
+    ],
+    "manuscript_or_supplement_bytes_included": false,
+    "scope": "SOFTWARE_ONLY"
+  },
+  "publication_identity": {
+    "package_name": "cdrs-e",
+    "release_channel": "release",
+    "tag": "v0.1.0",
+    "version": "0.1.0"
+  },
+  "qualification": {
+    "build": "UNRUN",
+    "coverage": "UNRUN",
+    "historical_results_relabelled_as_rc2": false,
+    "installed_tests": "UNRUN",
+    "scientific_replay": "UNRUN",
+    "source_tests": "UNRUN"
+  },
+  "qualification_binding": "release/QUALIFICATION_STATE.json#/active_qualification_binding",
+  "qualification_status_scope": "UNRUN fields describe the 0.1.0 source snapshot at preparation; historical qualification remains attached to the recorded predecessor identities.",
+  "release_track": "LOCAL_SOURCE_RELEASE_PREPARATION",
+  "reproducibility_limits": {
+    "docker_digest_execution": false,
+    "independent_machine_execution": false,
+    "oci_runtime_certified": false,
+    "setuptools_84_executed_in_p10_sd40": false
+  },
+  "schema": "CDRSE_RC3_LOCAL_RELEASE_GATES_V1",
+  "schema_identifier_policy": "The RC3 schema identifier is retained for format compatibility; software_version identifies the current version.",
+  "scientific_open_gates": {
+    "f03": "OPEN",
+    "f15": "OPEN",
+    "historical_objects_located": 21,
+    "historical_objects_total": 75,
+    "historical_objects_unreconciled": 54,
+    "programme_complete": false,
+    "submission_ready": false,
+    "ts0": "NOT_MET"
+  },
+  "software_version": "0.1.0",
+  "source_snapshot_archival_identity": {
+    "doi_embedded": false,
+    "successor_commit": null,
+    "version_DOI": null
+  }
+}

@@ -1,8 +1,8 @@
 # Reproducibility
 
-## Current 0.1.0 preparation
+## Current local 0.1.1 candidate
 
-The 0.1.0 source, build, installed-form and distribution checks remain UNRUN. The current recipe requires a fresh exact-backend build and forbids reusing historical binary envelopes. The source-archive builder excludes its two generated envelope members and refuses existing destinations. The distribution verifier checks unique safe paths, regular member types, metadata, RECORD and literal package bytes. A complete future receipt must bind the actual main commit, tag and uploaded assets; no DOI, date or current execution is inferred here. See ../RC3_VALIDATION_PLAN.md.
+The frozen source precedes the finite QA2 checks. Its build/test status fields are not a live execution registry: external results must bind the exact source and produced distributions. The full suite, full coverage threshold, multi-platform verification and scientific replay remain UNRUN unless separately evidenced. The source requires a fresh exact-backend build; historical binary envelopes are forbidden. Licence payloads are bound literally to source and installed-wheel checks verify module origins. See [QA2 scope](../QA2_0_1_1_SCOPE.md).
 
 ## Historical rc1 scope
 

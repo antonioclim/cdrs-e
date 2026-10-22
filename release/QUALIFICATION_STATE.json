@@ -5,7 +5,7 @@
     "administrative_closure": "D2_RC2_ADMINISTRATIVE_CLOSURE_01.json",
     "administrative_closure_bytes": 65513,
     "administrative_closure_sha256": "6ee4a21869e9ad5eb7ece70a4f4f70d1ffb63a20760f8a14653cee77a3c1e1c9",
-    "applicability": "Historical D2 predecessor only; not qualification of rc2 metadata derivatives, prepared rc3 or 0.1.0.",
+    "applicability": "Historical D2 predecessor only; not qualification of rc2 metadata derivatives, prepared rc3 or 0.1.0. This historical binding does not qualify 0.1.1.",
     "current_profile_acceptance": "UNRUN",
     "historical_results_preserved": [
       "Q09 FAIL from phase03",
@@ -36,10 +36,14 @@
     "role": "HISTORICAL_D2_PREDECESSOR_ONLY"
   },
   "build": "UNRUN",
-  "candidate_status": "PREPARED_RELEASE_010",
+  "candidate_status": "PREPARED_RELEASE_011",
   "coverage": "UNRUN",
-  "execution_status_scope": "UNRUN describes this prepared 0.1.0 source. Historical NOT_EXECUTED records retain their original scope in release/history.",
+  "execution_status_scope": "UNRUN fields describe this 0.1.1 source snapshot at its pre-validation freeze. Any subsequent finite QA2 execution is recorded externally and bound to the exact frozen bytes; it is not a full-suite, multi-platform or scientific qualification.",
   "global_scientific_PASS_claimed": false,
+  "historical_0_1_0_record": {
+    "path": "release/history/public_0_1_0/release/QUALIFICATION_STATE.json",
+    "sha256": "2fdb3bb0311d8d8a645128e9e88a4aa803ed4d461188a88ea47d3a4872ca0da6"
+  },
   "historical_evidence_scope": "Exact rc1 and K1 source identities retain their recorded historical scope. Separately bound D2 predecessor evidence combines 36 inherited criteria with a new complete Q33 campaign; it is not a new execution of this changed profile.",
   "historical_rc2_record": {
     "path": "release/history/rc2_profile/release/QUALIFICATION_STATE.json",
@@ -57,7 +61,7 @@
   "schema_identifier_policy": "The RC3 schema identifier is retained for format compatibility; software_version identifies the current version.",
   "scientific_replay": "UNRUN",
   "scoped_mutation_audit": "UNRUN",
-  "software_version": "0.1.0",
+  "software_version": "0.1.1",
   "source_tests": "UNRUN",
   "state_is_source_snapshot_not_live_execution_registry": true
 }

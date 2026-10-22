@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "If you use CDRS-E, cite this software version. Cite the associated article separately when it becomes available."
 title: "CDRS-E"
-version: "0.1.0"
+version: "0.1.1"
 type: software
 license: Apache-2.0
 authors:
