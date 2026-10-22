@@ -31,5 +31,7 @@
   "runtimePlatform": "Python 3.11 or later",
   "softwareHelp": "https://github.com/antonioclim/cdrs-e/blob/main/README.md",
   "url": "https://github.com/antonioclim/cdrs-e",
-  "version": "0.1.1"
+  "version": "0.1.1",
+  "identifier": "https://doi.org/10.5281/zenodo.23555624",
+  "datePublished": "2026-10-22"
 }
