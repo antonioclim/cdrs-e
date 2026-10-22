@@ -1,20 +1,21 @@
 {
-  "candidate_status": "PREPARED_RELEASE_010",
+  "candidate_status": "PREPARED_RELEASE_011",
+  "historical_0_1_0_lineage": "release/history/public_0_1_0/release/SUCCESSOR_SOURCE_LINEAGE.json",
   "historical_rc2_lineage": "release/history/rc2_profile/release/SUCCESSOR_SOURCE_LINEAGE.json",
   "immediate_source_snapshot": {
-    "commit": "6a9f2d43c62d45e78ec619ef2be582e4915ef50f",
-    "role": "PREPARED_RC3_SOURCE_NOT_A_PUBLISHED_RELEASE",
-    "tree": "d742e6316887e1ea2cc4aafcd8e46ca5ca7a0dd0",
-    "version": "0.1.0rc3"
+    "commit": "b8333fb0b72f6b07c4fd1fa4969d0704c48b12f7",
+    "role": "PUBLIC_0_1_0_SOURCE_PRESERVED_UNCHANGED",
+    "tree": "17c208e9909b097c07ba7bb84991b94231eea819",
+    "version": "0.1.0"
   },
   "new_build_status": "UNRUN",
   "new_test_status": "UNRUN",
-  "predecessor_commit": "c4bedf30c3b5967ade38b0aeac897529a67a7672",
-  "predecessor_source_archive_sha256": "959ea4ac44120a821479bc4f796e459facb048d674d4e79ef3e25c848b191376",
-  "predecessor_tag": "v0.1.0rc2",
+  "predecessor_commit": "b8333fb0b72f6b07c4fd1fa4969d0704c48b12f7",
+  "predecessor_source_archive_sha256": "061e5e3412bbb6335a4b9aa28dd54595faf866a6487359429a808be0e6a05c86",
+  "predecessor_tag": "v0.1.0",
   "runtime_contract_corrections_present": true,
   "schema": "CDRSE_RC3_SOURCE_LINEAGE_V1",
   "schema_identifier_policy": "The RC3 schema identifier is retained for format compatibility; software_version identifies the current version.",
-  "scope": "Normal 0.1.0 source-release preparation derives immediately from the reviewed rc3 source snapshot. The public predecessor remains rc2. Historical D2 and Component C records remain attached to their exact predecessor identities. Neither version promotion nor publication transfers qualification to this source.",
-  "software_version": "0.1.0"
+  "scope": "Local 0.1.1 candidate derived from the byte-verified public0.1.0 source archive. No historical qualification is transferred. Publication identifiers and any finite execution must be established separately for this candidate.",
+  "software_version": "0.1.1"
 }

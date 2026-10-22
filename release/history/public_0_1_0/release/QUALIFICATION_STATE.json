@@ -1,0 +1,63 @@
+{
+  "active_qualification_binding": {
+    "M12_method_extension_designed_after_observing_phase05": true,
+    "M12_method_scope": "Successor06 only; no retrospective reclassification or out-of-sample mutation claim.",
+    "administrative_closure": "D2_RC2_ADMINISTRATIVE_CLOSURE_01.json",
+    "administrative_closure_bytes": 65513,
+    "administrative_closure_sha256": "6ee4a21869e9ad5eb7ece70a4f4f70d1ffb63a20760f8a14653cee77a3c1e1c9",
+    "applicability": "Historical D2 predecessor only; not qualification of rc2 metadata derivatives, prepared rc3 or 0.1.0.",
+    "current_profile_acceptance": "UNRUN",
+    "historical_results_preserved": [
+      "Q09 FAIL from phase03",
+      "M06 UNRESOLVED from phase04",
+      "M12 UNRESOLVED from phase05"
+    ],
+    "inherited_criteria": 36,
+    "inherited_main_invocations": 37,
+    "new_Q33": {
+      "baseline_cases": 34,
+      "baseline_groups": 9,
+      "hybrid_score": false,
+      "killed": 12,
+      "minimum_kills": 9,
+      "mutants": 12,
+      "score": 1.0,
+      "status": "PASS",
+      "threshold": 0.7,
+      "valid_classifications": 12
+    },
+    "predecessor_archive": "D2_RC2_M12_CONTRACT_CLASSIFICATION_06.zip",
+    "predecessor_archive_bytes": 6520524,
+    "predecessor_archive_sha256": "90198779ffd28c27c5e7b94589f6182a93229ae22425e582ef961a284cdba6f8",
+    "predecessor_complete_source_files": 175,
+    "predecessor_qualification_status": "SCOPED_SUCCESSOR_QUALIFICATION_PASS_WITH_INHERITED_EVIDENCE",
+    "predecessor_source_manifest": "ADMIN/SUCCESSOR_SOURCE_MANIFEST.json",
+    "predecessor_source_manifest_sha256": "61bef2212b4c2b16e292c24224963c2b01cad33cd6bd1ea17bb92dec66550880",
+    "role": "HISTORICAL_D2_PREDECESSOR_ONLY"
+  },
+  "build": "UNRUN",
+  "candidate_status": "PREPARED_RELEASE_010",
+  "coverage": "UNRUN",
+  "execution_status_scope": "UNRUN describes this prepared 0.1.0 source. Historical NOT_EXECUTED records retain their original scope in release/history.",
+  "global_scientific_PASS_claimed": false,
+  "historical_evidence_scope": "Exact rc1 and K1 source identities retain their recorded historical scope. Separately bound D2 predecessor evidence combines 36 inherited criteria with a new complete Q33 campaign; it is not a new execution of this changed profile.",
+  "historical_rc2_record": {
+    "path": "release/history/rc2_profile/release/QUALIFICATION_STATE.json",
+    "sha256": "3cbfeb766faf0bded994b86fac4fd00ffb1ab863f0cf9c25f870d6a7a7ebe47e"
+  },
+  "historical_record": {
+    "path": "release/history/rc1_p7/release/QUALIFICATION_STATE.json",
+    "sha256": "9cdf5f50aa647ec5ce19e8a9648df7bbbda23ad9dee1adc1e305950109c7547f"
+  },
+  "installed_runtime": "UNRUN",
+  "installed_tests": "UNRUN",
+  "integrated_qualification": "UNRUN",
+  "post_profile_checks_recording_policy": "New impact-check receipts must be external and bind the complete changed source and produced artefacts. This frozen source snapshot is not rewritten to insert their hashes.",
+  "schema": "CDRSE_RC3_LOCAL_QUALIFICATION_STATE_V1",
+  "schema_identifier_policy": "The RC3 schema identifier is retained for format compatibility; software_version identifies the current version.",
+  "scientific_replay": "UNRUN",
+  "scoped_mutation_audit": "UNRUN",
+  "software_version": "0.1.0",
+  "source_tests": "UNRUN",
+  "state_is_source_snapshot_not_live_execution_registry": true
+}

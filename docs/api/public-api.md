@@ -19,7 +19,7 @@ from cdrse import (
 ```
 
 Algorithm APIs live under `cdrse.algorithms`. The package follows semantic
-versioning. Version `0.1.0` uses a normal release identifier. The 0.x API may
+versioning. Local candidate version `0.1.1` uses a normal release identifier. The 0.x API may
 evolve; pin the actual version and source or distribution digest. This version
 identifier does not establish runtime qualification or production support.
 

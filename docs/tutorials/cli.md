@@ -11,6 +11,9 @@ cdrse validate-protocol examples/frozen_protocol.json
 cdrse self-check --json
 ```
 
-All commands emit strict JSON. Failures use exit status 2 and a JSON error on
-standard error. The global `--output PATH` option writes deterministic JSON to a
-file.
+Successful computational commands emit strict JSON. Expected argument, input
+validation and file-access errors use exit status 2 and a JSON error on standard
+error, without writing a successful result. `--help` is a separate human-readable
+contract: help text on standard output and exit status 0. Unexpected internal
+exceptions are not silently reclassified as input errors. The global
+`--output PATH` option writes deterministic JSON to a file.

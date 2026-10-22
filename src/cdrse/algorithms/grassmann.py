@@ -148,11 +148,14 @@ def optimise_multistart(
         )
     best = min(runs, key=lambda run: (run.objective, run.stationarity_norm, run.start_index))
     return {
-        "status": "NUMERICALLY_STATIONARY_MULTISTART_BASELINE",
+        "status": (
+            "NUMERICALLY_STATIONARY_MULTISTART_BASELINE"
+            if best.converged else "MULTISTART_CANDIDATE_NOT_CONVERGED"
+        ),
         "best": best.to_dict(),
         "runs": [run.to_dict() for run in runs],
         "global_certified": False,
-        "certificate_scope": "first_order_stationarity_only",
+        "certificate_scope": "first_order_stationarity_only" if best.converged else "none",
         "seed": seed,
         "counters": counters.to_dict(),
         "warnings": [

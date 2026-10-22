@@ -20,6 +20,6 @@ The package exposes three arithmetic semantics:
 
 - `ExactRationalBackend` for directed cuts, modular resources and symbolic witnesses;
 - `Float64Backend` for general numerical evaluation with residuals and condition diagnostics;
-- `HighPrecisionAuditBackend` for small-instance audit, not production-scale optimisation.
+- `HighPrecisionAuditBackend` for small-instance audit, not production-scale optimisation. Precision must be an integer of at least 30 decimal digits, the iteration limit a positive integer and tolerance a finite strictly positive numerical value or numerical string. Boolean parameters and fractional precision/iteration limits are rejected rather than truncated.
 
 A backend name is not sufficient evidence by itself. The result or certificate must state the actual error enclosure and exactness scope.

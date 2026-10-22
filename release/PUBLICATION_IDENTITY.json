@@ -1,8 +1,12 @@
 {
-  "candidate_status": "PREPARED_RELEASE_010",
+  "candidate_status": "PREPARED_RELEASE_011",
   "canonical_repository_url": "https://github.com/antonioclim/cdrs-e",
   "citation_metadata_source": "CITATION.cff",
   "doi_embedded_in_source_snapshot": false,
+  "historical_0_1_0_record": {
+    "path": "release/history/public_0_1_0/release/PUBLICATION_IDENTITY.json",
+    "sha256": "c3f1dafde59d878e4b761a09fa23da12be6cdb2adfb0fbcffc50758afdf6d599"
+  },
   "historical_rc2_record": {
     "path": "release/history/rc2_profile/release/PUBLICATION_IDENTITY.json",
     "sha256": "18c64e732114444ab3c4b801bd78025689811c6dce2cf8f8effde14313f8806a"
@@ -13,15 +17,16 @@
   },
   "issue_tracker_url": "https://github.com/antonioclim/cdrs-e/issues",
   "package_name": "cdrs-e",
+  "publication_state": "LOCAL_CANDIDATE_NOT_PUBLISHED",
   "release_channel": "release",
   "release_date": null,
   "schema": "CDRSE_RC3_LOCAL_PUBLICATION_IDENTITY_V1",
   "schema_identifier_policy": "The RC3 schema identifier is retained for format compatibility; version identifies the current version.",
   "security_policy": "SECURITY.md",
   "successor_commit": null,
-  "tag": "v0.1.0",
+  "tag": "v0.1.1",
   "tag_collision_check": "NOT_CHECKED",
   "target_branch": "main",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "version_DOI": null
 }

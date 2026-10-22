@@ -86,10 +86,23 @@ class HighPrecisionAuditBackend:
     """Arbitrary-precision audit backend for small projected VAR instances."""
 
     def __init__(self, decimal_digits: int = 80, tolerance: str = "1e-60", max_iterations: int = 50_000):
+        for label, value in (("decimal_digits", decimal_digits), ("max_iterations", max_iterations)):
+            if isinstance(value, (bool, np.bool_)) or not isinstance(value, (int, np.integer)):
+                raise ValidationError(f"{label} must be an integer")
         if decimal_digits < 30:
             raise ValidationError("high-precision audit requires at least 30 decimal digits")
+        if max_iterations < 1:
+            raise ValidationError("max_iterations must be positive")
+        if isinstance(tolerance, (bool, np.bool_)):
+            raise ValidationError("tolerance must be finite and strictly positive")
+        try:
+            parsed_tolerance = mp.mpf(tolerance)
+        except (TypeError, ValueError, OverflowError) as exc:
+            raise ValidationError("tolerance must be a real numerical value or numerical string") from exc
+        if not mp.isfinite(parsed_tolerance) or parsed_tolerance <= 0:
+            raise ValidationError("tolerance must be finite and strictly positive")
         self.decimal_digits = int(decimal_digits)
-        self.tolerance = mp.mpf(tolerance)
+        self.tolerance = parsed_tolerance
         self.max_iterations = int(max_iterations)
 
     @property

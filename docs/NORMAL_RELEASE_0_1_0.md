@@ -1,3 +1,5 @@
+> Historical predecessor plan for 0.1.0; not an instruction to publish this local 0.1.1 candidate. The current bounded QA2 scope is in [QA2_0_1_1_SCOPE.md](QA2_0_1_1_SCOPE.md). The full legacy pipeline remains UNRUN.
+
 # Normal release 0.1.0 — scope and identity
 
 The publication target is the ordinary release `v0.1.0` from the reviewed 0.1.0 source integrated into `main`. It is not a GitHub pre-release. The package version, runtime version and current citation/release metadata are `0.1.0`.

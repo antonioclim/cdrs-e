@@ -111,6 +111,26 @@ def source_package() -> dict[str, bytes]:
     return rows
 
 
+def verify_wheel_licences(z: ZipFile, expected_info: str, source_root: Path = ROOT) -> None:
+    """Bind the two declared licence payloads to exact paths and source bytes.
+
+    A valid RECORD only binds a wheel to itself. It does not establish that
+    its licence text is the text selected in the frozen source tree.
+    """
+    expected = {expected_info + "licenses/" + name: source_root / name for name in ("LICENSE", "NOTICE")}
+    names = z.namelist()
+    actual = [
+        name for name in names
+        if name.startswith(expected_info + "licenses/")
+        or (name.startswith(expected_info) and PurePosixPath(name).name in {"LICENSE", "NOTICE"})
+    ]
+    if len(actual) != len(expected) or set(actual) != set(expected):
+        raise ValueError("wheel licence paths or multiplicity mismatch")
+    for name, source in expected.items():
+        if source.is_symlink() or not source.is_file() or z.read(name) != source.read_bytes():
+            raise ValueError(f"wheel licence bytes differ from the selected source: {name}")
+
+
 def main() -> int:
     wheels = sorted(DIST.glob("*.whl"))
     sdists = sorted(DIST.glob("*.tar.gz"))
@@ -137,9 +157,7 @@ def main() -> int:
                 raise ValueError(f"wheel metadata mismatch: {key}")
         if set(headers.get_all('License-File', [])) != {'LICENSE','NOTICE'}:
             raise ValueError("wheel licence declarations mismatch")
-        licences = {n.rsplit('/',1)[-1] for n in names if n.startswith(expected_info+'licenses/')}
-        if licences != {'LICENSE','NOTICE'}:
-            raise ValueError("wheel licence payload mismatch")
+        verify_wheel_licences(z, expected_info)
         actual_package = {n:z.read(n) for n in names if n.startswith('cdrse/')}
         if actual_package != package:
             raise ValueError("wheel package bytes differ from the selected source")
