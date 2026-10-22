@@ -1,3 +1,6 @@
+# 22 October 2026 — documentary DOI synchronisation
+
+Bind current citation metadata to published CDRS-E 0.1.1, DOI 10.5281/zenodo.23555624. Add the frozen commit and finite QA2 scope to current documentation. This is a documentary change after publication, not a software release, rebuild, new test result or replacement of v0.1.1 assets. Earlier preparation entries below remain verbatim.
 # 0.1.1 — local QA2 remediation candidate
 
 - Prepare targeted corrections to CLI input/error contracts, selected-run Grassmann convergence labels, high-precision backend parameter validation, wheel licence byte binding and installed-module provenance.
